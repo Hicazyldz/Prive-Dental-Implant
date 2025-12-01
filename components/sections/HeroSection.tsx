@@ -14,8 +14,8 @@ export default function HeroSection() {
       <Grid container spacing={6} alignItems="center">
         <Grid size={{ xs: 12, md: 6 }}>
           <Typography
-            variant="overline"
-            className="text-amber-600 font-semibold tracking-widest"
+            variant="h4"
+            className="text-lime-500 font-extrabold tracking-widest block"
           >
             ÇORAP ÜRETİCİSİ
           </Typography>
@@ -28,7 +28,7 @@ export default function HeroSection() {
             Her adımda konfor, <br /> her çiftte kalite.
           </Typography>
 
-          <Typography variant="body1" className="mt-4 text-gray-600">
+          <Typography variant="h6" className="mt-4 text-gray-400">
             Günlük, spor ve özel üretim çoraplarımızla markanız için güvenilir
             bir üretim ortağı sunuyoruz.
           </Typography>
@@ -36,7 +36,7 @@ export default function HeroSection() {
           <Box className="flex flex-wrap gap-3 mt-6">
             <Button
               variant="contained"
-              color="primary"
+              className="text-lime-500"
               size="large"
               href="#products"
             >
@@ -57,7 +57,7 @@ export default function HeroSection() {
           <Box className="flex justify-center md:justify-end">
             <Paper
               elevation={3}
-              className="w-full max-w-sm aspect-4/5 rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center"
+              className="w-full max-w-sm aspect-4/5 rounded-3xl overflow-hidden bg-linear-to-br from-gray-800 to-gray-700 flex items-center justify-center"
             >
               <Typography
                 variant="h6"
