@@ -4,7 +4,7 @@ const theme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#0F4C81", // deep ocean blue
+      main: "rgb(124,207,0,1)", // deep ocean blue
       light: "#1E6BA8",
       dark: "#0A3560",
       contrastText: "#FFFFFF",
