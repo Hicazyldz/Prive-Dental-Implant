@@ -15,23 +15,23 @@ import PublicIcon from "@mui/icons-material/Public";
 const reasons = [
   {
     icon: <VerifiedIcon fontSize="large" />,
-    title: "Yüksek Kalite Standartları",
-    desc: "Her çift çorap, sıkı kalite kontrol süreçlerinden geçerek paketlenir.",
+    title: "Kanıtlanmış Kalite & Güvenilirlik",
+    desc: "Titiz AR-GE çalışmaları ve dünya standartlarında üretim protokolleri ile en yüksek biyouyumlulukta implantlar sunuyoruz.",
   },
   {
     icon: <SpeedIcon fontSize="large" />,
-    title: "Hızlı ve Güvenilir Termin",
-    desc: "Siparişlerinizi söz verilen tarihte, hatta çoğu zaman daha erken teslim ederiz.",
+    title: "Yenilikçi Teknoloji",
+    desc: "Maxicell gibi onaylanmış yüzey teknolojilerimiz hızlı osseointegrasyon ve yüksek sağkalım oranı sağlar.",
   },
   {
     icon: <FactoryIcon fontSize="large" />,
-    title: "Esnek Üretim Kapasitesi",
-    desc: "Hem küçük adetli hem de yüksek hacimli siparişlerde ölçeklenebilir üretim.",
+    title: "Cerrahi ve Protezde Tam Uyum",
+    desc: "Ortak iç bağlantı yapısı sayesinde kolay, hızlı ve güvenli bir cerrahi & protez süreci sunar.",
   },
   {
     icon: <PublicIcon fontSize="large" />,
-    title: "İhracat Tecrübesi",
-    desc: "Yurt içi ve yurt dışında birçok marka ile uzun süreli iş ortaklıkları.",
+    title: "Uluslararası Deneyim",
+    desc: "Dünya çapında hekimler tarafından tercih edilen ve güçlü klinik destek sunan güvenilir implant markası.",
   },
 ];
 
@@ -39,16 +39,14 @@ export default function WhyUsSection() {
   return (
     <section id="quality">
       <Container maxWidth="lg" className="py-20">
-        <Typography
-          variant="overline"
-          className="text-amber-600 font-semibold tracking-widest block text-center mb-2"
-        >
-          NEDEN BİZ?
-        </Typography>
-
-        <Typography
+          <Typography
+            variant="h4"
+            sx={{ color: "primary.main", fontWeight: "bold", letterSpacing: "0.1em", display: "block", textAlign: "center", mb: 2 }}
+          >
+            NEDEN BİZ?
+          </Typography>        <Typography
           variant="h4"
-          className="font-bold text-center mb-10 tracking-tight"
+          className="font-bold text-center mb-16 tracking-tight"
         >
           Üretimde güvenebileceğiniz bir iş ortağı.
         </Typography>
@@ -60,13 +58,13 @@ export default function WhyUsSection() {
                 elevation={2}
                 className="h-full rounded-2xl p-6 flex flex-col gap-3 hover:-translate-y-1 hover:shadow-lg transition-all"
               >
-                <Box className="text-blue-700">{item.icon}</Box>
+                <Box sx={{ color: "primary.main", mt: 2 }}>{item.icon}</Box>
 
-                <Typography variant="subtitle1" className="font-semibold">
+                <Typography variant="subtitle1" className="font-semibold mb-3">
                   {item.title}
                 </Typography>
 
-                <Typography variant="body2" className="text-gray-600">
+                <Typography variant="body2" sx={{ color: "text.secondary" }}>
                   {item.desc}
                 </Typography>
               </Paper>

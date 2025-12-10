@@ -8,6 +8,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
+import { useTheme } from "@mui/material/styles";
 
 import PhoneIcon from "@mui/icons-material/Phone";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -15,6 +16,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import MailIcon from "@mui/icons-material/Mail";
 
 export default function ContactSection() {
+  const theme = useTheme();
   return (
     <section id="contact">
       <Container maxWidth="lg" className="py-20">
@@ -22,20 +24,20 @@ export default function ContactSection() {
           {/* Sol taraf: iletişim bilgileri */}
   <Grid size={{ xs: 12, md: 5 }}>
             <Typography
-              variant="overline"
-              className="text-amber-600 font-semibold tracking-widest mb-2 block"
+              variant="h4"
+              sx={{ color: "primary.main", fontWeight: "bold", letterSpacing: "0.1em", mb: 2, display: "block" }}
             >
               İLETİŞİM
             </Typography>
 
             <Typography
               variant="h4"
-              className="font-bold mb-4 tracking-tight"
+              className="font-bold mb-8 tracking-tight"
             >
               Sizinle çalışmayı sabırsızlıkla bekliyoruz.
             </Typography>
 
-            <Typography variant="body1" className="text-gray-600 mb-6">
+            <Typography variant="body1" sx={{ color: "text.secondary", mb: 6 }}>
               Ürünlerimiz ve üretim süreçlerimiz hakkında detaylı bilgi almak
               veya teklif talep etmek için bizimle dilediğiniz kanaldan
               iletişime geçebilirsiniz.
@@ -43,21 +45,21 @@ export default function ContactSection() {
 
             <Box className="flex flex-col gap-4">
               <Box className="flex items-center gap-3">
-                <PhoneIcon className="text-blue-700" />
+                <PhoneIcon sx={{ color: "primary.main" }} />
                 <Typography variant="body2">
                   Telefon: <span className="font-medium">+90 5XX XXX XX XX</span>
                 </Typography>
               </Box>
 
               <Box className="flex items-center gap-3">
-                <WhatsAppIcon className="text-emerald-500" />
+                <WhatsAppIcon sx={{ color: "success.main" }} />
                 <Typography variant="body2">
                   WhatsApp:{" "}
                   <a
                     href="https://wa.me/905XXXXXXXXX"
                     target="_blank"
                     rel="noreferrer"
-                    className="font-medium text-blue-700 underline underline-offset-4"
+                    style={{ color: theme.palette.primary.main, textDecoration: "underline" }}
                   >
                     Hemen mesaj gönderin
                   </a>
@@ -65,7 +67,7 @@ export default function ContactSection() {
               </Box>
 
               <Box className="flex items-center gap-3">
-                <MailIcon className="text-blue-700" />
+                <MailIcon sx={{ color: "primary.main" }} />
                 <Typography variant="body2">
                   E-posta:{" "}
                   <span className="font-medium">info@firmaadi.com</span>
@@ -73,7 +75,7 @@ export default function ContactSection() {
               </Box>
 
               <Box className="flex items-start gap-3">
-                <LocationOnIcon className="text-blue-700 mt-1" />
+                <LocationOnIcon sx={{ color: "primary.main", mt: 0.5 }} />
                 <Typography variant="body2">
                   Adres: <span className="font-medium">Organize Sanayi Bölgesi, İstanbul / Türkiye</span>
                   <br />
@@ -86,14 +88,13 @@ export default function ContactSection() {
           {/* Sağ taraf: form */}
   <Grid size={{ xs: 12, md: 7 }}>
             <Paper
-              elevation={3}
-              className="rounded-2xl p-6 md:p-8 bg-white"
+              sx={{ borderRadius: "16px", p: { xs: 3, md: 4 }, bgcolor: "background.paper" }}
             >
-              <Typography variant="h6" className="font-semibold mb-4">
+              <Typography variant="h6" sx={{ fontWeight: "bold", mb: 3 }}>
                 Teklif veya bilgi formu
               </Typography>
 
-              <Typography variant="body2" className="text-gray-600 mb-6">
+              <Typography variant="body2" sx={{ color: "text.secondary", mb: 4 }}>
                 Kısaca ihtiyacınızı yazın, en kısa sürede size geri dönüş
                 yapalım.
               </Typography>

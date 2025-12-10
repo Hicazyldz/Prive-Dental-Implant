@@ -2,75 +2,75 @@
 "use client";
 
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 
 export default function HeroSection() {
   return (
-    <Container maxWidth="lg" className="py-16 md:py-24">
-      <Grid container spacing={6} alignItems="center">
-        <Grid size={{ xs: 12, md: 6 }}>
+    <Box
+      id="home"
+      className="w-full text-white py-24 md:py-40 relative overflow-hidden"
+      sx={{
+        backgroundImage: "url('/hero.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          zIndex: 1,
+        },
+      }}
+    >
+      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
+        <Box
+          sx={{
+            maxWidth: "600px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
           <Typography
-            variant="h4"
-            className="text-lime-500 font-extrabold tracking-widest block"
+            variant="h2"
+            className="font-extrabold leading-tight tracking-tight"
+            sx={{ fontSize: { xs: "2rem", md: "3rem" }, lineHeight: "1.1" }}
           >
-            ÇORAP ÜRETİCİSİ
+            Yenilikçi <br /> İmplant Teknolojisi
           </Typography>
 
-          <Typography
-            variant="h3"
-            component="h1"
-            className="font-bold mt-3 leading-tight"
-          >
-            Her adımda konfor, <br /> her çiftte kalite.
+          <Typography variant="body1" sx={{ color: "text.secondary", mt: 3, fontSize: "1.125rem" }}>
+            Biyouyumlu titanyum yüzeyler, yüksek stabilite ve ileri mühendislik ile geliştirilen implant çözümleri.
+            Daha güçlü, daha hızlı iyileşen ve estetik sonuçlar için tasarlandı.
           </Typography>
 
-          <Typography variant="h6" className="mt-4 text-gray-400">
-            Günlük, spor ve özel üretim çoraplarımızla markanız için güvenilir
-            bir üretim ortağı sunuyoruz.
-          </Typography>
-
-          <Box className="flex flex-wrap gap-3 mt-6">
+          <Box className="flex gap-4 mt-10">
             <Button
               variant="contained"
-              className="text-lime-500"
               size="large"
-              href="#products"
+              href="#kurumsal"
+              color="error"
             >
-              Ürünlere göz at
+              Kurumsal
             </Button>
+
             <Button
               variant="outlined"
-              color="primary"
               size="large"
-              href="#contact"
+              href="#products"
+              color="error"
             >
-              Hemen iletişime geç
+              Ürünler
             </Button>
           </Box>
-        </Grid>
-
-        <Grid size={{ xs: 12, md: 6 }}>
-          <Box className="flex justify-center md:justify-end">
-            <Paper
-              elevation={3}
-              className="w-full max-w-sm aspect-4/5 rounded-3xl overflow-hidden bg-linear-to-br from-gray-800 to-gray-700 flex items-center justify-center"
-            >
-              <Typography
-                variant="h6"
-                className="text-gray-300 text-center px-6"
-              >
-                Buraya daha sonra <br />
-                çorap ürün fotoğrafları <br />
-                gelecek.
-              </Typography>
-            </Paper>
-          </Box>
-        </Grid>
-      </Grid>
-    </Container>
+        </Box>
+      </Container>
+    </Box>
   );
 }
