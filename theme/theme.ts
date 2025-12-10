@@ -4,7 +4,7 @@ const theme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "rgb(124,207,0,1)", // deep ocean blue
+      main: "#EF4444", 
       light: "#1E6BA8",
       dark: "#0A3560",
       contrastText: "#FFFFFF",
@@ -16,14 +16,14 @@ const theme = createTheme({
       contrastText: "#FFFFFF",
     },
     background: {
-      default: "#F8F9FA", // light neutral background
+      default: "#e0e0e0", // light neutral background
       paper: "#FFFFFF",
     },
     text: {
-      primary: "#1F2937", // dark gray
+      primary: "#EF4444", // dark gray
       secondary: "#6B7280", // medium gray
     },
-    info: {
+    info: { 
       main: "#06B6D4", // cyan
     },
     success: {

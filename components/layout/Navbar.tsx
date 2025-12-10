@@ -1,7 +1,6 @@
 // components/layout/Navbar.tsx
 "use client";
 
-
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -17,12 +16,15 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 
 const navItems = [
+  { label: "Anasayfa", href: "#home" },
+  { label: "Kurumsal", href: "#kurumsal" },
   { label: "Ürünler", href: "#products" },
-  { label: "Hakkımızda", href: "#about" },
-  { label: "Kalite", href: "#quality" },
+  { label: "Kaynaklar", href: "#resources" },
   { label: "İletişim", href: "#contact" },
 ];
 
@@ -30,16 +32,27 @@ export default function Navbar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [language, setLanguage] = React.useState("tr");
 
   const handleDrawerToggle = () => {
     setDrawerOpen((prev) => !prev);
   };
 
+  const handleLanguageChange = (event: any) => {
+    setLanguage(event.target.value);
+          //todo ileride burada i18n.changeLanguage(language) gibi bir entegrasyon yapacağız
+  };
+
   return (
     <AppBar position="sticky" color="inherit" elevation={0}>
-      <Toolbar className="max-w-8xl mx-auto w-full flex justify-between">
-        <a href="/" className="flex items-center">
-          <img src="/logo.svg" alt="GELAL" className="h-25 w-auto mt-1 mb-1" />
+      <Toolbar className="max-w-6xl mx-auto w-full flex justify-between">
+        {/* Logo */}
+        <a href="#home" className="flex items-center">
+          <img
+            src="/Prive_logo.png"
+            alt="Implant Company"
+            className="h-12 w-auto mt-1 mb-1"
+          /> 
         </a>
 
         {isMobile ? (
@@ -52,26 +65,59 @@ export default function Navbar() {
             >
               <MenuIcon />
             </IconButton>
+
             <Drawer
               anchor="right"
               open={drawerOpen}
               onClose={handleDrawerToggle}
             >
-              <Box sx={{ width: 250 }} role="presentation" onClick={handleDrawerToggle}>
-                <List>
-                  {navItems.map((item) => (
-                    <ListItem key={item.href} disablePadding>
-                      <ListItemButton component="a" href={item.href}>
-                        <ListItemText primary={item.label} />
+              <Box
+                sx={{ width: 260 }}
+                role="presentation"
+                onClick={handleDrawerToggle}
+                className="flex flex-col h-full justify-between"
+              >
+                <Box>
+                  <List>
+                    {navItems.map((item) => (
+                      <ListItem key={item.href} disablePadding>
+                        <ListItemButton component="a" href={item.href}>
+                          <ListItemText primary={item.label} />
+                        </ListItemButton>
+                      </ListItem>
+                    ))}
+                    <ListItem disablePadding>
+                      <ListItemButton component="a" href="#contact">
+                        <ListItemText primary="Teklif Al" />
                       </ListItemButton>
                     </ListItem>
-                  ))}
-                  <ListItem disablePadding>
-                    <ListItemButton component="a" href="#contact">
-                      <ListItemText primary="Teklif Al" />
-                    </ListItemButton>
-                  </ListItem>
-                </List>
+                  </List>
+                </Box>
+
+                {/* Mobile’da dil seçimi */}
+                <Box className="p-3 border-t border-gray-200">
+                  <FormControl size="small" fullWidth>
+                    <Select
+                      value={language}
+                      onChange={handleLanguageChange}
+                      sx={{
+                        backgroundColor: "#FFFFFF",
+                        borderRadius: "8px",
+                        "& .MuiOutlinedInput-notchedOutline": {
+                          borderColor: "#E5E7EB",
+                        },
+                        "&:hover .MuiOutlinedInput-notchedOutline": {
+                          borderColor: "#0F4C81",
+                        },
+                      }}
+                    >
+                      <MenuItem value="tr">🇹🇷 Türkçe</MenuItem>
+                      <MenuItem value="en">🇬🇧 English</MenuItem>
+                      <MenuItem value="de">🇩🇪 Deutsch</MenuItem>
+                      <MenuItem value="ar">🇸🇦 العربية</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
               </Box>
             </Drawer>
           </>
@@ -81,17 +127,38 @@ export default function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-lg font-medium text-gray-900 hover:text-green-800 transition-colors"
+                className="text-sm font-medium text-gray-900 hover:text-[#EF4444] transition-colors"
               >
                 {item.label}
               </a>
             ))}
 
+            <FormControl size="small" sx={{ minWidth: 120 }}>
+              <Select
+                value={language}
+                onChange={handleLanguageChange}
+                sx={{
+                  backgroundColor: "#FFFFFF",
+                  borderRadius: "8px",
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#E5E7EB",
+                  },
+                  "&:hover .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#EF4444",
+                  },
+                }}
+              >
+                <MenuItem value="tr">🇹🇷 Türkçe</MenuItem>
+                <MenuItem value="en">🇬🇧 English</MenuItem>
+                <MenuItem value="de">🇩🇪 Deutsch</MenuItem>
+                <MenuItem value="ar">🇸🇦 العربية</MenuItem>
+              </Select>
+            </FormControl>
+
             <Button
               variant="contained"
-              
-              size="large"
-              className="ml-4 text-gray-900 hover:bg-gray-500 hover:text-white"
+              size="medium"
+              className="ml-2 text-white bg-[#0F4C81] hover:bg-[#0b385f]"
               href="#contact"
             >
               Teklif Al
