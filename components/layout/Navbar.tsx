@@ -49,9 +49,9 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#home" className="flex items-center">
           <img
-            src="/Prive_logo.png"
+            src="/logo.png"
             alt="Implant Company"
-            className="h-12 w-auto mt-1 mb-1"
+            className="h-25 w-auto"
           /> 
         </a>
 
@@ -82,7 +82,7 @@ export default function Navbar() {
                     {navItems.map((item) => (
                       <ListItem key={item.href} disablePadding>
                         <ListItemButton component="a" href={item.href}>
-                          <ListItemText primary={item.label} />
+                          <ListItemText  className=' text-6xl' primary={item.label} />
                         </ListItemButton>
                       </ListItem>
                     ))}
