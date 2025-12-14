@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import Container from "@mui/material/Container";
+// Grid2 is provided as an unstable export in some MUI versions
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
@@ -141,17 +142,21 @@ export default function CorporateSection() {
           </Typography>
         </Box>
 
-        <Grid container spacing={6} justifyContent="center">
-          {corporateItems.map((item) => (
-            <Grid
-              key={item.id}
-              item
-              xs={12}
-              sm={6}
-              md={4}
-              lg={3}
-              sx={{ textAlign: "center" }}
-            >
+       <Box
+         sx={{
+           display: "grid",
+           gap: 6,
+           gridTemplateColumns: {
+             xs: "repeat(1, 1fr)",
+             sm: "repeat(2, 1fr)",
+             md: "repeat(3, 1fr)",
+             lg: "repeat(4, 1fr)",
+           },
+           justifyContent: "center",
+         }}
+       >
+  {corporateItems.map((item) => (
+    <Box key={item.id} sx={{ textAlign: "center" }}>
               <Box
                 onClick={() => handleItemClick(item)}
                 sx={{
@@ -194,9 +199,9 @@ export default function CorporateSection() {
                   {item.title}
                 </Typography>
               </Box>
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Container>
 
       {/* Modal */}

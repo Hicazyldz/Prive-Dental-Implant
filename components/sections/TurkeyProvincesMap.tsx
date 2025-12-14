@@ -145,7 +145,8 @@ export default function TurkeyProvincesMap({
     if (!svg) return;
     const groups = svg.querySelectorAll("g[id]");
     groups.forEach((g) => {
-      const id = (g as Element).id;
+      const el = g as SVGGElement;
+      const id = el.id;
       // skip the wrapper group
       if (!id || id === "turkiye") return;
       try {
@@ -155,11 +156,14 @@ export default function TurkeyProvincesMap({
         (g as any).style.cursor = "pointer";
 
         // Ensure each province <g> has a <title> so native tooltip shows
-        let titleEl = g.querySelector("title");
+        let titleEl = el.querySelector("title") as SVGTitleElement | null;
         if (!titleEl) {
-          titleEl = document.createElementNS("http://www.w3.org/2000/svg", "title") as Element;
+          titleEl = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "title"
+          ) as SVGTitleElement;
           if (titleEl) {
-            g.insertBefore(titleEl, g.firstChild);
+            el.insertBefore(titleEl, el.firstChild);
           }
         }
         if (titleEl) {
