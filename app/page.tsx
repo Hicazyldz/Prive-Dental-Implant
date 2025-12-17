@@ -7,14 +7,16 @@ import AboutSection from "../components/sections/AboutSection"
 import CorporateSection from "../components/sections/CorporateSection";
 import ContactSection from "../components/sections/ContactSection";
 import DealersSection from "../components/sections/DealersSection";
+import PatientInfoSection from "../components/sections/PatientInfoSection";
 
 export default function HomePage() {
   return (
     <main>
       <Navbar />
       <HeroSection />
-      <CorporateSection />
       <ProductsSection />
+      <CorporateSection />
+      <PatientInfoSection />
       <WhyUsSection/>
       <DealersSection/>      
       <AboutSection/>

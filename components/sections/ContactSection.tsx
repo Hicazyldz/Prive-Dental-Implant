@@ -18,8 +18,7 @@ import MailIcon from "@mui/icons-material/Mail";
 export default function ContactSection() {
   const theme = useTheme();
   return (
-    <section id="contact">
-      <Container maxWidth="lg" className="py-20">
+      <Container  className="py-20" id="contact" sx={{bgcolor:'#2a2a2a'}}>
         <Grid container spacing={6}>
           {/* Sol taraf: iletişim bilgileri */}
   <Grid size={{ xs: 12, md: 5 }}>
@@ -138,6 +137,5 @@ export default function ContactSection() {
           </Grid>
         </Grid>
       </Container>
-    </section>
   );
 }

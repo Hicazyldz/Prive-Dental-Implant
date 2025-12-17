@@ -4,7 +4,7 @@ import "./globals.css";
 import ThemeRegistry from "../components/ThemeRegistry";
 
 export const metadata: Metadata = {
-  title: "Online Trading Store",
+  title: "Prive Dental Implant",
   description: "Socks catalog website",
 };
 

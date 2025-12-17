@@ -32,7 +32,8 @@ export default function ProductsSection() {
       <Container maxWidth="lg" className="py-20">
         <Typography
           variant="h4"
-          className="font-bold text-center mb-20"
+          className="font-bold text-center"
+          sx={{mb:'2rem'}}
         >
           Ürün Gruplarımız
         </Typography>
@@ -43,40 +44,46 @@ export default function ProductsSection() {
 
             return (
               <Grid key={item.id} container spacing={6} alignItems="center">
-                {/* FOTOĞRAF KISMI */}
+                {/* Photo */}
                 <Grid
                   size={{ xs: 12, md: 6 }}
                   sx={{
+                    height: "100%",
                     order: {
                       xs: 1,
-                      md: isEven ? 1 : 2, // tek ürünlerde sol, çift ürünlerde sağ
+                      md: isEven ? 1 : 2, 
                     }
                   }}
                 >
                   <Paper
                     sx={{ width: "100%", aspectRatio: "2/3", borderRadius: "24px", overflow: "hidden", bgcolor: "background.default", display: "flex", alignItems: "center", justifyContent: "center" }}
                   >
-                    <img src={`/product${item.id}.jpg`} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={`/product${item.id}.png`} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </Paper>
                 </Grid>
 
-                {/* YAZI KISMI */}
+                {/* Description */}
                 <Grid
                   size={{ xs: 12, md: 6 }}
                   sx={{
+                    height: "100%",
                     order: {
                       xs: 2,
-                      md: isEven ? 2 : 1, // fotoğraf neredeyse, yazı tam tersi
+                      md: isEven ? 2 : 1,
                     },
                   }}
                 >
                   <Box
                     sx={{
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
                       backgroundColor: "#FFFFFF",
                       borderBottom: "12px solid #EF4444",
                       borderRadius: isEven 
-                        ? "0px 15px 60px 0px"  // Sağda: sağ kenarlar rounded
-                        : "15px 0px 0px 60px", // Solda: sol kenarlar rounded
+                        ? "0px 15px 60px 0px"  
+                        : "15px 0px 0px 60px", 
                       marginLeft: isEven ? "auto" : "0",
                       marginRight: isEven ? "0" : "auto",
                       padding: "24px",
@@ -86,7 +93,7 @@ export default function ProductsSection() {
                       {item.title}
                     </Typography>
 
-                    <Typography variant="h5" sx={{ color: "text.secondary", mb: 6 }}>
+                    <Typography variant="h6" sx={{ color: "text.secondary", mb: 6 }}>
                       {item.desc}
                     </Typography>
 

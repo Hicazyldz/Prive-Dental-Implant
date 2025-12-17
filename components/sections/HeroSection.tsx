@@ -5,6 +5,7 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import { Grid } from "@mui/material";
 
 export default function HeroSection() {
   return (
@@ -12,7 +13,7 @@ export default function HeroSection() {
       id="home"
       className="w-full text-white py-24 md:py-40 relative overflow-hidden"
       sx={{
-        backgroundImage: "url('/hero.jpg')",
+        backgroundImage: "url('/hero.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
