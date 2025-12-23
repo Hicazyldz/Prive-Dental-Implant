@@ -74,7 +74,7 @@ export default function ContactSection() {
             <Box className="flex items-center gap-3">
               <MailIcon sx={{ color: "primary.main" }} />
               <Typography variant="body2" sx={{ color: "white" }}>
-                {t("email")}: <span className="font-medium">info@firmaadi.com</span>
+                {t("email")}: <span className="font-medium">info@priveimplant.com</span>
               </Typography>
             </Box>
 

@@ -55,18 +55,7 @@ export default function ProductsSection() {
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 }, position: "relative", zIndex: 1 }}>
         {/* Section Header */}
         <Box sx={{ textAlign: "center", mb: 8 }}>
-          <Chip
-            label="Our Products"
-            sx={{
-              mb: 2,
-              bgcolor: "rgba(239, 68, 68, 0.2)",
-              color: "primary.light",
-              fontWeight: 600,
-              fontSize: "0.875rem",
-              px: 2,
-              animation: `${fadeInUp} 0.6s ease-out`
-            }}
-          />
+          
           <Typography
             variant="h3"
             sx={{
@@ -89,7 +78,7 @@ export default function ProductsSection() {
               animation: `${fadeInUp} 0.6s ease-out 0.2s backwards`
             }}
           >
-            Discover our range of premium dental implant solutions
+            {tProducts("description")}
           </Typography>
         </Box>
 
@@ -228,7 +217,7 @@ export default function ProductsSection() {
 
                     {/* Features */}
                     <Box sx={{ mb: 4 }}>
-                      {["High Quality", "Long Lasting", "Easy Installation"].map((feature, idx) => (
+                      {[tProducts("items.highquaility"), tProducts("items.longlasting"), tProducts("items.biocompatible")].map((feature, idx) => (
                         <Box
                           key={idx}
                           sx={{
@@ -285,31 +274,7 @@ export default function ProductsSection() {
                         {tProducts("btnDetail")}
                       </Button>
 
-                      <Button
-                        component="a"
-                        href="#contact"
-                        variant="outlined"
-                        sx={{
-                          color: "text.primary",
-                          borderColor: "divider",
-                          borderWidth: "2px",
-                          px: 4,
-                          py: 1.5,
-                          fontSize: "1rem",
-                          fontWeight: 600,
-                          borderRadius: "50px",
-                          textTransform: "none",
-                          transition: "all 0.3s ease",
-                          "&:hover": {
-                            borderColor: "primary.main",
-                            borderWidth: "2px",
-                            color: "primary.main",
-                            transform: "translateY(-2px)"
-                          }
-                        }}
-                      >
-                        Learn More
-                      </Button>
+                     
                     </Box>
                   </Box>
                 </Grid>

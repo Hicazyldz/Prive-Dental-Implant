@@ -19,6 +19,7 @@
   },
   "products": {
     "title": "Ürün Gruplarımız",
+    "description": "Gelişmiş teknoloji ve yüksek biyouyumluluk ile tasarlanmış, çeşitli klinik ihtiyaçlara yönelik güvenilir implant çözümleri.",
     "btnDetail": "Detaylı Bilgi",
      "items": {
       "t6Standard": {
@@ -32,7 +33,11 @@
       "slimex": {
         "title": "Slimex",
         "desc": "Dar kretler ve sınırlı kemik kalınlığında ince ama dayanıklı çözümler sunan implant sistemi. External tasarımı ve geniş üst yapı seçenekleriyle farklı protez tedavilerine uyum sağlar; Maxicell yüzeyiyle güvenli ve yüksek sağkalım oranı sunar."
-      }
+      },
+      "highquaility":"Yüksek Kalite",
+      "longlasting":"Uzun Ömürlü",
+      "biocompatible":"Biyouyumlu"
+      
     }
   },
   

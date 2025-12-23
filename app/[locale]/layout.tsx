@@ -9,16 +9,14 @@ export const metadata: Metadata = {
   description: "Socks catalog website",
 };
 
-const locales = ["tr", "en"] as const;
+const locales = ["tr", "en","de","ar"] as const;
 
-// ✅ next-intl dokümanlarının önerdiği şey: [locale] için statik param üret
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
 type Props = {
   children: React.ReactNode;
-  // ✅ Next 16'da params build-time validator yüzünden Promise olabiliyor
   params: Promise<{ locale: string }>;
 };
 

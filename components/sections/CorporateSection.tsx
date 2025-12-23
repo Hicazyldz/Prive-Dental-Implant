@@ -55,6 +55,7 @@ export default function CorporateSection() {
             variant="h2"
             sx={{
               fontWeight: 400,
+              color: "primary.main",
               fontSize: { xs: "2.5rem", md: "3.2rem" },
               mb: 3,
               letterSpacing: 1,
