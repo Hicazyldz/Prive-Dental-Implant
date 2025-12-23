@@ -1,0 +1,200 @@
+{
+  "nav": {
+    "home": "Anasayfa",
+    "products": "Ürünler",
+    "corporate": "Kurumsal",
+    "patientInfo": "Hasta Bilgilendirme",
+    "whyUs": "Neden Biz?",
+    "dealers": "Bayiler",
+    "about": "Hakkımızda",
+    "contact": "İletişim"
+  },
+
+  "hero": {
+    "titleLine1": "Yenilikçi",
+    "titleLine2": "İmplant Teknolojisi",
+    "description": "Biyouyumlu titanyum yüzeyler, yüksek stabilite ve ileri mühendislik ile geliştirilen implant çözümleri. Daha güçlü, daha hızlı iyileşen ve estetik sonuçlar için tasarlandı.",
+    "ctaCorporate": "Kurumsal",
+    "ctaProducts": "Ürünler"
+  },
+  "products": {
+    "title": "Ürün Gruplarımız",
+    "btnDetail": "Detaylı Bilgi",
+     "items": {
+      "t6Standard": {
+        "title": "T6 Standard",
+        "desc": "Kemik seviyesi implant. Modern ve estetik tasarımı, güvenli cerrahi protokolü ve zengin üst yapı seçenekleriyle hekime ve hastaya konforlu bir cerrahi ve protetik süreç sunar."
+      },
+      "t6Torq": {
+        "title": "T6 Torq",
+        "desc": "Kemik seviyesi implant. Kesici ve derin diş profili sayesinde tüm kemik tiplerinde güçlü mekanik tutunma sağlar; yüksek ISQ değerleriyle hemen ve erken yükleme için tasarlanmıştır. Ortak iç yapısı ve Maxicell yüzeyiyle T6 serisinin kanıtlanmış gücünü sürdürür."
+      },
+      "slimex": {
+        "title": "Slimex",
+        "desc": "Dar kretler ve sınırlı kemik kalınlığında ince ama dayanıklı çözümler sunan implant sistemi. External tasarımı ve geniş üst yapı seçenekleriyle farklı protez tedavilerine uyum sağlar; Maxicell yüzeyiyle güvenli ve yüksek sağkalım oranı sunar."
+      }
+    }
+  },
+  
+  "corporate": {
+    "title": "Yenilikçi Vizyon",
+    "description": "Prive Implant; titiz AR-GE çalışmalarını ve klinik bilgi birikimini, yüksek hassasiyetli üretim protokolleri ile birleştirerek hekimlere güvenilir implant çözümleri sunar. Verimliliği artırmak, cerrahi süreçleri kolaylaştırmak ve daha konforlu tedavi deneyimi sağlamak için yenilikçi ürünler tasarlamaya, geliştirmeye ve uygulamaya devam ediyoruz.",
+    "btnClose": "Kapat",
+    "items": {
+      "vision": {
+        "title": "Vizyonumuz ve Misyonumuz",
+        "details": "Vizyonumuz; yerel güçle geliştirilen, global ölçekte tercih edilen bir implant markası olmaktır. Misyonumuz ise; hekimlere cerrahi ve protetik açıdan güven veren, hastalara ise uzun ömürlü ve estetik sonuçlar sunan implant sistemleri geliştirmektir."
+      },
+      "quality": {
+        "title": "Kalite Politikamız",
+        "details": "Kalite yönetim sistemimizi uluslararası tıbbi cihaz standartlarına uygun şekilde kurguluyor, her implantı üretimden sevkiyata kadar izlenebilir kılıyoruz. Sürekli iyileştirme kültürü ile süreçlerimizi, ürün performansını ve hizmet kalitemizi düzenli olarak gözden geçiriyoruz."
+      },
+      "certificates": {
+        "title": "Sertifikalarımız",
+        "details": "Prive Implant ürünleri ve üretim tesisleri, ilgili mevzuat ve standartlara uygunluk için düzenli olarak denetlenmekte ve belgelendirilmektedir. Sertifikasyon yapımız; güvenli, izlenebilir ve regülasyonlara uyumlu bir üretim anlayışının göstergesidir."
+      },
+      "environment": {
+        "title": "Çevre Politikamız",
+        "details": "Üretim süreçlerimizde kaynak kullanımını optimize etmeyi, atıkları azaltmayı ve çevresel etkilerimizi en aza indirmeyi hedefliyoruz. Sürdürülebilirlik odaklı yaklaşımımız doğrultusunda enerji verimliliği, atık yönetimi ve geri dönüşüm konularına öncelik veriyoruz."
+      },
+      "hr": {
+        "title": "İnsan Kaynakları Politikamız",
+        "details": "Çalışanlarımızı; markamızın en önemli değeri ve sürdürülebilir başarımızın temel unsuru olarak görüyoruz. Gelişimi destekleyen, adil, şeffaf ve kapsayıcı bir çalışma ortamı oluşturmayı, sürekli eğitim ve yetkinlik artırma programları ile ekiplerimizi güçlendirmeyi amaçlıyoruz."
+      },
+      "kvkk": {
+        "title": "Kişisel Verilerin Korunması",
+        "details": "Prive Implant olarak kişisel verilerin gizliliği ve güvenliği konusunda ilgili mevzuata tam uyum sağlamayı taahhüt ediyoruz. Veri işleme faaliyetlerimizi şeffaflık ilkesiyle yürütüyor, yalnızca gerekli bilgilere erişimi yetkili personelle sınırlıyoruz."
+      },
+      "cookie": {
+        "title": "Çerez Politikamız",
+        "details": "Dijital kanallarımızda kullanılan çerezler; kullanıcı deneyimini iyileştirmek, site performansını analiz etmek ve güvenliği artırmak amacıyla sınırlı şekilde kullanılmaktadır. Çerez tercihleri, kullanıcılarımızın kontrolü altındadır ve talep edildiğinde güncellenebilmektedir."
+      }
+    }
+  
+},
+
+  
+  "patientInfo": {
+    "title": "Hasta Bilgilendirme",
+    "description": "Dental implant tedavisi hakkında merak edilen temel sorular ve bilgilendirici yanıtlar.",
+    "warning": "Bu durumlarda implant uygulaması riskli olabilir. Bu nedenle hekiminizin önerisine mutlaka uyunuz.",
+    "items": {
+      "whatIs": {
+        "question": "İmplant nedir?",
+        "answer": "Dental implant, genellikle insan biyolojisi ile uyumlu titanyum malzemeden üretilen ve diş kökü yerine çene kemiğine yerleştirilen yapay köklerdir. Her türlü diş kaybının tedavisinde kullanılır. Kemik içine yerleştirilen implant kemik ile kaynadıktan sonra, porselen dişler implant üzerine vida ya da yapıştırma yöntemi ile bağlanır."
+      },
+      "toWhom": {
+        "question": "Kimlere uygulanır?",
+        "answer": "Genel sağlık durumu iyi olan, ergenlik çağını tamamlamış ve hekim tarafından implant tedavisine uygun bulunan her bireye dental implant uygulanabilir."
+      },
+      "doctorDiagnosis": {
+        "question": "Hangi durumlarda implant tedavisi hekim teşhisine bağlıdır?",
+        "text": "Aşağıdaki durumlarda implant tedavisi hekim değerlendirmesine bağlıdır:",
+        "list": [
+          "Kronik şeker hastalarında",
+          "Hamilelerde",
+          "Kemik gelişimi tamamlanmamış bireylerde",
+          "Aşırı sigara tüketimi olan kişilerde",
+          "Alkol ve uyuşturucu bağımlılığı olanlarda",
+          "Bağışıklık sistemi yetersizliği bulunan hastalarda",
+          "Hemofili ve yüksek tansiyon gibi kronik rahatsızlıklarda"
+        ]
+      },
+      "isHarmful": {
+        "question": "Herhangi bir zararı var mıdır?",
+        "answer": "Prive Implant ürünleri, insan vücudu ile yüksek biyouyumluluğa sahip saf titanyumdan üretilmektedir. Doğru uygulanmış ve düzenli bakımı yapılmış implantlarda %98'e varan başarı oranları bildirilmektedir.\n\nTüm cerrahi işlemlerde olduğu gibi implant tedavisinde de potansiyel riskler bulunmaktadır. Hekiminiz sizin için en sağlıklı kararı verecektir."
+      },
+      "lifeSpan": {
+        "question": "İmplantın ömrü ne kadardır?",
+        "answer": "İmplantlar, doğal dişler gibi kemik ve diş etiyle ilişki içindedir. Düzenli ağız bakımı yapılmadığında diş eti problemleri implant çevresinde de görülebilir.\n\nDoğru ağız hijyeni ve düzenli diş hekimi kontrolleri ile implantlar uzun yıllar sağlıklı şekilde kullanılabilir. Günümüzde 30 yıl önce yapılan implantları halen kullanan hastalar bulunmaktadır."
+      }
+    }
+  },
+  
+  "whyUs": {
+    "subtitle": "NEDEN BİZ?",
+    "title": "Üretimde güvenebileceğiniz bir iş ortağı.",
+    "description": "Kalite, güvenilirlik ve yenilikçi teknoloji ile hekimlere ve hastalara en iyi implant çözümlerini sunuyoruz.",
+    "items": {
+      "quality": {
+        "title": "Kanıtlanmış Kalite & Güvenilirlik",
+        "desc": "Titiz AR-GE çalışmaları ve dünya standartlarında üretim protokolleri ile en yüksek biyouyumlulukta implantlar sunuyoruz."
+      },
+      "tech": {
+        "title": "Yenilikçi Teknoloji",
+        "desc": "Maxicell gibi onaylanmış yüzey teknolojilerimiz hızlı osseointegrasyon ve yüksek sağkalım oranı sağlar."
+      },
+      "harmony": {
+        "title": "Cerrahi ve Protezde Tam Uyum",
+        "desc": "Ortak iç bağlantı yapısı sayesinde kolay, hızlı ve güvenli bir cerrahi & protez süreci sunar."
+      },
+      "experience": {
+        "title": "Uluslararası Deneyim",
+        "desc": "Dünya çapında hekimler tarafından tercih edilen ve güçlü klinik destek sunan güvenilir implant markası."
+      }
+    }
+  
+},
+
+  "dealers": {
+    "title": "Bayilerimiz",
+    "description": "Türkiye genelinde hizmet veren bayilerimiz ve satış noktalarımız. Size en yakın bayimizi bularak ürünlerimize kolayca ulaşabilirsiniz.",
+    "defaultInfo": "Bilgiler daha sonra eklenecektir.",
+    "data": {
+      "ankara": {
+        "name": "ADH Medikal / Ankara Bayii",
+        "contact": "Ali Can Arslan",
+        "address": "Kızılay, Dr. Mediha Eldem Sk. No:38 D:11, 06420 Çankaya / Ankara",
+        "info": "Satış ve teknik destek hizmetleri."
+      },
+      "bursa": {
+        "name": "White Medikal",
+        "contact": "Osman Şimşekcan",
+        "address": "İhsaniye Mah. Tuna Cad. No:165 B2/7 Nilüfer / Bursa",
+        "info": "Bölgesel satış noktası."
+      },
+      "gaziantep": {
+        "name": "TAM DENTAL",
+        "contact": "Erhan Özil",
+        "address": "Korutürk Cd. No:92, 27500 Şehitkamil / Gaziantep, Türkiye",
+        "info": "Gaziantep ve çevre iller için yetkili bayi."
+      },
+      "adana": { "name": "Adana" },
+      "hatay": { "name": "Hatay" },
+      "mersin": { "name": "Mersin" },
+      "kahramanmaras": { "name": "Kahramanmaraş" }
+    }
+  },
+  
+  "about": {
+    "subtitle": "HAKKIMIZDA",
+    "paragraphs": [
+      "Türkiye’nin yenilikçi implant çözümleri sunan öncü markalarından biri olarak kurulan firmamız, yüksek hassasiyetli üretim teknolojileri ve bilimsel altyapı üzerine inşa edilmiştir. Amacımız; hekimlere güven veren, hastalara ise uzun ömürlü ve konforlu çözümler sağlayan üstün kaliteli implant sistemleri geliştirmektir.",
+      "Ar-Ge odaklı yaklaşımımızla, biyouyumluluk ve yüzey teknolojileri alanındaki güncel bilimsel gelişmeleri takip ediyor; global standartlarla uyumlu, güvenilir ve temiz implant yüzeyleri üretmek için çalışıyoruz. Her bir ürünümüz, titiz protokollerle test edilmekte ve klinik beklentilere yüksek doğrulukla cevap verecek şekilde tasarlanmaktadır.",
+      "Klinik hekimler ve akademisyenlerle sürdürdüğümüz iş birliği sayesinde implantoloji alanındaki yenilikleri destekliyor; bilgi paylaşımı ve sürekli gelişim odaklı bilimsel platformlarda aktif rol alıyoruz.",
+      "Etik, şeffaf ve sorumluluk bilinci yüksek yönetim anlayışımız; üretimden satış sonrası desteğe kadar tüm süreçlerimizin temelini oluşturur. Hasta güvenliğini ve hekim memnuniyetini merkeze alarak, sektöre değer katmaya devam ediyoruz."
+    ]
+  },
+  
+  "contact": {
+    "subtitle": "İLETİŞİM",
+    "title": "Sizinle çalışmayı sabırsızlıkla bekliyoruz.",
+    "description": "Ürünlerimiz ve üretim süreçlerimiz hakkında detaylı bilgi almak veya teklif talep etmek için bizimle dilediğiniz kanaldan iletişime geçebilirsiniz.",
+    "phone": "Telefon",
+    "whatsapp": "Hemen mesaj gönderin",
+    "email": "E-posta",
+    "address": "Adres",
+    "addressDetail": "Organize Sanayi Bölgesi, İstanbul / Türkiye",
+    "formTitle": "Teklif veya bilgi formu",
+    "formDesc": "Kısaca ihtiyacınızı yazın, en kısa sürede size geri dönüş yapalım.",
+    "labels": {
+      "name": "Ad Soyad",
+      "company": "Firma Adı",
+      "email": "E-posta",
+      "message": "Mesajınız",
+      "button": "Mesajı Gönder"
+    }
+  }
+
+}
+

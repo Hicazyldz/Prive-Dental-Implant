@@ -1,7 +1,6 @@
-// components/layout/Navbar.tsx
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
@@ -15,316 +14,344 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import LanguageIcon from "@mui/icons-material/Language";
+import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import Divider from "@mui/material/Divider";
 
-// ==================== TİP TANIMLARI ====================
-interface NavItem {
-  label: string;
-  href: string;
-}
+import { useLocale, useTranslations } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
 
-interface Language {
-  code: string;
-  label: string;
-  flag: string;
-}
+type LocaleCode = "tr" | "en";
 
-// ==================== YAPILANDIRMA ====================
-const NAV_ITEMS: NavItem[] = [
-  { label: "Anasayfa", href: "#home" },
-  { label: "Ürünler", href: "#products" },
-  { label: "Kurumsal", href: "#kurumsal" },
-  { label: "Hasta Bilgilendirme", href: "#hasta-bilgilendirme" },
-  { label: "Neden Biz?", href: "#why-us" },
-  { label: "Bayiler", href: "#dealers" },
-  { label: "Hakkımızda", href: "#about" },
-  { label: "İletişim", href: "#contact" },
+const NAV_ITEMS = [
+  { key: "home", href: "#home" },
+  { key: "products", href: "#products" },
+  { key: "corporate", href: "#kurumsal" },
+  { key: "patientInfo", href: "#hasta-bilgilendirme" },
+  { key: "whyUs", href: "#why-us" },
+  { key: "dealers", href: "#dealers" },
+  { key: "about", href: "#about" },
+  { key: "contact", href: "#contact" }
+] as const;
+
+const LANGUAGES: { code: LocaleCode; flag: string; label: string }[] = [
+  { code: "tr", flag: "🇹🇷", label: "Türkçe" },
+  { code: "en", flag: "🇬🇧", label: "English" }
 ];
 
-const LANGUAGES: Language[] = [
-  { code: "tr", label: "Türkçe", flag: "🇹🇷" },
-  { code: "en", label: "English", flag: "🇬🇧" },
-  { code: "de", label: "Deutsch", flag: "🇩🇪" },
-  { code: "ar", label: "العربية", flag: "🇸🇦" },
-];
-
-const NAVBAR_CONFIG = {
-  logo: {
-    src: "/logo.png",
-    alt: "Prive Implant Logo",
-    height: 48 // px
-  },
-  drawer: {
-    width: 280
+function replaceLocaleInPath(pathname: string, nextLocale: string) {
+  const parts = pathname.split("/");
+  if (parts.length >= 2) {
+    parts[1] = nextLocale;
+    return parts.join("/") || `/${nextLocale}`;
   }
-} as const;
+  return `/${nextLocale}`;
+}
 
-// Stil konfigürasyonu
-const STYLES = {
-  appBar: {
-    bgcolor: "background.paper",
-    borderBottom: "1px solid",
-    borderColor: "divider",
-    boxShadow: "0 1px 3px rgba(0,0,0,0.05)"
-  },
-  navLink: {
-    position: "relative" as const,
-    fontSize: "0.95rem",
-    fontWeight: 500,
-    color: "text.secondary",
-    textDecoration: "none",
-    padding: "8px 0",
-    transition: "color 0.2s ease",
-    "&:hover": {
-      color: "error.main",
-    },
-    "&::after": {
-      content: '""',
-      position: "absolute",
-      bottom: 0,
-      left: 0,
-      width: 0,
-      height: "2px",
-      bgcolor: "error.main",
-      transition: "width 0.3s ease",
-    },
-    "&:hover::after": {
-      width: "100%",
-    }
-  },
-  languageSelect: {
-    minWidth: 140,
-    bgcolor: "background.paper",
-    borderRadius: 2,
-    "& .MuiOutlinedInput-notchedOutline": {
-      borderColor: "divider",
-    },
-    "&:hover .MuiOutlinedInput-notchedOutline": {
-      borderColor: "error.main",
-    },
-    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-      borderColor: "error.main",
-    }
-  }
-} as const;
-
-// ==================== COMPONENT ====================
 export default function Navbar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [language, setLanguage] = useState("tr");
 
-  const handleDrawerToggle = () => {
-    setDrawerOpen((prev) => !prev);
+  const router = useRouter();
+  const pathname = usePathname();
+  const locale = useLocale() as LocaleCode;
+
+  const tNav = useTranslations("nav");
+
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [langAnchor, setLangAnchor] = useState<null | HTMLElement>(null);
+
+  const languageOptions = useMemo(() => LANGUAGES, []);
+  const currentLang = languageOptions.find(lang => lang.code === locale);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleDrawerToggle = () => setDrawerOpen((p) => !p);
+
+  const handleLanguageClick = (event: React.MouseEvent<HTMLElement>) => {
+    setLangAnchor(event.currentTarget);
   };
 
-  const handleLanguageChange = (event: SelectChangeEvent) => {
-    setLanguage(event.target.value);
-    // TODO: İleride i18n entegrasyonu
-    // i18n.changeLanguage(event.target.value);
+  const handleLanguageClose = () => {
+    setLangAnchor(null);
+  };
+
+  const handleLanguageChange = (nextLocale: LocaleCode) => {
+    const hash = typeof window !== "undefined" ? window.location.hash : "";
+    const nextPath = replaceLocaleInPath(pathname, nextLocale);
+    router.push(`${nextPath}${hash}`, { scroll: false });
+    handleLanguageClose();
   };
 
   const handleNavClick = () => {
-    if (isMobile) {
-      setDrawerOpen(false);
-    }
+    if (isMobile) setDrawerOpen(false);
   };
 
   return (
-    <AppBar position="sticky" elevation={0} sx={STYLES.appBar}>
-      <Toolbar
-        sx={{
-          maxWidth: "lg",
-          width: "100%",
-          mx: "auto",
-          px: { xs: 2, sm: 3 },
-          justifyContent: "space-between"
-        }}
-      >
-        {/* Logo */}
-        <Box
-          component="a"
-          href="#home"
+    <AppBar
+      position="sticky"
+      elevation={scrolled ? 4 : 0}
+      sx={{
+        bgcolor: "background.paper",
+        backdropFilter: scrolled ? "blur(20px)" : "none",
+        backgroundColor: scrolled ? "rgba(255, 255, 255, 0.95)" : "background.paper",
+        borderBottom: scrolled ? "none" : "1px solid",
+        borderColor: "divider",
+        transition: "all 0.3s ease-in-out"
+      }}
+    >
+      <Container maxWidth="xl">
+        <Toolbar
+          disableGutters
           sx={{
-            display: "flex",
-            alignItems: "center",
-            textDecoration: "none",
-            transition: "opacity 0.2s ease",
-            "&:hover": { opacity: 0.8 }
+            justifyContent: "space-between",
+            minHeight: { xs: 70, md: scrolled ? 80 : 100 },
+            transition: "min-height 0.3s ease-in-out"
           }}
-          aria-label="Ana Sayfaya Git"
         >
+          {/* Logo */}
           <Box
-            component="img"
-            src={NAVBAR_CONFIG.logo.src}
-            alt={NAVBAR_CONFIG.logo.alt}
+            component="a"
+            href="#home"
             sx={{
-              height: { xs: 40, md: NAVBAR_CONFIG.logo.height },
-              width: "auto"
+              display: "flex",
+              alignItems: "center",
+              textDecoration: "none",
+              transition: "transform 0.2s ease-in-out",
+              "&:hover": {
+                transform: "scale(1.05)"
+              }
             }}
-          />
-        </Box>
-
-        {/* Mobile: Hamburger Menu */}
-        {isMobile ? (
-          <>
-            <IconButton
-              edge="end"
-              color="inherit"
-              aria-label={drawerOpen ? "Menüyü Kapat" : "Menüyü Aç"}
-              onClick={handleDrawerToggle}
+          >
+            <Box
+              component="img"
+              src="/logo.png"
+              alt="Prive Implant"
               sx={{
-                color: "text.primary",
-                "&:hover": { bgcolor: "action.hover" }
+                height: { xs: 45, md: scrolled ? 65 : 85 },
+                width: "auto",
+                display: "block",
+                transition: "height 0.3s ease-in-out"
               }}
-            >
-              {drawerOpen ? <CloseIcon /> : <MenuIcon />}
-            </IconButton>
+            />
+          </Box>
 
-            {/* Mobile Drawer */}
-            <Drawer
-              anchor="right"
-              open={drawerOpen}
-              onClose={handleDrawerToggle}
-              PaperProps={{
-                sx: {
-                  width: NAVBAR_CONFIG.drawer.width,
-                  bgcolor: "background.paper"
-                }
-              }}
-            >
-              <Box
+          {isMobile ? (
+            <>
+              <IconButton
+                edge="end"
+                onClick={handleDrawerToggle}
                 sx={{
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between"
+                  color: "text.primary",
+                  bgcolor: "rgba(0, 0, 0, 0.04)",
+                  "&:hover": {
+                    bgcolor: "rgba(0, 0, 0, 0.08)"
+                  }
+                }}
+                aria-label={drawerOpen ? "Close menu" : "Open menu"}
+              >
+                {drawerOpen ? <CloseIcon /> : <MenuIcon />}
+              </IconButton>
+
+              <Drawer
+                anchor="right"
+                open={drawerOpen}
+                onClose={handleDrawerToggle}
+                PaperProps={{
+                  sx: {
+                    width: 300,
+                    bgcolor: "background.paper"
+                  }
                 }}
               >
-                {/* Navigation Links */}
-                <Box>
-                  {/* Drawer Header */}
+                <Box sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
                   <Box
                     sx={{
-                      p: 2,
+                      p: 3,
                       display: "flex",
-                      alignItems: "center",
                       justifyContent: "space-between",
+                      alignItems: "center",
                       borderBottom: "1px solid",
                       borderColor: "divider"
                     }}
                   >
-                    <Box
-                      component="img"
-                      src={NAVBAR_CONFIG.logo.src}
-                      alt={NAVBAR_CONFIG.logo.alt}
-                      sx={{ height: 36, width: "auto" }}
-                    />
-                    <IconButton
-                      onClick={handleDrawerToggle}
-                      size="small"
-                      aria-label="Menüyü Kapat"
-                    >
+                    <Box component="img" src="/logo.png" alt="Logo" sx={{ height: 50 }} />
+                    <IconButton onClick={handleDrawerToggle} size="small">
                       <CloseIcon />
                     </IconButton>
                   </Box>
 
-                  {/* Nav Items */}
-                  <List sx={{ pt: 2 }}>
+                  <List sx={{ flex: 1, pt: 2 }}>
                     {NAV_ITEMS.map((item) => (
-                      <ListItem key={item.href} disablePadding>
+                      <ListItem key={item.key} disablePadding sx={{ mb: 0.5 }}>
                         <ListItemButton
                           component="a"
                           href={item.href}
                           onClick={handleNavClick}
                           sx={{
-                            py: 1.5,
-                            px: 3,
+                            mx: 2,
+                            borderRadius: 2,
                             "&:hover": {
-                              bgcolor: "error.50",
+                              bgcolor: "error.main",
                               "& .MuiListItemText-primary": {
-                                color: "text.primary"
+                                color: "white"
                               }
-                            }
+                            },
+                            transition: "all 0.2s ease-in-out"
                           }}
                         >
                           <ListItemText
-                            primary={item.label}
-                            primaryTypographyProps={{
-                              fontSize: "1rem",
-                              fontWeight: 500
+                            primary={tNav(item.key)}
+                            sx={{
+                              "& .MuiListItemText-primary": {
+                                fontWeight: 600,
+                                fontSize: "0.95rem",
+                                color: "text.primary"
+                              }
                             }}
                           />
                         </ListItemButton>
                       </ListItem>
                     ))}
                   </List>
-                </Box>
 
-                {/* Language Selector - Mobile */}
-                <Box sx={{ p: 3, borderTop: "1px solid", borderColor: "divider" }}>
-                  <FormControl size="small" fullWidth>
-                    <Select
-                      value={language}
-                      onChange={handleLanguageChange}
-                      sx={STYLES.languageSelect}
+                  <Box sx={{ p: 3, borderTop: "1px solid", borderColor: "divider" }}>
+                    <Button
+                      fullWidth
+                      variant="outlined"
+                      startIcon={<LanguageIcon />}
+                      onClick={handleLanguageClick}
+                      sx={{
+                        justifyContent: "flex-start",
+                        textTransform: "none",
+                        fontSize: "0.95rem",
+                        fontWeight: 600,
+                        color: "text.primary",
+                        borderColor: "#e0e0e0",
+                        "&:hover": {
+                          borderColor: "error.main",
+                          bgcolor: "rgba(211, 47, 47, 0.04)",
+                          color: "error.main"
+                        }
+                      }}
                     >
-                      {LANGUAGES.map((lang) => (
-                        <MenuItem key={lang.code} value={lang.code}>
-                          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                            <span>{lang.flag}</span>
-                            <span>{lang.label}</span>
-                          </Box>
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
+                      {currentLang?.flag} {currentLang?.label}
+                    </Button>
+                  </Box>
                 </Box>
-              </Box>
-            </Drawer>
-          </>
-        ) : (
-          /* Desktop: Navigation Links */
-          <Box sx={{ display: "flex", gap: 4, alignItems: "center" }}>
-            {/* Nav Links */}
-            {NAV_ITEMS.map((item) => (
-              <Box
-                key={item.href}
-                component="a"
-                href={item.href}
-                sx={STYLES.navLink}
-              >
-                {item.label}
-              </Box>
-            ))}
+              </Drawer>
+            </>
+          ) : (
+            <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+              {NAV_ITEMS.map((item) => (
+                <Button
+                  key={item.key}
+                  component="a"
+                  href={item.href}
+                  sx={{
+                    px: 2,
+                    py: 1,
+                    fontSize: "0.95rem",
+                    fontWeight: 600,
+                    color: "text.primary",
+                    textTransform: "none",
+                    position: "relative",
+                    "&::after": {
+                      content: '""',
+                      position: "absolute",
+                      bottom: 0,
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      width: 0,
+                      height: 2,
+                      bgcolor: "error.main",
+                      transition: "width 0.3s ease-in-out"
+                    },
+                    "&:hover": {
+                      bgcolor: "transparent",
+                      color: "error.main",
+                      "&::after": {
+                        width: "80%"
+                      }
+                    }
+                  }}
+                >
+                  {tNav(item.key)}
+                </Button>
+              ))}
 
-            {/* Divider */}
-            <Divider orientation="vertical" flexItem sx={{ mx: 1 }} />
+              <Box sx={{ ml: 2, pl: 2, borderLeft: "1px solid", borderColor: "divider" }}>
+                <Button
+                  variant="outlined"
+                  startIcon={<LanguageIcon />}
+                  onClick={handleLanguageClick}
+                  sx={{
+                    textTransform: "none",
+                    fontSize: "0.95rem",
+                    fontWeight: 600,
+                    borderRadius: 2,
+                    px: 2,
+                    borderColor: "#e0e0e0",
+                    color: "text.primary",
+                    "&:hover": {
+                      borderColor: "error.main",
+                      bgcolor: "rgba(211, 47, 47, 0.04)",
+                      color: "error.main"
+                    }
+                  }}
+                >
+                  {currentLang?.flag} {currentLang?.label}
+                </Button>
+              </Box>
+            </Box>
+          )}
+        </Toolbar>
+      </Container>
 
-            {/* Language Selector - Desktop */}
-            <FormControl size="small">
-              <Select
-                value={language}
-                onChange={handleLanguageChange}
-                sx={STYLES.languageSelect}
-              >
-                {LANGUAGES.map((lang) => (
-                  <MenuItem key={lang.code} value={lang.code}>
-                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                      <span>{lang.flag}</span>
-                      <span>{lang.label}</span>
-                    </Box>
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Box>
-        )}
-      </Toolbar>
+      <Menu
+        anchorEl={langAnchor}
+        open={Boolean(langAnchor)}
+        onClose={handleLanguageClose}
+        PaperProps={{
+          sx: {
+            mt: 1,
+            minWidth: 150,
+            borderRadius: 2,
+            boxShadow: "0 4px 20px rgba(0,0,0,0.1)"
+          }
+        }}
+      >
+        {languageOptions.map((lang) => (
+          <MenuItem
+            key={lang.code}
+            selected={lang.code === locale}
+            onClick={() => handleLanguageChange(lang.code)}
+            sx={{
+              gap: 1.5,
+              py: 1.5,
+              "&.Mui-selected": {
+                bgcolor: "error.main",
+                color: "white",
+                "&:hover": {
+                  bgcolor: "error.dark"
+                }
+              }
+            }}
+          >
+            <span style={{ fontSize: "1.2rem" }}>{lang.flag}</span>
+            <span style={{ fontWeight: 500 }}>{lang.label}</span>
+          </MenuItem>
+        ))}
+      </Menu>
     </AppBar>
   );
 }
