@@ -240,7 +240,7 @@ export default function HeroSection() {
                 </Button>
               </Box>
 
-              {/* Stats */}
+              {/* Stats
               <Grid container spacing={3} sx={{ mt: 6 }}>
                 {[
                   { number: "15+", label: "Years Experience" },
@@ -274,7 +274,7 @@ export default function HeroSection() {
                     </Box>
                   </Grid>
                 ))}
-              </Grid>
+              </Grid> */}
             </Box>
           </Grid>
 
@@ -282,36 +282,7 @@ export default function HeroSection() {
         </Grid>
       </Container>
 
-      {/* Scroll Down Indicator */}
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: 40,
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 2,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: 1,
-          cursor: "pointer",
-          animation: `${bounce} 2s infinite`
-        }}
-        component="a"
-        href="#products"
-      >
-        <Typography
-          sx={{
-            color: "rgba(255, 255, 255, 0.8)",
-            fontSize: "0.875rem",
-            fontWeight: 500,
-            letterSpacing: "1px"
-          }}
-        >
-          Scroll Down
-        </Typography>
-        <KeyboardArrowDownIcon sx={{ color: "white", fontSize: "2rem" }} />
-      </Box>
+     
     </Box>
   );
 }

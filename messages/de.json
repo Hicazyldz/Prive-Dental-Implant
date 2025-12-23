@@ -1,0 +1,193 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "products": "Produkte",
+    "corporate": "Unternehmen",
+    "patientInfo": "Patienteninformation",
+    "whyUs": "Warum wir?",
+    "dealers": "Händler",
+    "about": "Über uns",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "titleLine1": "Innovativ",
+    "titleLine2": "Implantattechnologie",
+    "description": "Implantatlösungen mit biokompatiblen Titanoberflächen, hoher Stabilität und fortschrittlicher Technik. Entwickelt für stärkere, schnellere Heilung und ästhetische Ergebnisse.",
+    "ctaCorporate": "Unternehmen",
+    "ctaProducts": "Produkte"
+  },
+  "products": {
+    "title": "Unsere Produktgruppen",
+    "description": "Zuverlässige Implantatlösungen, die mit fortschrittlicher Technologie und hoher Biokompatibilität auf unterschiedliche klinische Anforderungen abgestimmt sind.",
+    "btnDetail": "Mehr erfahren",
+    "items": {
+      "t6Standard": {
+        "title": "T6 Standard",
+        "desc": "Implantatsystem auf Knochenniveau. Modernes, ästhetisches Design mit sicherem chirurgischem Protokoll und flexiblen prothetischen Optionen für einen komfortablen klinischen Workflow."
+      },
+      "t6Torq": {
+        "title": "T6 Torq",
+        "desc": "Implantat auf Knochenniveau mit tiefem Schneidgewinde für starke mechanische Retention in allen Knochentypen; entwickelt für sofortige/frühe Belastung mit hohen ISQ-Werten."
+      },
+      "slimex": {
+        "title": "Slimex",
+        "desc": "Eine schlanke und dennoch robuste Lösung für schmale Kieferkämme und begrenzte Knochenbreite. Kompatibel mit verschiedenen prothetischen Behandlungen und zuverlässig durch fortschrittliche Oberflächentechnologie."
+      },
+      "highquaility": "Hohe Qualität",
+      "longlasting": "Langlebig",
+      "biocompatible": "Biokompatibel"
+    }
+  },
+  "corporate": {
+    "title": "Innovative Vision",
+    "description": "Prive Implant vereint sorgfältige F&E-Studien und klinisches Wissen mit hochpräzisen Produktionsprotokollen, um Ärzten zuverlässige Implantatlösungen zu bieten. Wir entwickeln kontinuierlich innovative Produkte, um Effizienz zu steigern, chirurgische Prozesse zu vereinfachen und ein komfortableres Behandlungserlebnis zu ermöglichen.",
+    "btnClose": "Schließen",
+    "items": {
+      "vision": {
+        "title": "Unsere Vision und Mission",
+        "details": "Unsere Vision ist es, eine Implantatmarke zu werden, die mit lokaler Stärke entwickelt wurde und weltweit bevorzugt wird. Unsere Mission ist die Entwicklung von Implantatsystemen, die Ärzten chirurgisch und prothetisch Vertrauen geben und Patienten langlebige sowie ästhetische Ergebnisse bieten."
+      },
+      "quality": {
+        "title": "Qualitätspolitik",
+        "details": "Wir gestalten unser Qualitätsmanagementsystem gemäß internationalen Medizinprodukte-Standards und stellen die vollständige Rückverfolgbarkeit jedes Implantats von der Produktion bis zum Versand sicher. Unsere Prozesse, Produktleistung und Servicequalität werden regelmäßig im Sinne kontinuierlicher Verbesserung überprüft."
+      },
+      "certificates": {
+        "title": "Unsere Zertifikate",
+        "details": "Produkte und Produktionsstätten von Prive Implant werden regelmäßig geprüft und zertifiziert, um die Einhaltung relevanter Gesetze und Normen zu gewährleisten. Unsere Zertifizierungsstruktur steht für sichere, rückverfolgbare und regelkonforme Produktion."
+      },
+      "environment": {
+        "title": "Umweltpolitik",
+        "details": "Wir streben an, den Ressourceneinsatz in unseren Produktionsprozessen zu optimieren, Abfälle zu reduzieren und unsere Umweltbelastung zu minimieren. Im Einklang mit unserem nachhaltigkeitsorientierten Ansatz legen wir Wert auf Energieeffizienz, Abfallmanagement und Recycling."
+      },
+      "hr": {
+        "title": "Personalpolitik",
+        "details": "Wir betrachten unsere Mitarbeitenden als den wichtigsten Wert unserer Marke und als Grundlage unseres nachhaltigen Erfolgs. Unser Ziel ist es, ein faires, transparentes und inklusives Arbeitsumfeld zu schaffen, das Entwicklung fördert und unsere Teams durch kontinuierliche Schulungen stärkt."
+      },
+      "kvkk": {
+        "title": "Schutz personenbezogener Daten",
+        "details": "Als Prive Implant verpflichten wir uns zur vollständigen Einhaltung der geltenden Datenschutzgesetze. Unsere Datenverarbeitungsprozesse erfolgen transparent und der Zugriff ist ausschließlich autorisierten Personen vorbehalten."
+      },
+      "cookie": {
+        "title": "Cookie-Richtlinie",
+        "details": "Cookies auf unseren digitalen Kanälen werden begrenzt eingesetzt, um die Nutzererfahrung zu verbessern, die Website-Leistung zu analysieren und die Sicherheit zu erhöhen. Cookie-Einstellungen liegen in der Kontrolle unserer Nutzer und können auf Anfrage angepasst werden."
+      }
+    }
+  },
+  "patientInfo": {
+    "title": "Patienteninformation",
+    "description": "Wichtige Fragen zur Zahnimplantatbehandlung mit klaren und verständlichen Antworten.",
+    "warning": "In diesen Fällen kann eine Implantatbehandlung riskant sein. Bitte folgen Sie der Empfehlung Ihres Zahnarztes.",
+    "items": {
+      "whatIs": {
+        "question": "Was ist ein Implantat?",
+        "answer": "Ein Zahnimplantat ist eine künstliche Zahnwurzel – meist aus biokompatiblem Titan – die in den Kieferknochen eingesetzt wird, um einen fehlenden Zahn zu ersetzen. Nach der Einheilung wird der Zahnersatz entweder verschraubt oder zementiert."
+      },
+      "toWhom": {
+        "question": "Wer kann Implantate erhalten?",
+        "answer": "Zahnimplantate können bei Personen mit gutem Allgemeinzustand angewendet werden, die das Jugendalter abgeschlossen haben und von einem Zahnarzt als geeignet eingestuft werden."
+      },
+      "doctorDiagnosis": {
+        "question": "In welchen Fällen hängt die Implantatbehandlung von der zahnärztlichen Beurteilung ab?",
+        "text": "In folgenden Fällen hängt die Implantatbehandlung von der Beurteilung des Zahnarztes ab:",
+        "list": [
+          "Menschen mit chronischem Diabetes",
+          "Schwangere",
+          "Personen mit unvollständiger Knochenentwicklung",
+          "Starke Raucher",
+          "Personen mit Alkohol- oder Substanzabhängigkeit",
+          "Patienten mit geschwächtem Immunsystem",
+          "Chronische Erkrankungen wie Hämophilie und Bluthochdruck"
+        ]
+      },
+      "isHarmful": {
+        "question": "Ist es schädlich?",
+        "answer": "Prive Implant Produkte bestehen aus reinem Titan mit hoher Biokompatibilität. Bei korrekter Anwendung und regelmäßiger Pflege werden Erfolgsraten von bis zu 98 % erreicht.\n\nWie bei jedem chirurgischen Eingriff bestehen auch bei Implantaten gewisse Risiken. Ihr Zahnarzt wird die beste Option für Sie bestimmen."
+      },
+      "lifeSpan": {
+        "question": "Wie lange halten Implantate?",
+        "answer": "Implantate interagieren mit Knochen und Zahnfleisch ähnlich wie natürliche Zähne. Bei mangelnder Mundhygiene können auch um Implantate herum Probleme auftreten.\n\nBei guter Pflege und regelmäßigen Kontrolluntersuchungen können Implantate viele Jahre lang genutzt werden. Es gibt heute Patienten, die seit über 30 Jahren Implantate tragen."
+      }
+    }
+  },
+  "whyUs": {
+    "subtitle": "WARUM WIR?",
+    "title": "Ein Partner, dem Sie in der Produktion vertrauen können.",
+    "description": "Wir bieten Ärzten und Patienten die besten Implantatlösungen mit Qualität, Zuverlässigkeit und innovativer Technologie.",
+    "items": {
+      "quality": {
+        "title": "Bewährte Qualität & Zuverlässigkeit",
+        "desc": "Durch sorgfältige Forschung und weltweite Produktionsstandards bieten wir Implantate mit höchster Biokompatibilität."
+      },
+      "tech": {
+        "title": "Innovative Technologie",
+        "desc": "Unsere geprüften Oberflächentechnologien wie Maxicell ermöglichen schnelle Osseointegration und hohe Überlebensraten."
+      },
+      "harmony": {
+        "title": "Perfekte chirurgische & prothetische Passform",
+        "desc": "Dank der einheitlichen internen Verbindungsstruktur bietet das System einen einfachen, schnellen und sicheren chirurgischen und prothetischen Ablauf."
+      },
+      "experience": {
+        "title": "Internationale Erfahrung",
+        "desc": "Eine weltweit bevorzugte Implantatmarke mit starker klinischer Unterstützung."
+      }
+    }
+  },
+  "dealers": {
+    "title": "Unsere Händler",
+    "description": "Unsere Händler und Verkaufsstellen in der gesamten Türkei. Finden Sie ganz einfach Ihren nächstgelegenen Händler.",
+    "defaultInfo": "Informationen werden später ergänzt.",
+    "data": {
+      "ankara": {
+        "name": "ADH Medical / Händler Ankara",
+        "contact": "Ali Can Arslan",
+        "address": "Kızılay, Dr. Mediha Eldem Str. Nr. 38 D:11, 06420 Çankaya / Ankara",
+        "info": "Vertriebs- und technischer Support."
+      },
+      "bursa": {
+        "name": "White Medical",
+        "contact": "Osman Şimşekcan",
+        "address": "İhsaniye Mah. Tuna Str. Nr. 165 B2/7 Nilüfer / Bursa",
+        "info": "Regionale Verkaufsstelle."
+      },
+      "gaziantep": {
+        "name": "TAM DENTAL",
+        "contact": "Erhan Özil",
+        "address": "Korutürk Str. Nr. 92, 27500 Şehitkamil / Gaziantep, Türkei",
+        "info": "Autorisierter Händler für Gaziantep und umliegende Provinzen."
+      },
+      "adana": { "name": "Adana" },
+      "hatay": { "name": "Hatay" },
+      "mersin": { "name": "Mersin" },
+      "kahramanmaras": { "name": "Kahramanmaraş" }
+    }
+  },
+  "about": {
+    "subtitle": "ÜBER UNS",
+    "paragraphs": [
+      "Als eine der führenden Marken der Türkei für innovative Implantatlösungen basiert unser Unternehmen auf hochpräzisen Produktionstechnologien und wissenschaftlicher Infrastruktur. Unser Ziel ist es, Implantatsysteme von höchster Qualität zu entwickeln, die Ärzten Vertrauen geben und Patienten langlebige sowie komfortable Lösungen bieten.",
+      "Mit unserem forschungsorientierten Ansatz verfolgen wir die neuesten wissenschaftlichen Entwicklungen in Biokompatibilität und Oberflächentechnologien und streben danach, zuverlässige Implantatoberflächen nach globalen Standards herzustellen.",
+      "Durch die Zusammenarbeit mit klinischen Ärzten und Akademikern fördern wir Innovationen im Bereich der Implantologie und engagieren uns aktiv auf wissenschaftlichen Plattformen für Wissensaustausch und kontinuierliche Weiterentwicklung.",
+      "Unser ethischer, transparenter und verantwortungsbewusster Managementansatz bildet die Grundlage aller Prozesse – von der Produktion bis zum After-Sales-Support. Patientensicherheit und Zufriedenheit der Ärzte stehen dabei stets im Mittelpunkt."
+    ]
+  },
+  "contact": {
+    "subtitle": "KONTAKT",
+    "title": "Wir freuen uns auf die Zusammenarbeit mit Ihnen.",
+    "description": "Kontaktieren Sie uns über jeden Kanal, um detaillierte Informationen zu unseren Produkten und Produktionsprozessen zu erhalten oder ein Angebot anzufordern.",
+    "phone": "Telefon",
+    "whatsapp": "Jetzt Nachricht senden",
+    "email": "E-Mail",
+    "address": "Adresse",
+    "addressDetail": "Organisierte Industriezone, Istanbul / Türkei",
+    "formTitle": "Angebots- oder Informationsformular",
+    "formDesc": "Beschreiben Sie kurz Ihr Anliegen, wir melden uns schnellstmöglich bei Ihnen.",
+    "labels": {
+      "name": "Vollständiger Name",
+      "company": "Firmenname",
+      "email": "E-Mail",
+      "message": "Ihre Nachricht",
+      "button": "Nachricht senden"
+    }
+  }
+}
+    

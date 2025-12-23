@@ -19,6 +19,7 @@
 
   "products": {
     "title": "Our Product Groups",
+    "description": "Reliable implant solutions designed to meet diverse clinical needs with advanced technology and high biocompatibility.",
     "btnDetail": "Learn More",
     "items": {
       "t6Standard": {
@@ -32,7 +33,10 @@
       "slimex": {
         "title": "Slimex",
         "desc": "A slim yet durable solution for narrow ridges and limited bone width. Compatible with various prosthetic treatments and offers reliable outcomes with its surface technology."
-      }
+      },
+      "highquaility":"High Quality",
+      "longlasting":"Long Lasting",
+      "biocompatible":"Biocompatible"
     }
   },
   

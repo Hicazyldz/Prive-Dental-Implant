@@ -23,7 +23,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 
-type LocaleCode = "tr" | "en";
+type LocaleCode = "tr" | "en"| "de" | "ar";
 
 const NAV_ITEMS = [
   { key: "home", href: "#home" },
@@ -38,7 +38,9 @@ const NAV_ITEMS = [
 
 const LANGUAGES: { code: LocaleCode; flag: string; label: string }[] = [
   { code: "tr", flag: "🇹🇷", label: "Türkçe" },
-  { code: "en", flag: "🇬🇧", label: "English" }
+  { code: "en", flag: "🇬🇧", label: "English" },
+  { code: "de", flag: "🇩🇪", label: "Deutsch" },
+  { code: "ar", flag: "🇸🇦", label: "العربية" },
 ];
 
 function replaceLocaleInPath(pathname: string, nextLocale: string) {
@@ -127,8 +129,10 @@ export default function Navbar() {
               alignItems: "center",
               textDecoration: "none",
               transition: "transform 0.2s ease-in-out",
+              ml:4,
               "&:hover": {
                 transform: "scale(1.05)"
+                
               }
             }}
           >
@@ -137,7 +141,7 @@ export default function Navbar() {
               src="/logo.png"
               alt="Prive Implant"
               sx={{
-                height: { xs: 45, md: scrolled ? 65 : 85 },
+                height: { xs: 35, md: scrolled ? 35 : 50 },
                 width: "auto",
                 display: "block",
                 transition: "height 0.3s ease-in-out"
