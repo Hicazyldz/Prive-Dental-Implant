@@ -1,4 +1,3 @@
-// components/sections/CorporateSection.tsx
 "use client";
 
 import { useState } from "react";
@@ -13,77 +12,27 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import { useTheme } from "@mui/material/styles";
+import { useTranslations } from "next-intl";
 
 interface CorporateItem {
   id: number;
-  title: string;        
-  image: string;        
-  description: string;  
-  details: string;      
+  key: string; // JSON'daki anahtar (vision, quality vb.)
+  image: string;
 }
 
 const corporateItems: CorporateItem[] = [
-  
-  {
-    id: 2,
-    title: "Vizyonumuz ve Misyonumuz",
-    image: "/corp_vision.png",
-    description: "Vizyonumuz ve Misyonumuz",
-    details:
-      "Vizyonumuz; yerel güçle geliştirilen, global ölçekte tercih edilen bir implant markası olmaktır. Misyonumuz ise; hekimlere cerrahi ve protetik açıdan güven veren, hastalara ise uzun ömürlü ve estetik sonuçlar sunan implant sistemleri geliştirmektir.",
-  },
-  {
-    id: 3,
-    title: "Kalite Politikamız",
-    image: "/corp_quality.png",
-    description: "Kalite Politikamız",
-    details:
-      "Kalite yönetim sistemimizi uluslararası tıbbi cihaz standartlarına uygun şekilde kurguluyor, her implantı üretimden sevkiyata kadar izlenebilir kılıyoruz. Sürekli iyileştirme kültürü ile süreçlerimizi, ürün performansını ve hizmet kalitemizi düzenli olarak gözden geçiriyoruz.",
-  },
-  {
-    id: 4,
-    title: "Sertifikalarımız",
-    image: "/corp_certificates.png",
-    description: "Sertifikalarımız",
-    details:
-      "Prive Implant ürünleri ve üretim tesisleri, ilgili mevzuat ve standartlara uygunluk için düzenli olarak denetlenmekte ve belgelendirilmektedir. Sertifikasyon yapımız; güvenli, izlenebilir ve regülasyonlara uyumlu bir üretim anlayışının göstergesidir.",
-  },
-  {
-    id: 5,
-    title: "Çevre Politikamız",
-    image: "/corp_environment.png",
-    description: "Çevre Politikamız",
-    details:
-      "Üretim süreçlerimizde kaynak kullanımını optimize etmeyi, atıkları azaltmayı ve çevresel etkilerimizi en aza indirmeyi hedefliyoruz. Sürdürülebilirlik odaklı yaklaşımımız doğrultusunda enerji verimliliği, atık yönetimi ve geri dönüşüm konularına öncelik veriyoruz.",
-  },
-  {
-    id: 6,
-    title: "İnsan Kaynakları Politikamız",
-    image: "/corp_hr.png",
-    description: "İnsan Kaynakları Politikamız",
-    details:
-      "Çalışanlarımızı; markamızın en önemli değeri ve sürdürülebilir başarımızın temel unsuru olarak görüyoruz. Gelişimi destekleyen, adil, şeffaf ve kapsayıcı bir çalışma ortamı oluşturmayı, sürekli eğitim ve yetkinlik artırma programları ile ekiplerimizi güçlendirmeyi amaçlıyoruz.",
-  },
-  {
-    id: 7,
-    title: "Kişisel Verilerin Korunması Politikamız",
-    image: "/corp_kvkk.png",
-    description: "Kişisel Verilerin Korunması",
-    details:
-      "Prive Implant olarak kişisel verilerin gizliliği ve güvenliği konusunda ilgili mevzuata tam uyum sağlamayı taahhüt ediyoruz. Veri işleme faaliyetlerimizi şeffaflık ilkesiyle yürütüyor, yalnızca gerekli bilgilere erişimi yetkili personelle sınırlıyoruz.",
-  },
-  {
-    id: 8,
-    title: "Çerez Politikamız",
-    image: "/corp_cookie.png",
-    description: "Çerez Politikamız",
-    details:
-      "Dijital kanallarımızda kullanılan çerezler; kullanıcı deneyimini iyileştirmek, site performansını analiz etmek ve güvenliği artırmak amacıyla sınırlı şekilde kullanılmaktadır. Çerez tercihleri, kullanıcılarımızın kontrolü altındadır ve talep edildiğinde güncellenebilmektedir.",
-  },
+  { id: 2, key: "vision", image: "/corp_vision.png" },
+  { id: 3, key: "quality", image: "/corp_quality.png" },
+  { id: 4, key: "certificates", image: "/corp_certificates.png" },
+  { id: 5, key: "environment", image: "/corp_environment.png" },
+  { id: 6, key: "hr", image: "/corp_hr.png" },
+  { id: 7, key: "kvkk", image: "/corp_kvkk.png" },
+  { id: 8, key: "cookie", image: "/corp_cookie.png" },
 ];
 
 export default function CorporateSection() {
   const theme = useTheme();
+  const t = useTranslations("corporate"); // JSON'daki 'corporate' anahtarını kullanır
   const [selectedItem, setSelectedItem] = useState<CorporateItem | null>(null);
   const [openModal, setOpenModal] = useState(false);
 
@@ -98,12 +47,7 @@ export default function CorporateSection() {
   };
 
   return (
-    <Box
-      id="kurumsal"
-      sx={{
-        py: 12,
-      }}
-    >
+    <Box id="kurumsal" sx={{ py: 12 }}>
       <Container maxWidth="lg">
         {/* Başlık ve açıklama */}
         <Box sx={{ textAlign: "center", mb: 10 }}>
@@ -116,9 +60,8 @@ export default function CorporateSection() {
               letterSpacing: 1,
             }}
           >
-            Yenilikçi{" "}
             <Box component="span" sx={{ fontWeight: 700 }}>
-              Vizyon
+            {t("title")}
             </Box>
           </Typography>
 
@@ -132,22 +75,13 @@ export default function CorporateSection() {
               lineHeight: 1.8,
             }}
           >
-            Prive Implant; titiz AR-GE çalışmalarını ve klinik bilgi birikimini,
-            yüksek hassasiyetli üretim protokolleri ile birleştirerek hekimlere
-            güvenilir implant çözümleri sunar. Verimliliği artırmak, cerrahi
-            sü  reçleri kolaylaştırmak ve daha konforlu tedavi deneyimi sağlamak
-            için yenilikçi ürünler tasarlamaya, geliştirmeye ve uygulamaya
-            devam ediyoruz.
+            {t("description")}
           </Typography>
         </Box>
-        <Grid container spacing={6} justifyContent="center">
-          <Grid size={{ xs: 12 }}>
-            </Grid>
-          </Grid>
 
-       <Grid container spacing={6} justifyContent="center">
-  {corporateItems.map((item) => (
-    <Grid key={item.id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }} sx={{ textAlign: "center" }}>
+        <Grid container spacing={6} justifyContent="center">
+          {corporateItems.map((item) => (
+            <Grid key={item.id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }} sx={{ textAlign: "center" }}>
               <Box
                 onClick={() => handleItemClick(item)}
                 sx={{
@@ -161,7 +95,6 @@ export default function CorporateSection() {
                   },
                 }}
               >
-                {/* Daire */}
                 <Box
                   sx={{
                     width: 210,
@@ -177,17 +110,17 @@ export default function CorporateSection() {
                   }}
                 />
 
-                {/* Alt başlık – tamamen küçük harf, NucleOSS havası */}
                 <Typography
                   variant="h1"
                   sx={{
                     fontWeight: 600,
                     textTransform: "none",
-                    color: "text.primary",
+                    color: "primary.main",
                     fontSize: "0.95rem",
                   }}
                 >
-                  {item.title}
+                  {/* Dinamik Başlık: items.vision.title vb. */}
+                  {t(`items.${item.key}.title`)}
                 </Typography>
               </Box>
             </Grid>
@@ -215,7 +148,6 @@ export default function CorporateSection() {
       >
         {selectedItem && (
           <>
-            {/* Header görseli */}
             <Box
               sx={{
                 position: "relative",
@@ -230,8 +162,7 @@ export default function CorporateSection() {
                 sx={{
                   position: "absolute",
                   inset: 0,
-                  background:
-                    "linear-gradient(135deg, rgba(0,0,0,0.35), rgba(0,0,0,0.7))",
+                  background: "linear-gradient(135deg, rgba(0,0,0,0.35), rgba(0,0,0,0.7))",
                 }}
               />
 
@@ -260,7 +191,8 @@ export default function CorporateSection() {
                 }}
               >
                 <Typography variant="h6" sx={{ fontWeight: 700 }}>
-                  {selectedItem.description}
+                  {/* Modal Başlığı */}
+                  {t(`items.${selectedItem.key}.title`)}
                 </Typography>
               </Box>
             </Box>
@@ -279,7 +211,8 @@ export default function CorporateSection() {
                 variant="body2"
                 sx={{ color: "text.secondary", lineHeight: 1.8 }}
               >
-                {selectedItem.details}
+                {/* Modal Detay Metni */}
+                {t(`items.${selectedItem.key}.details`)}
               </Typography>
             </DialogContent>
 
@@ -291,7 +224,7 @@ export default function CorporateSection() {
               }}
             >
               <Button onClick={handleCloseModal} variant="contained">
-                Kapat
+                {t("btnClose")}
               </Button>
             </DialogActions>
           </>

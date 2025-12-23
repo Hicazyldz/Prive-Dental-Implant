@@ -1,0 +1,196 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "corporate": "Corporate",
+    "patientInfo": "Patient Information",
+    "whyUs": "Why Us?",
+    "dealers": "Dealers",
+    "about": "About Us",
+    "contact": "Contact"
+  },
+  "hero": {
+    "titleLine1": "Innovative",
+    "titleLine2": "Implant Technology",
+    "description": "Implant solutions developed with biocompatible titanium surfaces, high stability, and advanced engineering. Designed for stronger, faster healing and aesthetic results.",
+    "ctaCorporate": "Corporate",
+    "ctaProducts": "Products"
+  },
+
+  "products": {
+    "title": "Our Product Groups",
+    "btnDetail": "Learn More",
+    "items": {
+      "t6Standard": {
+        "title": "T6 Standard",
+        "desc": "Bone-level implant system. Modern, aesthetic design with a safe surgical protocol and flexible prosthetic options for a comfortable clinical workflow."
+      },
+      "t6Torq": {
+        "title": "T6 Torq",
+        "desc": "Bone-level implant with deep cutting thread design for strong mechanical retention across bone types; designed for immediate/early loading with high ISQ values."
+      },
+      "slimex": {
+        "title": "Slimex",
+        "desc": "A slim yet durable solution for narrow ridges and limited bone width. Compatible with various prosthetic treatments and offers reliable outcomes with its surface technology."
+      }
+    }
+  },
+  
+  "corporate": {
+    "title": "Innovative Vision",
+    "description": "Prive Implant combines meticulous R&D studies and clinical knowledge with high-precision production protocols to provide reliable implant solutions to physicians. We continue to design, develop, and implement innovative products to increase efficiency, simplify surgical processes, and provide a more comfortable treatment experience.",
+    "btnClose": "Close",
+    "items": {
+      "vision": {
+        "title": "Our Vision and Mission",
+        "details": "Our vision is to become an implant brand developed with local strength and preferred on a global scale. Our mission is to develop implant systems that give confidence to physicians in surgical and prosthetic aspects and offer long-lasting and aesthetic results to patients."
+      },
+      "quality": {
+        "title": "Quality Policy",
+        "details": "We build our quality management system in accordance with international medical device standards and make every implant traceable from production to shipment. We regularly review our processes, product performance, and service quality with a culture of continuous improvement."
+      },
+      "certificates": {
+        "title": "Our Certificates",
+        "details": "Prive Implant products and production facilities are regularly audited and certified for compliance with relevant legislation and standards. Our certification structure is an indicator of a safe, traceable, and regulation-compliant production approach."
+      },
+      "environment": {
+        "title": "Environmental Policy",
+        "details": "We aim to optimize resource use in our production processes, reduce waste, and minimize our environmental impact. In line with our sustainability-oriented approach, we prioritize energy efficiency, waste management, and recycling."
+      },
+      "hr": {
+        "title": "Human Resources Policy",
+        "details": "We see our employees as the most important value of our brand and the fundamental element of our sustainable success. We aim to create a fair, transparent, and inclusive working environment that supports development and to strengthen our teams with continuous training and competency enhancement programs."
+      },
+      "kvkk": {
+        "title": "Protection of Personal Data",
+        "details": "As Prive Implant, we commit to fully complying with the relevant legislation on the privacy and security of personal data. We conduct our data processing activities with the principle of transparency and limit access to necessary information only to authorized personnel."
+      },
+      "cookie": {
+        "title": "Cookie Policy",
+        "details": "Cookies used on our digital channels are used in a limited way to improve user experience, analyze site performance, and increase security. Cookie preferences are under the control of our users and can be updated upon request."
+      }
+    }
+  },
+    
+  "patientInfo": {
+    "title": "Patient Information",
+    "description": "Key questions about dental implant treatment, with clear and informative answers.",
+    "warning": "In these cases, implant treatment may be risky. Please follow your dentist’s recommendation.",
+    "items": {
+      "whatIs": {
+        "question": "What is an implant?",
+        "answer": "A dental implant is an artificial root—usually made of biocompatible titanium—placed into the jawbone to replace a missing tooth root. It can be used to treat all kinds of tooth loss. After the implant fuses with the bone, porcelain teeth are attached to it using either a screw-retained or cemented method."
+      },
+      "toWhom": {
+        "question": "Who can receive implants?",
+        "answer": "Dental implants can be applied to individuals with good overall health, who have completed adolescence, and who are considered suitable for implant treatment by a dentist."
+      },
+      "doctorDiagnosis": {
+        "question": "In which cases does implant treatment depend on the dentist’s evaluation?",
+        "text": "In the following cases, implant treatment depends on the dentist’s assessment:",
+        "list": [
+          "People with chronic diabetes",
+          "Pregnant individuals",
+          "Individuals whose bone development is not complete",
+          "Heavy smokers",
+          "People with alcohol or substance dependence",
+          "Patients with weakened immune systems",
+          "Chronic conditions such as hemophilia and high blood pressure"
+        ]
+      },
+      "isHarmful": {
+        "question": "Is it harmful?",
+        "answer": "Prive Implant products are made from pure titanium with high biocompatibility. When applied correctly and maintained regularly, success rates of up to 98% have been reported.\n\nAs with any surgical procedure, implant treatment also carries potential risks. Your dentist will determine the healthiest option for you."
+      },
+      "lifeSpan": {
+        "question": "How long do implants last?",
+        "answer": "Implants interact with the bone and gums similarly to natural teeth. If regular oral care is neglected, gum problems can also occur around implants.\n\nWith proper oral hygiene and routine dental check-ups, implants can be used healthily for many years. Today, there are patients who still use implants placed 30 years ago."
+      }
+    }
+  },
+  
+  "whyUs": {
+    "subtitle": "WHY CHOOSE US?",
+    "title": "A partner you can trust in production.",
+    "description": "We offer the best implant solutions to physicians and patients with quality, reliability, and innovative technology.",
+    "items": {
+      "quality": {
+        "title": "Proven Quality & Reliability",
+        "desc": "We offer implants with the highest biocompatibility through meticulous R&D and world-class production protocols."
+      },
+      "tech": {
+        "title": "Innovative Technology",
+        "desc": "Our approved surface technologies like Maxicell provide fast osseointegration and high survival rates."
+      },
+      "harmony": {
+        "title": "Perfect Surgical & Prosthetic Fit",
+        "desc": "Thanks to the common internal connection structure, it offers an easy, fast, and safe surgical & prosthetic process."
+      },
+      "experience": {
+        "title": "International Experience",
+        "desc": "A trusted implant brand preferred by physicians worldwide, offering strong clinical support."
+      }
+    }
+  },
+  
+  "dealers": {
+    "title": "Our Dealers",
+    "description": "Our dealers and sales points serving across Turkey. You can easily reach our products by finding our nearest dealer.",
+    "defaultInfo": "Information will be added later.",
+    "data": {
+      "ankara": {
+        "name": "ADH Medical / Ankara Dealer",
+        "contact": "Ali Can Arslan",
+        "address": "Kızılay, Dr. Mediha Eldem St. No:38 D:11, 06420 Çankaya / Ankara",
+        "info": "Sales and technical support services."
+      },
+      "bursa": {
+        "name": "White Medical",
+        "contact": "Osman Şimşekcan",
+        "address": "İhsaniye Mah. Tuna Ave. No:165 B2/7 Nilüfer / Bursa",
+        "info": "Regional sales point."
+      },
+      "gaziantep": {
+        "name": "TAM DENTAL",
+        "contact": "Erhan Özil",
+        "address": "Korutürk St. No:92, 27500 Şehitkamil / Gaziantep, Turkey",
+        "info": "Authorized dealer for Gaziantep and surrounding provinces."
+      },
+      "adana": { "name": "Adana" },
+      "hatay": { "name": "Hatay" },
+      "mersin": { "name": "Mersin" },
+      "kahramanmaras": { "name": "Kahramanmaras" }
+    }
+  },
+  
+  "about": {
+    "subtitle": "ABOUT US",
+    "paragraphs": [
+      "Established as one of Turkey's leading brands offering innovative implant solutions, our company is built on high-precision production technologies and scientific infrastructure. Our goal is to develop superior quality implant systems that provide confidence to physicians and long-lasting, comfortable solutions to patients.",
+      "With our R&D-oriented approach, we follow the latest scientific developments in biocompatibility and surface technologies; we strive to produce reliable and clean implant surfaces that comply with global standards. Each of our products is tested with meticulous protocols and designed to respond to clinical expectations with high accuracy.",
+      "Through our collaboration with clinical physicians and academics, we support innovations in the field of implantology and take an active role in scientific platforms focused on knowledge sharing and continuous development.",
+      "Our ethical, transparent, and highly responsible management approach forms the basis of all our processes, from production to after-sales support. By putting patient safety and physician satisfaction at the center, we continue to add value to the sector."
+    ]
+  },
+  
+  "contact": {
+    "subtitle": "CONTACT",
+    "title": "We look forward to working with you.",
+    "description": "You can contact us through any channel to get detailed information about our products and production processes or to request a quote.",
+    "phone": "Phone",
+    "whatsapp": "Send a message now",
+    "email": "E-mail",
+    "address": "Address",
+    "addressDetail": "Organized Industrial Zone, Istanbul / Turkey",
+    "formTitle": "Quote or information form",
+    "formDesc": "Write your needs briefly, and we will get back to you as soon as possible.",
+    "labels": {
+      "name": "Full Name",
+      "company": "Company Name",
+      "email": "E-mail",
+      "message": "Your Message",
+      "button": "Send Message"
+    }
+  }
+}
+

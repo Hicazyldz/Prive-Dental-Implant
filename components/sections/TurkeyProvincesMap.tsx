@@ -3,10 +3,34 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Box from "@mui/material/Box";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Paper from "@mui/material/Paper";
+import Stack from "@mui/material/Stack";
+import Divider from "@mui/material/Divider";
+import PersonIcon from '@mui/icons-material/Person';
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
+import PlaceIcon from '@mui/icons-material/Place';
+
+type Dealer = {
+  name: string;
+  contact?: string;
+  address?: string;
+  phone?: string;
+  email?: string;
+  info?: string;
+};
 
 type TurkeyProvincesMapProps = {
   /** Bayisi olan illerin id'leri (örn: "adana", "ankara") */
   activeProvinces?: string[];
+  /** Opsiyonel: her il için bayi bilgisi */
+  dealers?: Record<string, Dealer>;
 };
 
 // İllerin Türkçe adları (tam 81 il)
@@ -95,8 +119,10 @@ const PROVINCE_NAMES: Record<string, string> = {
 
 export default function TurkeyProvincesMap({
   activeProvinces = [],
+  dealers,
 }: TurkeyProvincesMapProps) {
   const [hovered, setHovered] = useState<string | null>(null);
+  const [openDealerId, setOpenDealerId] = useState<string | null>(null);
   const svgRef = useRef<SVGSVGElement | null>(null);
   const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(
     null
@@ -120,8 +146,14 @@ export default function TurkeyProvincesMap({
   };
 
   const handleClick = (id: string) => {
-    // Şimdilik log; istersen modal vs. açarsın
-    console.log("İl tıklandı:", id);
+    // Eğer o ilde bayi varsa modal aç
+    if (dealers && dealers[id]) {
+      setOpenDealerId(id);
+      return;
+    }
+
+    // yoksa sadece log
+    console.log("İl tıklandı (bayi yok):", id);
   };
 
   const handleMapMouseMove = (e: React.MouseEvent<SVGElement>) => {
@@ -175,6 +207,8 @@ export default function TurkeyProvincesMap({
     });
   }, [hovered, activeProvinces]);
 
+  const handleCloseDialog = () => setOpenDealerId(null);
+
   return (
     <Box sx={{ width: "100%", maxWidth: 900, margin: "0 auto" }}>
       <svg
@@ -185,6 +219,12 @@ export default function TurkeyProvincesMap({
         style={{ width: "100%", height: "auto" }}
         onMouseMove={handleMapMouseMove}
         onMouseLeave={() => setHovered(null)}
+        onClick={(e) => {
+          const el = (e.target as Element).closest("g[id]");
+          if (el && el.id !== "turkiye") {
+            handleClick(el.id);
+          }
+        }}
       >
         <g id="turkiye">
          <g id="adana" data-plakakodu="01" data-alankodu="416" data-iladi="Adana">
@@ -479,6 +519,66 @@ export default function TurkeyProvincesMap({
         </g>
         
       </svg>
+
+      {/* Dealer info dialog */}
+      <Dialog open={!!openDealerId} onClose={handleCloseDialog} fullWidth maxWidth="sm">
+        <DialogTitle>
+          {openDealerId ? (dealers?.[openDealerId]?.name || PROVINCE_NAMES[openDealerId] || openDealerId) : "Bayi Bilgisi"}
+        </DialogTitle>
+        <DialogContent dividers>
+          {openDealerId && dealers?.[openDealerId] ? (
+            <Paper sx={{ p: 2, borderLeft: '4px solid', borderLeftColor: 'primary.main', borderRadius: 1, backgroundColor: 'background.paper' }}>
+              <Stack spacing={1}>
+                <Typography variant="h6" sx={{ color: 'primary.main', fontWeight: 700 }}>
+                  {dealers[openDealerId].name}
+                </Typography>
+
+                <Divider />
+
+                {/* Contact rows with icons */}
+                {dealers[openDealerId].contact && (
+                  <Stack direction="row" spacing={2} alignItems="center">
+                    <PersonIcon color="primary" />
+                    <Typography variant="body1">{dealers[openDealerId].contact}</Typography>
+                  </Stack>
+                )}
+
+                {dealers[openDealerId].phone && (
+                  <Stack direction="row" spacing={2} alignItems="center">
+                    <PhoneIcon color="primary" />
+                    <Typography variant="body1">{dealers[openDealerId].phone}</Typography>
+                  </Stack>
+                )}
+
+                {dealers[openDealerId].email && (
+                  <Stack direction="row" spacing={2} alignItems="center">
+                    <EmailIcon color="primary" />
+                    <Typography variant="body1">{dealers[openDealerId].email}</Typography>
+                  </Stack>
+                )}
+
+                {dealers[openDealerId].address && (
+                  <Stack direction="row" spacing={2} alignItems="center">
+                    <PlaceIcon color="primary" />
+                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>{dealers[openDealerId].address}</Typography>
+                  </Stack>
+                )}
+
+                {dealers[openDealerId].info && (
+                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    {dealers[openDealerId].info}
+                  </Typography>
+                )}
+              </Stack>
+            </Paper>
+          ) : (
+            <Typography>Seçilen ilde bayi bilgisi bulunmuyor.</Typography>
+          )}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseDialog}>Kapat</Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 }

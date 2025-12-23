@@ -1,4 +1,3 @@
-// components/sections/WhyUsSection.tsx
 "use client";
 
 import Container from "@mui/material/Container";
@@ -6,72 +5,139 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-
+import Stack from "@mui/material/Stack";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import SpeedIcon from "@mui/icons-material/Speed";
 import FactoryIcon from "@mui/icons-material/Factory";
 import PublicIcon from "@mui/icons-material/Public";
+import { useTranslations } from "next-intl";
 
-const reasons = [
-  {
-    icon: <VerifiedIcon fontSize="large" />,
-    title: "Kanıtlanmış Kalite & Güvenilirlik",
-    desc: "Titiz AR-GE çalışmaları ve dünya standartlarında üretim protokolleri ile en yüksek biyouyumlulukta implantlar sunuyoruz.",
-  },
-  {
-    icon: <SpeedIcon fontSize="large" />,
-    title: "Yenilikçi Teknoloji",
-    desc: "Maxicell gibi onaylanmış yüzey teknolojilerimiz hızlı osseointegrasyon ve yüksek sağkalım oranı sağlar.",
-  },
-  {
-    icon: <FactoryIcon fontSize="large" />,
-    title: "Cerrahi ve Protezde Tam Uyum",
-    desc: "Ortak iç bağlantı yapısı sayesinde kolay, hızlı ve güvenli bir cerrahi & protez süreci sunar.",
-  },
-  {
-    icon: <PublicIcon fontSize="large" />,
-    title: "Uluslararası Deneyim",
-    desc: "Dünya çapında hekimler tarafından tercih edilen ve güçlü klinik destek sunan güvenilir implant markası.",
-  },
+// Veri yapısı sadeleştirildi
+const REASONS = [
+  { id: 1, key: "quality", icon: <VerifiedIcon /> },
+  { id: 2, key: "tech", icon: <SpeedIcon /> },
+  { id: 3, key: "harmony", icon: <FactoryIcon /> },
+  { id: 4, key: "experience", icon: <PublicIcon /> },
 ];
 
+const CARD_STYLES = {
+  paper: {
+    height: "100%",
+    borderRadius: 3,
+    p: { xs: 3, md: 4 },
+    display: "flex",
+    flexDirection: "column" as const,
+    gap: 2,
+    transition: "all 0.3s ease",
+    border: "1px solid",
+    borderColor: "divider",
+    "&:hover": {
+      transform: "translateY(-8px)",
+      boxShadow: "0 12px 24px rgba(0,0,0,0.12)",
+      borderColor: "primary.main",
+    },
+  },
+  iconBox: {
+    width: 64,
+    height: 64,
+    borderRadius: 2,
+    bgcolor: "primary.50",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "primary.main",
+    transition: "all 0.3s ease",
+    "& svg": { fontSize: 32 },
+  },
+} as const;
+
 export default function WhyUsSection() {
+  const t = useTranslations("whyUs");
+
   return (
-    <section id="quality">
-      <Container maxWidth="lg" className="py-20">
+    <Box component="section" id="why-us" sx={{ py: { xs: 10, md: 16 } }}>
+      <Container maxWidth="lg">
+        <Stack spacing={2} sx={{ textAlign: "center", mb: { xs: 6, md: 10 } }}>
           <Typography
             variant="h4"
-            sx={{ color: "primary.main", fontWeight: "bold", letterSpacing: "0.1em", display: "block", textAlign: "center", mb: 2 }}
+            sx={{ color: "primary.main", fontWeight: "bold", letterSpacing: "0.1em", mb: 2 }}
           >
-            NEDEN BİZ?
-          </Typography>        <Typography
-          variant="h4"
-          className="font-bold text-center mb-16 tracking-tight"
-        >
-          Üretimde güvenebileceğiniz bir iş ortağı.
-        </Typography>
+            {t("subtitle")}
+          </Typography>
 
-        <Grid container spacing={4}>
-          {reasons.map((item, index) => (
-            <Grid key={index} size={{ xs: 12, sm: 6, md: 3 }}>
-              <Paper
-                elevation={2}
-                className="h-full rounded-2xl p-6 flex flex-col gap-3 hover:-translate-y-1 hover:shadow-lg transition-all"
-              >
-                <Box sx={{ color: "primary.main", mt: 2 }}>{item.icon}</Box>
+          <Box sx={{ textAlign: "center", mb: 4 }}>
+            <Typography
+              variant="h2"
+              sx={{
+                fontWeight: 400,
+                fontSize: { xs: "2.5rem", md: "3.2rem" },
+                mb: 3,
+                letterSpacing: 1,
+              }}
+            >
+              {t("title")}
+            </Typography>
 
-                <Typography variant="subtitle1" className="font-semibold mb-3">
-                  {item.title}
+            <Typography
+              variant="body1"
+              sx={{
+                color: "text.secondary",
+                fontSize: { xs: "1rem", md: "1.1rem" },
+                maxWidth: "700px",
+                mx: "auto",
+                lineHeight: 1.7,
+              }}
+            >
+              {t("description")}
+            </Typography>
+          </Box>
+        </Stack>
+
+        <Grid container spacing={{ xs: 3, md: 4 }}>
+          {REASONS.map((reason) => (
+            <Grid key={reason.id} size={{ xs: 12, md: 6 }}>
+              <Paper elevation={0} sx={CARD_STYLES.paper}>
+                <Box
+                  sx={{
+                    ...CARD_STYLES.iconBox,
+                    "&:hover": {
+                      bgcolor: "primary.main",
+                      color: "white",
+                      transform: "scale(1.05)",
+                    }
+                  }}
+                >
+                  {reason.icon}
+                </Box>
+
+                <Typography
+                  variant="h6"
+                  component="h3"
+                  sx={{
+                    fontWeight: 600,
+                    fontSize: { xs: "1rem", md: "1.125rem" },
+                    lineHeight: 1.4,
+                    color: "text.primary",
+                  }}
+                >
+                  {t(`items.${reason.key}.title`)}
                 </Typography>
 
-                <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                  {item.desc}
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "text.secondary",
+                    lineHeight: 1.7,
+                    fontSize: { xs: "0.875rem", md: "0.9375rem" },
+                  }}
+                >
+                  {t(`items.${reason.key}.desc`)}
                 </Typography>
               </Paper>
             </Grid>
           ))}
         </Grid>
       </Container>
-    </section>
+    </Box>
   );
 }
