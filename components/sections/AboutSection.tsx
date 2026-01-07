@@ -6,40 +6,38 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import { useTranslations } from "next-intl";
-
 export default function AboutSection() {
   const t = useTranslations("about");
 
-  // JSON'daki paragrafları bir dizi olarak alıyoruz
   const paragraphs = t.raw("paragraphs") as string[];
-
+    /* */
   return (
-    <section id="about">
-      <Container maxWidth="lg" className="py-20">
+    <Box sx={[{bgcolor:"background.grayLine"}]}>
+      <Container maxWidth="lg" className="py-20" >
         <Grid container spacing={6} alignItems="center">
-          {/* Yazı tarafı */}
           <Grid size={{ xs: 12, md: 6 }}>
             <Typography
               variant="h4"
-              sx={{ 
-                color: "primary.main", 
-                fontWeight: "bold", 
-                letterSpacing: "0.1em", 
-                mb: 4, 
-                display: "block" 
-              }}
-            >
-              {t("subtitle")}
-            </Typography>
+                         sx={{ color: "text.onGraySoft", fontWeight: "bold", letterSpacing: "0.1em", mb: 2, display: "block" }}
 
-            {/* Paragrafları döngü ile basıyoruz */}
+              
+              
+            >
+                             <Box component="span" sx={{ fontWeight: 700 }}>
+            {t("subtitle")}
+            </Box>
+            </Typography>
+ 
             {paragraphs.map((text, index) => (
               <Typography 
                 key={index} 
                 variant="body1" 
                 sx={{ 
+                  color: "text.secondary",
+                 fontSize: { xs: "1rem", md: "1.05rem" },
                   mb: index === paragraphs.length - 1 ? 0 : 3,
                   lineHeight: 1.8 
+             
                 }}
               >
                 {text}
@@ -61,11 +59,11 @@ export default function AboutSection() {
                   display: "flex", 
                   alignItems: "center", 
                   justifyContent: "center",
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.1)"
+                  boxShadow: "0 12px 24px rgba(37, 85, 142, 0.5)"
                 }}
               >
                 <img 
-                  src="/Prive_logo.png" 
+                  src="/about_photo.png" 
                   alt={t("subtitle")} 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                 />
@@ -74,6 +72,6 @@ export default function AboutSection() {
           </Grid>
         </Grid>
       </Container>
-    </section>
+      </Box>
   );
 }

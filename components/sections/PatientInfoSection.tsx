@@ -76,7 +76,7 @@ export default function PatientInfoSection() {
       id="hasta-bilgilendirme"
       sx={{
         py: { xs: 8, md: 12 },
-        backgroundColor: "#2a2a2a",
+        backgroundColor: "background.brandMain",
       }}
     >
       <Container maxWidth="md">
@@ -88,7 +88,7 @@ export default function PatientInfoSection() {
               fontWeight: 700,
               fontSize: { xs: "2rem", md: "2.8rem" },
               mb: 2,
-              color: "primary.main",
+              color: "text.onBrandMain",
             }}
           >
             {t("title")}
@@ -97,7 +97,7 @@ export default function PatientInfoSection() {
           <Typography
             variant="body1"
             sx={{
-              color: "rgba(255, 255, 255, 0.7)",
+              color: "text.onBrandMain",
               lineHeight: 1.8,
               maxWidth: 700,
               mx: "auto",
@@ -114,8 +114,8 @@ export default function PatientInfoSection() {
               key={item.id}
               defaultExpanded={index === 0}
               sx={{
-                backgroundColor: "#3a3a3a",
-                color: "white",
+                backgroundColor: "background.brandSoft",
+                color: "text.onBrandSoft",
                 borderRadius: "8px !important",
                 "&:before": { display: "none" },
                 boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
@@ -135,7 +135,7 @@ export default function PatientInfoSection() {
                   pt: 0,
                   pb: 3,
                   px: 3,
-                  color: "rgba(255, 255, 255, 0.85)",
+                  color: "text.onBrandLight",
                 }}
               >
                 {renderAnswer(item.key)}

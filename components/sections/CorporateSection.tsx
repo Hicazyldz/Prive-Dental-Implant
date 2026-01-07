@@ -21,13 +21,13 @@ interface CorporateItem {
 }
 
 const corporateItems: CorporateItem[] = [
-  { id: 2, key: "vision", image: "/corp_vision.png" },
-  { id: 3, key: "quality", image: "/corp_quality.png" },
-  { id: 4, key: "certificates", image: "/corp_certificates.png" },
-  { id: 5, key: "environment", image: "/corp_environment.png" },
-  { id: 6, key: "hr", image: "/corp_hr.png" },
-  { id: 7, key: "kvkk", image: "/corp_kvkk.png" },
-  { id: 8, key: "cookie", image: "/corp_cookie.png" },
+  { id: 2, key: "vision", image: "/corporate/vision.png" },
+  { id: 3, key: "quality", image: "/corporate/quality.png" },
+  { id: 4, key: "certificates", image: "/corporate/certificates.png" },
+  { id: 5, key: "environment", image: "/corporate/environment.png" },
+  { id: 6, key: "hr", image: "/corporate/hr.png" },
+  { id: 7, key: "kvkk", image: "/corporate/kvkk.png" },
+  { id: 8, key: "cookie", image: "/corporate/cookie.png" },
 ];
 
 export default function CorporateSection() {
@@ -47,7 +47,7 @@ export default function CorporateSection() {
   };
 
   return (
-    <Box id="kurumsal" sx={{ py: 12 }}>
+    <Box id="kurumsal" sx={{ py: 12,  bgcolor: "background.graySoft" }}>
       <Container maxWidth="lg">
         {/* Başlık ve açıklama */}
         <Box sx={{ textAlign: "center", mb: 10 }}>
@@ -96,10 +96,11 @@ export default function CorporateSection() {
                   },
                 }}
               >
+                {/* İkon boyutu 210px'den 160px'e küçültüldü */}
                 <Box
                   sx={{
-                    width: 210,
-                    height: 210,
+                    width: 160,
+                    height: 160,
                     borderRadius: "50%",
                     overflow: "hidden",
                     mb: 2.5,
@@ -129,97 +130,74 @@ export default function CorporateSection() {
         </Grid>
       </Container>
 
-      {/* Modal */}
+      {/* Modal - içeriğe göre otomatik boyutlanır, fotoğraf yok */}
       <Dialog
         open={openModal}
         onClose={handleCloseModal}
-        maxWidth="lg"
+        maxWidth="md"
         fullWidth
         PaperProps={{
           sx: {
             borderRadius: "16px",
             boxShadow: "0 20px 60px rgba(0,0,0,0.35)",
-            maxWidth: 900,
+            maxWidth: 650,
             width: "100%",
             mx: 2,
-            maxHeight: 500,
-            height: "100%",
           },
         }}
       >
         {selectedItem && (
           <>
+            {/* Modal başlık alanı - fotoğraf kaldırıldı, sadece başlık */}
             <Box
               sx={{
-                position: "relative",
-                height: { xs: 220, md: 320 },
-                overflow: "hidden",
-                backgroundImage: `url('${selectedItem.image}')`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
+                p: 3,
+                borderBottom: `1px solid ${theme.palette.divider}`,
               }}
             >
-              <Box
-                sx={{
-                  position: "absolute",
-                  inset: 0,
-                  background: "linear-gradient(135deg, rgba(0,0,0,0.35), rgba(0,0,0,0.7))",
-                }}
-              />
-
-              <IconButton
-                onClick={handleCloseModal}
-                sx={{
-                  position: "absolute",
-                  top: 10,
-                  right: 10,
-                  color: "#fff",
-                  bgcolor: "rgba(0,0,0,0.35)",
-                  "&:hover": { bgcolor: "rgba(0,0,0,0.6)" },
-                }}
-              >
-                <CloseIcon />
-              </IconButton>
-
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  p: 3,
-                  color: "white",
-                }}
-              >
-                <Typography variant="h6" sx={{ fontWeight: 700 }}>
-                  {/* Modal Başlığı */}
+              <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <Typography variant="h5" sx={{ fontWeight: 700, color: "primary.main" }}>
                   {t(`items.${selectedItem.key}.title`)}
                 </Typography>
+
+                <IconButton
+                  onClick={handleCloseModal}
+                  sx={{
+                    color: "text.secondary",
+                    "&:hover": { bgcolor: "rgba(0,0,0,0.05)" },
+                  }}
+                >
+                  <CloseIcon />
+                </IconButton>
               </Box>
             </Box>
 
+            {/* Modal içerik - padding artırıldı, daha okunabilir */}
             <DialogContent
               sx={{
-                pt: 3,
-                maxHeight: {
-                  xs: "calc(95vh - 220px - 96px)",
-                  md: "calc(95vh - 320px - 96px)",
-                },
-                overflowY: "auto",
+                pt: 4,
+                pb: 4,
+                px: 4,
               }}
             >
               <Typography
-                variant="body2"
-                sx={{ color: "text.secondary", lineHeight: 1.8 }}
+                variant="body1"
+                sx={{ 
+                  color: "text.secondary", 
+                  lineHeight: 1.8,
+                  fontSize: "1rem",
+                }}
               >
                 {/* Modal Detay Metni */}
                 {t(`items.${selectedItem.key}.details`)}
               </Typography>
             </DialogContent>
 
+            {/* Modal footer - daha az padding */}
             <DialogActions
               sx={{
-                p: 2,
+                p: 2.5,
+                px: 4,
                 borderTop: `1px solid ${theme.palette.divider}`,
                 justifyContent: "flex-end",
               }}

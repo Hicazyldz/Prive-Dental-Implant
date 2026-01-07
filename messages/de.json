@@ -20,22 +20,21 @@
     "title": "Unsere Produktgruppen",
     "description": "Zuverlässige Implantatlösungen, die mit fortschrittlicher Technologie und hoher Biokompatibilität auf unterschiedliche klinische Anforderungen abgestimmt sind.",
     "btnDetail": "Mehr erfahren",
+    "btnViewCatalog": "Katalog Anzeigen",
     "items": {
-      "t6Standard": {
-        "title": "T6 Standard",
-        "desc": "Implantatsystem auf Knochenniveau. Modernes, ästhetisches Design mit sicherem chirurgischem Protokoll und flexiblen prothetischen Optionen für einen komfortablen klinischen Workflow."
+      "prive_info": {
+        "title": "Prive Dental",
+        "desc": "Bei Prive Implant definieren wir die Standards der Zahnersatzung neu, indem wir biologische Harmonie mit modernster Technik kombinieren. Unsere Implantatsysteme sind so konzipiert, dass sie Ärzten maximale Kontrolle und Patienten eine lebenslange Stabilität bieten. Mit dem Fokus auf langfristige Knocherhaltung und ästhetischen Erfolg steht Prive Implant an der Spitze der modernen Implantologie."
       },
-      "t6Torq": {
-        "title": "T6 Torq",
-        "desc": "Implantat auf Knochenniveau mit tiefem Schneidgewinde für starke mechanische Retention in allen Knochentypen; entwickelt für sofortige/frühe Belastung mit hohen ISQ-Werten."
+      "prive_surgual": {
+        "title": "Prive Chirurgisches Set",
+        "desc": "Das Prive Surgical Kit vereint moderne Technik mit intuitivem Design, um Ihren klinischen Arbeitsablauf zu optimieren. Jedes Instrument ist sorgfältig kalibriert, um absolute Präzision und maximale Patientenkomfort während der Prozeduren zu gewährleisten. Aufgrund von Haltbarkeit und Benutzerfreundlichkeit bietet es die ultimative Lösung für Ihren täglichen Praxisbetrieb, wodurch Sie vorhersehbare Ergebnisse und langfristige Stabilität in jedem chirurgischen Fall erreichen können."
       },
-      "slimex": {
-        "title": "Slimex",
-        "desc": "Eine schlanke und dennoch robuste Lösung für schmale Kieferkämme und begrenzte Knochenbreite. Kompatibel mit verschiedenen prothetischen Behandlungen und zuverlässig durch fortschrittliche Oberflächentechnologie."
-      },
-      "highquaility": "Hohe Qualität",
-      "longlasting": "Langlebig",
-      "biocompatible": "Biokompatibel"
+      "catalog": {
+        "title": "E-Katalog",
+        "desc": "Entdecken Sie das volle Potenzial der fortschrittlichen Lösungen von Prive Implant durch unseren umfassenden Katalog. Von innovativen Oberflächentechnologien bis hin zu präzisionsgefederten chirurgischen Kits bietet unser Katalog alles, was Sie brauchen, um Ihre klinische Praxis zu verbessern und langfristigen Erfolg für Ihre Patienten zu gewährleisten. Erkunden Sie unser gesamtes Sortiment und detaillierte technische Spezifikationen, bitte prüfen Sie unseren E-Katalog."
+    },
+      "properties": "KALTVERLEIMUNG\nHERSTELLT IN DEUTSCHLAND\nSLA REINE OBERFLÄCHE\nGEWINDEDESIGN\nEINPLATTFORM"
     }
   },
   "corporate": {
@@ -45,7 +44,7 @@
     "items": {
       "vision": {
         "title": "Unsere Vision und Mission",
-        "details": "Unsere Vision ist es, eine Implantatmarke zu werden, die mit lokaler Stärke entwickelt wurde und weltweit bevorzugt wird. Unsere Mission ist die Entwicklung von Implantatsystemen, die Ärzten chirurgisch und prothetisch Vertrauen geben und Patienten langlebige sowie ästhetische Ergebnisse bieten."
+        "details": "Unsere Vision ist es, weltweit eine bevorzugte Implantatmarke zu werden. Unsere Mission ist die Entwicklung von Implantatsystemen, die Ärzten chirurgisch und prothetisch Vertrauen geben und Patienten langlebige sowie ästhetische Ergebnisse bieten."
       },
       "quality": {
         "title": "Qualitätspolitik",
@@ -132,35 +131,7 @@
       }
     }
   },
-  "dealers": {
-    "title": "Unsere Händler",
-    "description": "Unsere Händler und Verkaufsstellen in der gesamten Türkei. Finden Sie ganz einfach Ihren nächstgelegenen Händler.",
-    "defaultInfo": "Informationen werden später ergänzt.",
-    "data": {
-      "ankara": {
-        "name": "ADH Medical / Händler Ankara",
-        "contact": "Ali Can Arslan",
-        "address": "Kızılay, Dr. Mediha Eldem Str. Nr. 38 D:11, 06420 Çankaya / Ankara",
-        "info": "Vertriebs- und technischer Support."
-      },
-      "bursa": {
-        "name": "White Medical",
-        "contact": "Osman Şimşekcan",
-        "address": "İhsaniye Mah. Tuna Str. Nr. 165 B2/7 Nilüfer / Bursa",
-        "info": "Regionale Verkaufsstelle."
-      },
-      "gaziantep": {
-        "name": "TAM DENTAL",
-        "contact": "Erhan Özil",
-        "address": "Korutürk Str. Nr. 92, 27500 Şehitkamil / Gaziantep, Türkei",
-        "info": "Autorisierter Händler für Gaziantep und umliegende Provinzen."
-      },
-      "adana": { "name": "Adana" },
-      "hatay": { "name": "Hatay" },
-      "mersin": { "name": "Mersin" },
-      "kahramanmaras": { "name": "Kahramanmaraş" }
-    }
-  },
+  
   "about": {
     "subtitle": "ÜBER UNS",
     "paragraphs": [

@@ -6,16 +6,17 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
-import Chip from "@mui/material/Chip";
 import { useTranslations } from "next-intl";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import { keyframes } from "@mui/system";
+import { useTheme } from "@mui/material/styles";
 
 const products = [
-  { id: 1, key: "t6Standard", image: "/product1.png", badge: "Premium" },
-  { id: 2, key: "t6Torq", image: "/product2.png", badge: "Advanced" },
-  { id: 3, key: "slimex", image: "/product3.png", badge: "Innovative" }
+  { id: 1, key: "prive_info", image: "/info/prive_info.png", isCatalog: false },
+  { id: 2, key: "prive_surgual", image: "/info/prive_surgual.png", isCatalog: false },
+  { id: 3, key: "catalog", image: "/info/catalog.png", isCatalog: true } 
 ] as const;
 
 const fadeInUp = keyframes`
@@ -42,12 +43,14 @@ const scaleIn = keyframes`
 
 export default function ProductsSection() {
   const tProducts = useTranslations("products");
+  const theme = useTheme();
 
   return (
+  
     <Box
       id="products"
       sx={{
-        bgcolor: "background.dark",
+        bgcolor: "background.brandMain",
         position: "relative",
         overflow: "hidden"
       }}
@@ -60,7 +63,7 @@ export default function ProductsSection() {
             variant="h3"
             sx={{
               fontWeight: 800,
-              color: "white",
+        color: "text.onBrandMain",
               mb: 2,
               fontSize: { xs: "2rem", md: "2.75rem" },
               animation: `${fadeInUp} 0.6s ease-out 0.1s backwards`
@@ -86,6 +89,8 @@ export default function ProductsSection() {
         <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 6, md: 10 } }}>
           {products.map((item, index) => {
             const isEven = index % 2 === 0;
+            const isFirstProduct = index === 0; // İlk ürün kontrolü
+            const isCatalog = item.isCatalog; // Katalog kontrolü
 
             return (
               <Grid
@@ -125,7 +130,6 @@ export default function ProductsSection() {
                         borderRadius: "24px",
                         overflow: "hidden",
                         aspectRatio: "4/5",
-                        bgcolor: "background.paper",
                         boxShadow: "0 10px 40px rgba(0,0,0,0.08)",
                         transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
                       }}
@@ -141,24 +145,6 @@ export default function ProductsSection() {
                         }}
                       />
                       
-                      {/* Badge */}
-                      <Chip
-                        className="product-badge"
-                        label={item.badge}
-                        sx={{
-                          position: "absolute",
-                          top: 20,
-                          right: 20,
-                          bgcolor: "primary.main",
-                          color: "white",
-                          fontWeight: 700,
-                          fontSize: "0.875rem",
-                          px: 2,
-                          py: 2.5,
-                          boxShadow: "0 4px 12px rgba(239, 68, 68, 0.4)",
-                          transition: "transform 0.3s ease"
-                        }}
-                      />
                     </Paper>
                   </Box>
                 </Grid>
@@ -175,26 +161,13 @@ export default function ProductsSection() {
                       pr: { xs: 0, md: isEven ? 0 : 4 }
                     }}
                   >
-                    {/* Product Number */}
-                    <Typography
-                      sx={{
-                        fontSize: "5rem",
-                        fontWeight: 900,
-                        color: "secondary.main",
-                        lineHeight: 0.8,
-                        mb: 2,
-                        opacity: 0.3
-                      }}
-                    >
-                      {String(index + 1).padStart(2, "0")}
-                    </Typography>
 
                     {/* Title */}
                     <Typography
                       variant="h4"
                       sx={{
                         fontWeight: 800,
-                        color: "white",
+                      color: "text.onBrandMain",
                         mb: 3,
                         fontSize: { xs: "1.75rem", md: "2.25rem" }
                       }}
@@ -215,66 +188,99 @@ export default function ProductsSection() {
                       {tProducts(`items.${item.key}.desc`)}
                     </Typography>
 
-                    {/* Features */}
-                    <Box sx={{ mb: 4 }}>
-                      {[tProducts("items.highquaility"), tProducts("items.longlasting"), tProducts("items.biocompatible")].map((feature, idx) => (
-                        <Box
-                          key={idx}
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 1.5,
-                            mb: 1.5
-                          }}
-                        >
-                          <CheckCircleOutlineIcon
+                    {/* Features - Sadece ilk ürün için göster */}
+                    {isFirstProduct && (
+                      <Box sx={{ mb: 4 }}>
+                        {tProducts("items.properties").split("\n").map((feature, idx) => (
+                          <Box
+                            key={idx}
                             sx={{
-                              color: "primary.main",
-                              fontSize: "1.5rem"
-                            }}
-                          />
-                          <Typography
-                            sx={{
-                              color: "rgba(255, 255, 255, 0.9)",
-                              fontSize: "1rem",
-                              fontWeight: 500
+                              display: "flex",
+                              alignItems: "center",
+                              gap: 1.5,
+                              mb: 1.5
                             }}
                           >
-                            {feature}
-                          </Typography>
-                        </Box>
-                      ))}
-                    </Box>
+                            <CheckCircleOutlineIcon
+                              sx={{
+                                color: "secondary.main",
+                                fontSize: "1.5rem"
+                              }}
+                            />
+                            <Typography
+                              sx={{
+                                color: "rgba(255, 255, 255, 0.9)",
+                                fontSize: "1rem",
+                                fontWeight: 500
+                              }}
+                            >
+                              {feature}
+                            </Typography>
+                          </Box>
+                        ))}
+                      </Box>
+                    )}
 
-                    {/* CTA Button */}
+                    {/* CTA Buttons - Katalog için özel buton */}
                     <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
-                      <Button
-                        component="a"
-                        href="#contact"
-                        variant="contained"
-                        endIcon={<ArrowForwardIcon />}
-                        sx={{
-                          bgcolor: "primary.main",
-                          color: "white",
-                          px: 4,
-                          py: 1.5,
-                          fontSize: "1rem",
-                          fontWeight: 600,
-                          borderRadius: "50px",
-                          textTransform: "none",
-                          boxShadow: "0 8px 16px rgba(239, 68, 68, 0.3)",
-                          transition: "all 0.3s ease",
-                          "&:hover": {
+                      {isCatalog ? (
+                        // Katalog için PDF butonu
+                        <Button
+                          component="a"
+                          href="https://forevermedikal.com/uploads/pdfs/68f6032c6b777_PRIVEENG.pdf"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          variant="contained"
+                          endIcon={<PictureAsPdfIcon />}
+                          sx={{
                             bgcolor: "primary.dark",
-                            transform: "translateY(-2px)",
-                            boxShadow: "0 12px 24px rgba(239, 68, 68, 0.4)"
-                          }
-                        }}
-                      >
-                        {tProducts("btnDetail")}
-                      </Button>
-
-                     
+                            px: 4,
+                            py: 1.5,
+                            fontSize: "1rem",
+                            fontWeight: 600,
+                            borderRadius: "50px",
+                            textTransform: "none",
+                            boxShadow: "0 8px 16px rgba(37, 85, 142, 0.4)",
+                            transition: "all 0.3s ease",
+                            "&:hover": {
+                              color: "text.onBrandLight",
+                              bgcolor: "background.brandLight",
+                              transform: "translateY(-2px)",
+                              boxShadow: "0 12px 24px rgba(37, 85, 142, 0.5)"
+                            }
+                          }}
+                        >
+                          {tProducts("btnViewCatalog")}
+                        </Button>
+                      ) : (
+                        // Diğer ürünler için normal buton
+                        <Button
+                          component="a"
+                          href="#contact"
+                          variant="contained"
+                          endIcon={<ArrowForwardIcon />}
+                          sx={{ 
+                            bgcolor: "primary.dark",
+                            color: "text.onBrandMain",
+                            px: 4,
+                            py: 1.5,
+                            fontSize: "1rem",
+                            fontWeight: 600,
+                            borderRadius: "50px",
+                            textTransform: "none",
+                            boxShadow: "0 8px 16px rgba(37, 85, 142, 0.4)",
+                            transition: "all 0.3s ease",
+                            "&:hover": { 
+                              color: "text.onBrandLight",
+                              bgcolor: "background.brandLight",
+                              transform: "translateY(-2px)",
+                              boxShadow: "0 12px 24px rgba(37, 85, 142, 0.5)"
+                            }
+                          }}
+                        >
+                          {tProducts("btnDetail")}
+                        </Button>
+                      )}
                     </Box>
                   </Box>
                 </Grid>

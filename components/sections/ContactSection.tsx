@@ -23,7 +23,7 @@ export default function ContactSection() {
     <Box
     id="contact"
   sx={{
-    bgcolor: "#2a2a2a",
+    bgcolor: "background.brandMain",
     py: { xs: 8, md: 12 },
     width: "100%"}}>
     <Container >
@@ -32,36 +32,36 @@ export default function ContactSection() {
         <Grid size={{ xs: 12, md: 5 }}>
           <Typography
             variant="h4"
-            sx={{ color: "primary.main", fontWeight: "bold", letterSpacing: "0.1em", mb: 2, display: "block" }}
+            sx={{ color: "text.onBrandMain", fontWeight: "bold", letterSpacing: "0.1em", mb: 2, display: "block" }}
           >
             {t("subtitle")}
           </Typography>
 
           <Typography
             variant="h4"
-            sx={{ fontWeight: "bold", mb: 4, trackingTight: "-0.02em", color: "white" }}
+            sx={{ fontWeight: "bold", mb: 4, trackingTight: "-0.02em", color: "text.onBrandMain " }}
           >
             {t("title")}
           </Typography>
 
-          <Typography variant="body1" sx={{ color: "rgba(255, 255, 255, 0.7)", mb: 6 }}>
+          <Typography variant="body1" sx={{ color: "text.onBrandMain", mb: 6 }}>
             {t("description")}
           </Typography>
 
           <Box className="flex flex-col gap-4">
             <Box className="flex items-center gap-3">
-              <PhoneIcon sx={{ color: "primary.main" }} />
+              <PhoneIcon sx={{ color: "background.brandLight" }} />
               <Typography variant="body2" sx={{ color: "white" }}>
-                {t("phone")}: <span className="font-medium">+90 5XX XXX XX XX</span>
+                {t("phone")}: <span className="font-medium">+90 532 059 0406</span>
               </Typography>
             </Box>
 
-            <Box className="flex items-center gap-3">
+            {/* <Box className="flex items-center gap-3">
               <WhatsAppIcon sx={{ color: "success.main" }} />
               <Typography variant="body2" sx={{ color: "white" }}>
                 WhatsApp:{" "}
                 <a
-                  href="https://wa.me/905XXXXXXXXX"
+                  href="https://wa.me/+90 532 059 0406"
                   target="_blank"
                   rel="noreferrer"
                   style={{ color: theme.palette.primary.main, textDecoration: "underline" }}
@@ -69,18 +69,18 @@ export default function ContactSection() {
                   {t("whatsapp")}
                 </a>
               </Typography>
-            </Box>
+            </Box> */}
 
             <Box className="flex items-center gap-3">
-              <MailIcon sx={{ color: "primary.main" }} />
-              <Typography variant="body2" sx={{ color: "white" }}>
+              <MailIcon sx={{ color: "background.brandLight" }} />
+              <Typography variant="body2" sx={{ color: "text.onBrandMain" }}>
                 {t("email")}: <span className="font-medium">info@priveimplant.com</span>
               </Typography>
             </Box>
 
             <Box className="flex items-start gap-3">
-              <LocationOnIcon sx={{ color: "primary.main", mt: 0.5 }} />
-              <Typography variant="body2" sx={{ color: "white" }}>
+              <LocationOnIcon sx={{ color: "background.brandLight", mt: 0.5 }} />
+              <Typography variant="body2" sx={{ color: "text.onBrandMain" }}>
                 {t("address")}: <span className="font-medium">{t("addressDetail")}</span>
               </Typography>
             </Box>
