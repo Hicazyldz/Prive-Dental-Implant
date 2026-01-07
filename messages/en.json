@@ -21,22 +21,22 @@
     "title": "Our Product Groups",
     "description": "Reliable implant solutions designed to meet diverse clinical needs with advanced technology and high biocompatibility.",
     "btnDetail": "Learn More",
-    "items": {
-      "t6Standard": {
-        "title": "T6 Standard",
-        "desc": "Bone-level implant system. Modern, aesthetic design with a safe surgical protocol and flexible prosthetic options for a comfortable clinical workflow."
+    "btnViewCatalog": "View Catalog",
+   "items": {
+      "prive_info": {
+        "title": "Prive Dental",
+        "desc": "At Prive Implant, we redefine the standards of dental restoration by merging biological harmony with cutting-edge engineering. Our implant systems are designed to provide clinicians with maximum control and patients with lifelong stability. With a focus on long-term bone preservation and aesthetic success, Prive Implant stands at the forefront of modern implantology."
+      
       },
-      "t6Torq": {
-        "title": "T6 Torq",
-        "desc": "Bone-level implant with deep cutting thread design for strong mechanical retention across bone types; designed for immediate/early loading with high ISQ values."
+      "prive_surgual": {
+        "title": "Prive Surgical Set",
+        "desc": "The Prive Surgical Kit combines cutting-edge engineering with an intuitive design to streamline your clinical workflow. Every instrument is meticulously calibrated to ensure absolute precision and maximum patient comfort during procedures. Crafted for durability and ease of use, it offers the ultimate solution for your daily practice, empowering you to achieve predictable results and long-term stability in every surgical case."
       },
-      "slimex": {
-        "title": "Slimex",
-        "desc": "A slim yet durable solution for narrow ridges and limited bone width. Compatible with various prosthetic treatments and offers reliable outcomes with its surface technology."
-      },
-      "highquaility":"High Quality",
-      "longlasting":"Long Lasting",
-      "biocompatible":"Biocompatible"
+      "catalog": {
+        "title": "E-Catalog",
+        "desc": "Discover the full potential of Prive Implant’s advanced solutions through our comprehensive catalog. From innovative surface technologies to precision-engineered surgical kits, our catalog offers everything you need to elevate your clinical practice and ensure lasting success for your patients. Explore our complete range and detailed technical specifications please check our e-catalog."
+    },
+      "properties": "COLD WELDING\nMADE IN GERMANY\nSLA CLEAN SURFACE\nTHREAD DESIGN\nSINGLE PLATFORM"
     }
   },
   
@@ -47,7 +47,7 @@
     "items": {
       "vision": {
         "title": "Our Vision and Mission",
-        "details": "Our vision is to become an implant brand developed with local strength and preferred on a global scale. Our mission is to develop implant systems that give confidence to physicians in surgical and prosthetic aspects and offer long-lasting and aesthetic results to patients."
+        "details": "Our vision is to become a preferred implant brand on a global scale. Our mission is to develop implant systems that give confidence to physicians in surgical and prosthetic aspects and offer long-lasting and aesthetic results to patients."
       },
       "quality": {
         "title": "Quality Policy",
@@ -137,35 +137,7 @@
     }
   },
   
-  "dealers": {
-    "title": "Our Dealers",
-    "description": "Our dealers and sales points serving across Turkey. You can easily reach our products by finding our nearest dealer.",
-    "defaultInfo": "Information will be added later.",
-    "data": {
-      "ankara": {
-        "name": "ADH Medical / Ankara Dealer",
-        "contact": "Ali Can Arslan",
-        "address": "Kızılay, Dr. Mediha Eldem St. No:38 D:11, 06420 Çankaya / Ankara",
-        "info": "Sales and technical support services."
-      },
-      "bursa": {
-        "name": "White Medical",
-        "contact": "Osman Şimşekcan",
-        "address": "İhsaniye Mah. Tuna Ave. No:165 B2/7 Nilüfer / Bursa",
-        "info": "Regional sales point."
-      },
-      "gaziantep": {
-        "name": "TAM DENTAL",
-        "contact": "Erhan Özil",
-        "address": "Korutürk St. No:92, 27500 Şehitkamil / Gaziantep, Turkey",
-        "info": "Authorized dealer for Gaziantep and surrounding provinces."
-      },
-      "adana": { "name": "Adana" },
-      "hatay": { "name": "Hatay" },
-      "mersin": { "name": "Mersin" },
-      "kahramanmaras": { "name": "Kahramanmaras" }
-    }
-  },
+  
   
   "about": {
     "subtitle": "ABOUT US",

@@ -138,7 +138,7 @@ export default function Navbar() {
           >
             <Box
               component="img"
-              src="/logo.png"
+              src="/logo/logo_head.png"
               alt="Prive Implant"
               sx={{
                 height: { xs: 35, md: scrolled ? 35 : 50 },
@@ -205,7 +205,7 @@ export default function Navbar() {
                             mx: 2,
                             borderRadius: 2,
                             "&:hover": {
-                              bgcolor: "error.main",
+                              bgcolor: ".main",
                               "& .MuiListItemText-primary": {
                                 color: "white"
                               }
@@ -242,9 +242,9 @@ export default function Navbar() {
                         color: "text.primary",
                         borderColor: "#e0e0e0",
                         "&:hover": {
-                          borderColor: "error.main",
+                          borderColor: "info.main",
                           bgcolor: "rgba(211, 47, 47, 0.04)",
-                          color: "error.main"
+                          color: "info.main"
                         }
                       }}
                     >
@@ -277,12 +277,12 @@ export default function Navbar() {
                       transform: "translateX(-50%)",
                       width: 0,
                       height: 2,
-                      bgcolor: "error.main",
+                      bgcolor: "info.main",
                       transition: "width 0.3s ease-in-out"
                     },
                     "&:hover": {
                       bgcolor: "transparent",
-                      color: "error.main",
+                      color: "info.main",
                       "&::after": {
                         width: "80%"
                       }
@@ -307,9 +307,9 @@ export default function Navbar() {
                     borderColor: "#e0e0e0",
                     color: "text.primary",
                     "&:hover": {
-                      borderColor: "error.main",
+                      borderColor: "info.main",
                       bgcolor: "rgba(211, 47, 47, 0.04)",
-                      color: "error.main"
+                      color: "info.main"
                     }
                   }}
                 >
@@ -343,7 +343,7 @@ export default function Navbar() {
               gap: 1.5,
               py: 1.5,
               "&.Mui-selected": {
-                bgcolor: "error.main",
+                bgcolor: "info.main",
                 color: "white",
                 "&:hover": {
                   bgcolor: "error.dark"

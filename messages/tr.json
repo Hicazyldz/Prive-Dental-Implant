@@ -21,26 +21,24 @@
     "title": "Ürün Gruplarımız",
     "description": "Gelişmiş teknoloji ve yüksek biyouyumluluk ile tasarlanmış, çeşitli klinik ihtiyaçlara yönelik güvenilir implant çözümleri.",
     "btnDetail": "Detaylı Bilgi",
-     "items": {
-      "t6Standard": {
-        "title": "T6 Standard",
-        "desc": "Kemik seviyesi implant. Modern ve estetik tasarımı, güvenli cerrahi protokolü ve zengin üst yapı seçenekleriyle hekime ve hastaya konforlu bir cerrahi ve protetik süreç sunar."
+    "btnViewCatalog": "Kataloğu Görüntüle",
+    "items": {
+      "prive_info": {
+        "title": "Prive Dental",
+        "desc": "Prive Implant olarak, biyolojik uyumu ileri teknoloji mühendislikle birleştirerek dental restorasyon standartlarını yeniden tanımlıyoruz. İmplant sistemlerimiz, hekimlere maksimum kontrol, hastalara ise ömür boyu stabilite sağlamak üzere tasarlanmıştır. Uzun vadeli kemik koruma ve estetik başarıya odaklanan Prive Implant, modern implantolojinin en ön safinda yer almaktadır."
       },
-      "t6Torq": {
-        "title": "T6 Torq",
-        "desc": "Kemik seviyesi implant. Kesici ve derin diş profili sayesinde tüm kemik tiplerinde güçlü mekanik tutunma sağlar; yüksek ISQ değerleriyle hemen ve erken yükleme için tasarlanmıştır. Ortak iç yapısı ve Maxicell yüzeyiyle T6 serisinin kanıtlanmış gücünü sürdürür."
+      "prive_surgual": {
+        "title": "Prive Cerrahi Seti,",
+        "desc": "Prive Cerrahi Seti, klinik iş akışınızı kolaylaştırmak için ileri mühendisliği sezgisel tasarımla birleştirir. Setteki her bir enstrüman, operasyon sırasında mutlak hassasiyet ve maksimum hasta konforu sağlamak için titizlikle kalibre edilmiştir. Dayanıklılık ve kullanım kolaylığı için üretilen bu set, her vakada öngörülebilir sonuçlar ve uzun vadeli stabilite sunarak günlük pratiğiniz için nihai çözüm haline gelir."
       },
-      "slimex": {
-        "title": "Slimex",
-        "desc": "Dar kretler ve sınırlı kemik kalınlığında ince ama dayanıklı çözümler sunan implant sistemi. External tasarımı ve geniş üst yapı seçenekleriyle farklı protez tedavilerine uyum sağlar; Maxicell yüzeyiyle güvenli ve yüksek sağkalım oranı sunar."
+      "catalog": {
+        "title": "Katalog",
+        "desc": "Prive Implant’ın sunduğu ileri düzey çözümlerin tüm detaylarını kapsamlı\nkataloğumuzla keşfedin. Yenilikçi yüzey teknolojilerinden hassas mühendislik ürünü cerrahi\nsetlere kadar, klinik pratiğinizi bir üst seviyeye taşıyacak ve hastalarınız için uzun vadeli\nbaşarı sağlayacak her şeyi bu katalogda bulabilirsiniz. Tüm ürün portföyümüzü ve detaylı\nteknik özelliklerimizi görmek için e-kataloğumuzu inceleyin."
       },
-      "highquaility":"Yüksek Kalite",
-      "longlasting":"Uzun Ömürlü",
-      "biocompatible":"Biyouyumlu"
-      
+      "properties": "SOĞUK KAYNAK\nMADE IN GERMANY\nSLA TEMİZ YÜZEY\nYİV DİZAYN\nTEK PLATFORM"
     }
   },
-  
+
   "corporate": {
     "title": "Yenilikçi Vizyon",
     "description": "Prive Implant; titiz AR-GE çalışmalarını ve klinik bilgi birikimini, yüksek hassasiyetli üretim protokolleri ile birleştirerek hekimlere güvenilir implant çözümleri sunar. Verimliliği artırmak, cerrahi süreçleri kolaylaştırmak ve daha konforlu tedavi deneyimi sağlamak için yenilikçi ürünler tasarlamaya, geliştirmeye ve uygulamaya devam ediyoruz.",
@@ -48,7 +46,7 @@
     "items": {
       "vision": {
         "title": "Vizyonumuz ve Misyonumuz",
-        "details": "Vizyonumuz; yerel güçle geliştirilen, global ölçekte tercih edilen bir implant markası olmaktır. Misyonumuz ise; hekimlere cerrahi ve protetik açıdan güven veren, hastalara ise uzun ömürlü ve estetik sonuçlar sunan implant sistemleri geliştirmektir."
+        "details": "Vizyonumuz; global ölçekte tercih edilen bir implant markası olmaktır. Misyonumuz ise; hekimlere cerrahi ve protetik açıdan güven veren, hastalara ise uzun ömürlü ve estetik sonuçlar sunan implant sistemleri geliştirmektir."
       },
       "quality": {
         "title": "Kalite Politikamız",
@@ -75,10 +73,8 @@
         "details": "Dijital kanallarımızda kullanılan çerezler; kullanıcı deneyimini iyileştirmek, site performansını analiz etmek ve güvenliği artırmak amacıyla sınırlı şekilde kullanılmaktadır. Çerez tercihleri, kullanıcılarımızın kontrolü altındadır ve talep edildiğinde güncellenebilmektedir."
       }
     }
-  
-},
+  },
 
-  
   "patientInfo": {
     "title": "Hasta Bilgilendirme",
     "description": "Dental implant tedavisi hakkında merak edilen temel sorular ve bilgilendirici yanıtlar.",
@@ -115,7 +111,7 @@
       }
     }
   },
-  
+
   "whyUs": {
     "subtitle": "NEDEN BİZ?",
     "title": "Üretimde güvenebileceğiniz bir iş ortağı.",
@@ -138,49 +134,94 @@
         "desc": "Dünya çapında hekimler tarafından tercih edilen ve güçlü klinik destek sunan güvenilir implant markası."
       }
     }
-  
+  },
+
+ "dealers": {
+  "title": "Bayilerimiz",
+  "description": "Türkiye genelinde hizmet veren bayilerimiz ve satış noktalarımız. Size en yakın bayimizi bularak ürünlerimize kolayca ulaşabilirsiniz.",
+  "defaultInfo": "Bilgiler daha sonra eklenecektir.",
+  "data": {
+    "ankara": {
+      "dealer": "ADH Medikal",
+      "name": "ADH Medikal / Ankara Bayii",
+      "contact": "Ali Can Arslan",
+      "address": "Kızılay, Dr. Mediha Eldem Sk. No:38 D:11, 06420 Çankaya / Ankara",
+      "info": "Satış ve teknik destek hizmetleri."
+    },
+    "cankiri": {
+      "dealer": "ADH Medikal",
+      "name": "ADH Medikal / Çankırı",
+      "info": "Satış ve teknik destek hizmetleri."
+    },
+    "kirikkale": {
+      "dealer": "ADH Medikal",
+      "name": "ADH Medikal / Kırıkkale",
+      "info": "Satış ve teknik destek hizmetleri."
+    },
+    "bolu": {
+      "dealer": "ADH Medikal",
+      "name": "ADH Medikal / Bolu",
+      "info": "Satış ve teknik destek hizmetleri."
+    },
+    "eskisehir": {
+      "dealer": "ADH Medikal",
+      "name": "ADH Medikal / Eskişehir",
+      "info": "Satış ve teknik destek hizmetleri."
+    },
+
+    "adiyaman": {
+      "dealer": "Adıyaman Alfa Medikal",
+      "name": "Adıyaman Alfa Medikal",
+      "info": "Adıyaman yetkili bayisi."
+    },
+
+    "samsun": {
+      "dealer": "Özpadent",
+      "name": "Özpadent / Samsun",
+      "info": "Karadeniz bölgesi yetkili bayisi."
+    },
+    "sinop": {
+      "dealer": "Özpadent",
+      "name": "Özpadent / Sinop"
+    },
+    "ordu": {
+      "dealer": "Özpadent",
+      "name": "Özpadent / Ordu"
+    },
+    "corum": {
+      "dealer": "Özpadent",
+      "name": "Özpadent / Çorum"
+    },
+    "amasya": {
+      "dealer": "Özpadent",
+      "name": "Özpadent / Amasya"
+    },
+
+    "edirne": {
+      "dealer": "BTI Medikal",
+      "name": "BTI Medikal / Edirne"
+    },
+    "kirklareli": {
+      "dealer": "BTI Medikal",
+      "name": "BTI Medikal / Kırklareli"
+    },
+    "tekirdag": {
+      "dealer": "BTI Medikal",
+      "name": "BTI Medikal / Tekirdağ"
+    }
+  }
 },
 
-  "dealers": {
-    "title": "Bayilerimiz",
-    "description": "Türkiye genelinde hizmet veren bayilerimiz ve satış noktalarımız. Size en yakın bayimizi bularak ürünlerimize kolayca ulaşabilirsiniz.",
-    "defaultInfo": "Bilgiler daha sonra eklenecektir.",
-    "data": {
-      "ankara": {
-        "name": "ADH Medikal / Ankara Bayii",
-        "contact": "Ali Can Arslan",
-        "address": "Kızılay, Dr. Mediha Eldem Sk. No:38 D:11, 06420 Çankaya / Ankara",
-        "info": "Satış ve teknik destek hizmetleri."
-      },
-      "bursa": {
-        "name": "White Medikal",
-        "contact": "Osman Şimşekcan",
-        "address": "İhsaniye Mah. Tuna Cad. No:165 B2/7 Nilüfer / Bursa",
-        "info": "Bölgesel satış noktası."
-      },
-      "gaziantep": {
-        "name": "TAM DENTAL",
-        "contact": "Erhan Özil",
-        "address": "Korutürk Cd. No:92, 27500 Şehitkamil / Gaziantep, Türkiye",
-        "info": "Gaziantep ve çevre iller için yetkili bayi."
-      },
-      "adana": { "name": "Adana" },
-      "hatay": { "name": "Hatay" },
-      "mersin": { "name": "Mersin" },
-      "kahramanmaras": { "name": "Kahramanmaraş" }
-    }
-  },
-  
   "about": {
     "subtitle": "HAKKIMIZDA",
     "paragraphs": [
-      "Türkiye’nin yenilikçi implant çözümleri sunan öncü markalarından biri olarak kurulan firmamız, yüksek hassasiyetli üretim teknolojileri ve bilimsel altyapı üzerine inşa edilmiştir. Amacımız; hekimlere güven veren, hastalara ise uzun ömürlü ve konforlu çözümler sağlayan üstün kaliteli implant sistemleri geliştirmektir.",
+      "Yenilikçi implant çözümleri sunmak için kurulan firmamız, yüksek hassasiyetli üretim teknolojileri ve bilimsel altyapı üzerine inşa edilmiştir. Amacımız; hekimlere güven veren, hastalara ise uzun ömürlü ve konforlu çözümler sağlayan üstün kaliteli implant sistemleri geliştirmektir.",
       "Ar-Ge odaklı yaklaşımımızla, biyouyumluluk ve yüzey teknolojileri alanındaki güncel bilimsel gelişmeleri takip ediyor; global standartlarla uyumlu, güvenilir ve temiz implant yüzeyleri üretmek için çalışıyoruz. Her bir ürünümüz, titiz protokollerle test edilmekte ve klinik beklentilere yüksek doğrulukla cevap verecek şekilde tasarlanmaktadır.",
       "Klinik hekimler ve akademisyenlerle sürdürdüğümüz iş birliği sayesinde implantoloji alanındaki yenilikleri destekliyor; bilgi paylaşımı ve sürekli gelişim odaklı bilimsel platformlarda aktif rol alıyoruz.",
       "Etik, şeffaf ve sorumluluk bilinci yüksek yönetim anlayışımız; üretimden satış sonrası desteğe kadar tüm süreçlerimizin temelini oluşturur. Hasta güvenliğini ve hekim memnuniyetini merkeze alarak, sektöre değer katmaya devam ediyoruz."
     ]
   },
-  
+
   "contact": {
     "subtitle": "İLETİŞİM",
     "title": "Sizinle çalışmayı sabırsızlıkla bekliyoruz.",
@@ -200,6 +241,4 @@
       "button": "Mesajı Gönder"
     }
   }
-
 }
-

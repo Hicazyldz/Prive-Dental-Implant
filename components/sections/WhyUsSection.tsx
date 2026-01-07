@@ -12,7 +12,6 @@ import FactoryIcon from "@mui/icons-material/Factory";
 import PublicIcon from "@mui/icons-material/Public";
 import { useTranslations } from "next-intl";
 
-// Veri yapısı sadeleştirildi
 const REASONS = [
   { id: 1, key: "quality", icon: <VerifiedIcon /> },
   { id: 2, key: "tech", icon: <SpeedIcon /> },
@@ -29,24 +28,28 @@ const CARD_STYLES = {
     flexDirection: "column" as const,
     gap: 2,
     transition: "all 0.3s ease",
-    border: "1px solid",
     borderColor: "divider",
+    bgcolor: "background.paper",
+    color: "text.primary",
+
     "&:hover": {
       transform: "translateY(-8px)",
       boxShadow: "0 12px 24px rgba(0,0,0,0.12)",
       borderColor: "primary.main",
     },
   },
+
   iconBox: {
     width: 64,
     height: 64,
     borderRadius: 2,
-    bgcolor: "primary.50",
+    bgcolor: "background.brandMain",   // brand soft
+    color: "text.onBrandLight",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    color: "primary.main",
     transition: "all 0.3s ease",
+
     "& svg": { fontSize: 32 },
   },
 } as const;
@@ -55,12 +58,25 @@ export default function WhyUsSection() {
   const t = useTranslations("whyUs");
 
   return (
-    <Box component="section" id="why-us" sx={{ py: { xs: 10, md: 16 } }}>
+    <Box
+      component="section"
+      id="why-us"
+      sx={{
+        py: { xs: 10, md: 16 },
+        bgcolor: "background.graySoft",   // 🔹 BRAND SOFT ZEMİN
+        color: "text.onBrandSoft",   // 🔹 BRAND SOFT ÜZERİNDEKİ YAZI
+      }}
+    >
       <Container maxWidth="lg">
         <Stack spacing={2} sx={{ textAlign: "center", mb: { xs: 6, md: 10 } }}>
           <Typography
-            variant="h4"
-            sx={{ color: "primary.main", fontWeight: "bold", letterSpacing: "0.1em", mb: 2 }}
+            variant="h3"
+            sx={{
+             color: "text.onGraySoft",   // 🔹 BRAND SOFT ÜZERİNDEKİ YAZI
+              fontWeight: "bold",
+              letterSpacing: "0.1em",
+              mb: 2,
+            }}
           >
             {t("subtitle")}
           </Typography>
@@ -73,6 +89,7 @@ export default function WhyUsSection() {
                 fontSize: { xs: "2.5rem", md: "3.2rem" },
                 mb: 3,
                 letterSpacing: 1,
+                color: "text.onGraySoft",
               }}
             >
               {t("title")}
@@ -81,7 +98,7 @@ export default function WhyUsSection() {
             <Typography
               variant="body1"
               sx={{
-                color: "text.secondary",
+                color: "text.onGraySoft",
                 fontSize: { xs: "1rem", md: "1.1rem" },
                 maxWidth: "700px",
                 mx: "auto",
@@ -100,11 +117,11 @@ export default function WhyUsSection() {
                 <Box
                   sx={{
                     ...CARD_STYLES.iconBox,
+                    color: "text.onBrandMain",
                     "&:hover": {
-                      bgcolor: "primary.main",
-                      color: "white",
+                      bgcolor: "background.brandMain",
                       transform: "scale(1.05)",
-                    }
+                    },
                   }}
                 >
                   {reason.icon}
@@ -117,7 +134,7 @@ export default function WhyUsSection() {
                     fontWeight: 600,
                     fontSize: { xs: "1rem", md: "1.125rem" },
                     lineHeight: 1.4,
-                    color: "text.primary",
+                    color: "text.onGraySoft",
                   }}
                 >
                   {t(`items.${reason.key}.title`)}

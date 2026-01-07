@@ -18,13 +18,15 @@ import EmailIcon from '@mui/icons-material/Email';
 import PlaceIcon from '@mui/icons-material/Place';
 
 type Dealer = {
-  name: string;
+  dealer?: string;
+  name?: string;
   contact?: string;
   address?: string;
   phone?: string;
   email?: string;
   info?: string;
 };
+
 
 type TurkeyProvincesMapProps = {
   /** Bayisi olan illerin id'leri (örn: "adana", "ankara") */
@@ -130,20 +132,32 @@ export default function TurkeyProvincesMap({
 
   const isActive = (id: string) => activeProvinces.includes(id);
 
-  const getFill = (id: string) => {
-    // Hover öncelikli
-    if (hovered === id) return "#191a1e"; // hover rengi (mavi)
-    if (isActive(id)) return "#EF4444"; // bayisi olan il rengi (açık mavi)
-    return "#e5e7eb"; // pasif il rengi (gri)
-  };
+const getFill = (id: string) => {
+  if (hovered === id && isActive(id)) return "#1565C0"; // koyu mavi hover (aktifte)
+  if (isActive(id)) return "#1E88E5";                   // mavi (aktif)
+  return "#e5e7eb";                                     // pasif gri
+};
 
-  const getTooltipText = (id: string): string => {
-    const name = PROVINCE_NAMES[id] || id;
-    if (isActive(id)) {
-      return `${name} - Bayim Var ✓`;
-    }
-    return name;
-  };
+const getTooltipText = (id: string): string => {
+  const cityName = PROVINCE_NAMES[id] || id;
+
+  // ✅ Sadece aktif illerde tooltip: "Şehir — Bayi"
+  if (isActive(id)) {
+    const dealerName =
+      dealers?.[id]?.dealer ||
+      dealers?.[id]?.name || // fallback: elinde sadece name varsa
+      "Bayi";
+
+    return `${cityName} — ${dealerName}`;
+  }
+
+  // Pasif illerde istersen sadece şehir adı:
+  return cityName;
+
+  // Alternatif: pasif illerde hiçbir şey yazma istiyorsan:
+  // return "";
+};
+
 
   const handleClick = (id: string) => {
     // Eğer o ilde bayi varsa modal aç
@@ -523,8 +537,14 @@ export default function TurkeyProvincesMap({
       {/* Dealer info dialog */}
       <Dialog open={!!openDealerId} onClose={handleCloseDialog} fullWidth maxWidth="sm">
         <DialogTitle>
-          {openDealerId ? (dealers?.[openDealerId]?.name || PROVINCE_NAMES[openDealerId] || openDealerId) : "Bayi Bilgisi"}
-        </DialogTitle>
+  {openDealerId
+    ? (dealers?.[openDealerId]?.name ||
+       dealers?.[openDealerId]?.dealer ||   // ✅ eklendi
+       PROVINCE_NAMES[openDealerId] ||
+       openDealerId)
+    : "Bayi Bilgisi"}
+</DialogTitle>
+
         <DialogContent dividers>
           {openDealerId && dealers?.[openDealerId] ? (
             <Paper sx={{ p: 2, borderLeft: '4px solid', borderLeftColor: 'primary.main', borderRadius: 1, backgroundColor: 'background.paper' }}>
