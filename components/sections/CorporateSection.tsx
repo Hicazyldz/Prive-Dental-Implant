@@ -13,10 +13,11 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import { useTheme } from "@mui/material/styles";
 import { useTranslations } from "next-intl";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 interface CorporateItem {
   id: number;
-  key: string; // JSON'daki anahtar (vision, quality vb.)
+  key: string;
   image: string;
 }
 
@@ -32,9 +33,11 @@ const corporateItems: CorporateItem[] = [
 
 export default function CorporateSection() {
   const theme = useTheme();
-  const t = useTranslations("corporate"); // JSON'daki 'corporate' anahtarını kullanır
+  const t = useTranslations("corporate");
   const [selectedItem, setSelectedItem] = useState<CorporateItem | null>(null);
   const [openModal, setOpenModal] = useState(false);
+
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleItemClick = (item: CorporateItem) => {
     setSelectedItem(item);
@@ -47,22 +50,22 @@ export default function CorporateSection() {
   };
 
   return (
-    <Box id="kurumsal" sx={{ py: 12,  bgcolor: "background.graySoft" }}>
+    <Box id="kurumsal" sx={{ py: { xs: 8, md: 12 }, bgcolor: "background.graySoft" }}>
       <Container maxWidth="lg">
         {/* Başlık ve açıklama */}
-        <Box sx={{ textAlign: "center", mb: 10 }}>
+        <Box sx={{ textAlign: "center", mb: { xs: 6, md: 10 } }}>
           <Typography
             variant="h2"
             sx={{
               fontWeight: 400,
               color: "primary.main",
-              fontSize: { xs: "2.5rem", md: "3.2rem" },
-              mb: 3,
+              fontSize: { xs: "2rem", md: "3.2rem" },
+              mb: 2,
               letterSpacing: 1,
             }}
           >
             <Box component="span" sx={{ fontWeight: 700 }}>
-            {t("title")}
+              {t("title")}
             </Box>
           </Typography>
 
@@ -70,67 +73,127 @@ export default function CorporateSection() {
             variant="body1"
             sx={{
               color: "text.secondary",
-              fontSize: { xs: "1rem", md: "1.05rem" },
+              fontSize: { xs: "0.95rem", md: "1.05rem" },
               maxWidth: "980px",
               mx: "auto",
               lineHeight: 1.8,
+              px: { xs: 2, sm: 0 },
             }}
           >
             {t("description")}
           </Typography>
         </Box>
 
-        <Grid container spacing={6} justifyContent="center">
-          {corporateItems.map((item) => (
-            <Grid key={item.id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }} sx={{ textAlign: "center" }}>
+        {/* ✅ MOBİL: Yatay kaydırmalı şerit */}
+        {isMobile ? (
+          <Box
+            sx={{
+              display: "flex",
+              gap: 2,
+              overflowX: "auto",
+              pb: 1,
+              px: 1,
+              scrollSnapType: "x mandatory",
+              WebkitOverflowScrolling: "touch",
+              "&::-webkit-scrollbar": { display: "none" },
+            }}
+          >
+            {corporateItems.map((item) => (
               <Box
+                key={item.id}
                 onClick={() => handleItemClick(item)}
                 sx={{
+                  flex: "0 0 auto",
+                  width: 150,
+                  scrollSnapAlign: "start",
                   cursor: "pointer",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  transition: "transform 0.3s ease",
-                  "&:hover": {
-                    transform: "scale(1.05)",
-                  },
+                  textAlign: "center",
+                  borderRadius: 3,
+                  p: 1.5,
+                  bgcolor: "rgba(255,255,255,0.65)",
+                  boxShadow: "0 8px 22px rgba(0,0,0,0.10)",
+                  transition: "transform 0.25s ease",
+                  "&:active": { transform: "scale(0.98)" },
                 }}
               >
-                {/* İkon boyutu 210px'den 160px'e küçültüldü */}
                 <Box
                   sx={{
-                    width: 160,
-                    height: 160,
+                    width: 112,
+                    height: 112,
                     borderRadius: "50%",
                     overflow: "hidden",
-                    mb: 2.5,
+                    mx: "auto",
+                    mb: 1.5,
                     backgroundImage: `url('${item.image}')`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
-                    boxShadow: "0 8px 25px rgba(0,0,0,0.18)",
-                    filter: "grayscale(20%)",
+                    boxShadow: "0 8px 18px rgba(0,0,0,0.14)",
+                    filter: "grayscale(15%)",
                   }}
                 />
 
                 <Typography
-                  variant="h1"
                   sx={{
-                    fontWeight: 600,
-                    textTransform: "none",
+                    fontWeight: 700,
                     color: "primary.main",
-                    fontSize: "0.95rem",
+                    fontSize: "0.85rem",
+                    lineHeight: 1.3,
+                    minHeight: 34, // başlıklar 2 satırsa zıplamasın
                   }}
                 >
-                  {/* Dinamik Başlık: items.vision.title vb. */}
                   {t(`items.${item.key}.title`)}
                 </Typography>
               </Box>
-            </Grid>
-          ))}
-        </Grid>
+            ))}
+          </Box>
+        ) : (
+          /* ✅ DESKTOP/TABLET: Normal grid */
+          <Grid container spacing={6} justifyContent="center">
+            {corporateItems.map((item) => (
+              <Grid key={item.id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }} sx={{ textAlign: "center" }}>
+                <Box
+                  onClick={() => handleItemClick(item)}
+                  sx={{
+                    cursor: "pointer",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    transition: "transform 0.3s ease",
+                    "&:hover": { transform: "scale(1.05)" },
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 160,
+                      height: 160,
+                      borderRadius: "50%",
+                      overflow: "hidden",
+                      mb: 2.5,
+                      backgroundImage: `url('${item.image}')`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      boxShadow: "0 8px 25px rgba(0,0,0,0.18)",
+                      filter: "grayscale(20%)",
+                    }}
+                  />
+
+                  <Typography
+                    sx={{
+                      fontWeight: 600,
+                      color: "primary.main",
+                      fontSize: "0.95rem",
+                    }}
+                  >
+                    {t(`items.${item.key}.title`)}
+                  </Typography>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        )}
       </Container>
 
-      {/* Modal - içeriğe göre otomatik boyutlanır, fotoğraf yok */}
+      {/* Modal */}
       <Dialog
         open={openModal}
         onClose={handleCloseModal}
@@ -148,13 +211,7 @@ export default function CorporateSection() {
       >
         {selectedItem && (
           <>
-            {/* Modal başlık alanı - fotoğraf kaldırıldı, sadece başlık */}
-            <Box
-              sx={{
-                p: 3,
-                borderBottom: `1px solid ${theme.palette.divider}`,
-              }}
-            >
+            <Box sx={{ p: 3, borderBottom: `1px solid ${theme.palette.divider}` }}>
               <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <Typography variant="h5" sx={{ fontWeight: 700, color: "primary.main" }}>
                   {t(`items.${selectedItem.key}.title`)}
@@ -162,42 +219,23 @@ export default function CorporateSection() {
 
                 <IconButton
                   onClick={handleCloseModal}
-                  sx={{
-                    color: "text.secondary",
-                    "&:hover": { bgcolor: "rgba(0,0,0,0.05)" },
-                  }}
+                  sx={{ color: "text.secondary", "&:hover": { bgcolor: "rgba(0,0,0,0.05)" } }}
                 >
                   <CloseIcon />
                 </IconButton>
               </Box>
             </Box>
 
-            {/* Modal içerik - padding artırıldı, daha okunabilir */}
-            <DialogContent
-              sx={{
-                pt: 4,
-                pb: 4,
-                px: 4,
-              }}
-            >
-              <Typography
-                variant="body1"
-                sx={{ 
-                  color: "text.secondary", 
-                  lineHeight: 1.8,
-                  fontSize: "1rem",
-                }}
-              >
-                {/* Modal Detay Metni */}
+            <DialogContent sx={{ pt: 4, pb: 4, px: { xs: 3, md: 4 } }}>
+              <Typography sx={{ color: "text.secondary", lineHeight: 1.8, fontSize: "1rem" }}>
                 {t(`items.${selectedItem.key}.details`)}
               </Typography>
             </DialogContent>
 
-            {/* Modal footer - daha az padding */}
             <DialogActions
               sx={{
                 p: 2.5,
-                px: 4,
+                px: { xs: 3, md: 4 },
                 borderTop: `1px solid ${theme.palette.divider}`,
                 justifyContent: "flex-end",
               }}

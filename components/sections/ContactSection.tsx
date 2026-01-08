@@ -106,11 +106,7 @@ export default function ContactSection() {
                 size="small"
                 fullWidth
               />
-              <TextField
-                label={t("labels.company")}
-                size="small"
-                fullWidth
-              />
+            
               <TextField
                 label={t("labels.email")}
                 size="small"
