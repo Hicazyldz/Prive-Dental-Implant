@@ -6,16 +6,9 @@ import IconButton from "@mui/material/IconButton";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-// Sadece 2 fotoğraflı slider
 const heroSlides = [
-  {
-    id: 1,
-    image: "/hero/hero1.png",
-  },
-  {
-    id: 2,
-    image: "/hero/hero2.png",
-  },
+  { id: 1, image: "/hero/1.png" },
+  { id: 2, image: "/hero/2.png" },
 ];
 
 export default function HeroSection() {
@@ -39,9 +32,7 @@ export default function HeroSection() {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
   };
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
+  const goToSlide = (index: number) => setCurrentSlide(index);
 
   return (
     <Box
@@ -49,11 +40,17 @@ export default function HeroSection() {
       sx={{
         position: "relative",
         width: "100%",
-        height: "calc(100vh - 80px)", // Navbar yüksekliğini çıkar (navbar genelde 64-80px)
+
+        // ✅ Mobilde daha kısa, desktop'ta full'e yakın
+        height: { xs: "48dvh", md: "calc(100vh - 80px)" },
+
+        // ✅ minHeight mobilde yüksek olursa hero asla küçülmez (sendeki ana bug buydu)
+        minHeight: { xs: 340, md: 600 },
+
         display: "flex",
         alignItems: "center",
+        justifyContent: "center",
         overflow: "hidden",
-        bgcolor: "#EAEAEA",
       }}
     >
       {/* Slider Fotoğrafları */}
@@ -62,17 +59,27 @@ export default function HeroSection() {
           key={slide.id}
           sx={{
             position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
+            inset: 0,
             backgroundImage: `url('${slide.image}')`,
             backgroundSize: "cover",
-            backgroundPosition: "center",
+
+            // ✅ Mobilde kadrajı biraz aşağı/yukarı ayarlayarak dev yazı kesilmeyi azaltır
+            // 0% = top, 50% = center, 100% = bottom
+            backgroundPosition: { xs: "center 35%", md: "center" },
+
             backgroundRepeat: "no-repeat",
             opacity: currentSlide === index ? 1 : 0,
             transition: "opacity 1.2s ease-in-out",
             zIndex: 0,
+
+            // ✅ Hafif overlay (opsiyonel ama okunabilirlik + premium his)
+            "&::after": {
+              content: '""',
+              position: "absolute",
+              inset: 0,
+              background:
+                "linear-gradient(to bottom, rgba(0,0,0,0.10), rgba(0,0,0,0.25))",
+            },
           }}
         />
       ))}
@@ -82,23 +89,28 @@ export default function HeroSection() {
         onClick={handlePrevSlide}
         sx={{
           position: "absolute",
-          left: { xs: 16, md: 40 },
+          zIndex: 10,
+
+          // ✅ Mobilde okları gizlemek daha temiz (swipe yoksa bile dots yeterli)
+          display: { xs: "none", md: "flex" },
+
+          left: { md: 40 },
           top: "50%",
           transform: "translateY(-50%)",
-          zIndex: 10,
+
           bgcolor: "rgba(37, 85, 142, 0.8)",
           color: "white",
-          width: { xs: 48, md: 56 },
-          height: { xs: 48, md: 56 },
+          width: 56,
+          height: 56,
           boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
           "&:hover": {
             bgcolor: "rgba(37, 85, 142, 1)",
-            transform: "translateY(-50%) scale(1.1)",
+            transform: "translateY(-50%) scale(1.08)",
           },
-          transition: "all 0.3s ease",
+          transition: "all 0.25s ease",
         }}
       >
-        <KeyboardArrowLeftIcon sx={{ fontSize: { xs: 28, md: 32 } }} />
+        <KeyboardArrowLeftIcon sx={{ fontSize: 32 }} />
       </IconButton>
 
       {/* Sağ Ok */}
@@ -106,39 +118,44 @@ export default function HeroSection() {
         onClick={handleNextSlide}
         sx={{
           position: "absolute",
-          right: { xs: 16, md: 40 },
+          zIndex: 10,
+
+          // ✅ Mobilde okları gizlemek daha temiz
+          display: { xs: "none", md: "flex" },
+
+          right: { md: 40 },
           top: "50%",
           transform: "translateY(-50%)",
-          zIndex: 10,
+
           bgcolor: "rgba(37, 85, 142, 0.8)",
           color: "white",
-          width: { xs: 48, md: 56 },
-          height: { xs: 48, md: 56 },
+          width: 56,
+          height: 56,
           boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
           "&:hover": {
             bgcolor: "rgba(37, 85, 142, 1)",
-            transform: "translateY(-50%) scale(1.1)",
+            transform: "translateY(-50%) scale(1.08)",
           },
-          transition: "all 0.3s ease",
+          transition: "all 0.25s ease",
         }}
       >
-        <KeyboardArrowRightIcon sx={{ fontSize: { xs: 28, md: 32 } }} />
+        <KeyboardArrowRightIcon sx={{ fontSize: 32 }} />
       </IconButton>
 
       {/* Alt Nokta Navigasyonu */}
       <Box
         sx={{
           position: "absolute",
-          bottom: { xs: 24, md: 40 },
+          bottom: { xs: 14, md: 40 },
           left: "50%",
           transform: "translateX(-50%)",
           display: "flex",
-          gap: 2,
+          gap: { xs: 1, md: 2 },
           zIndex: 10,
-          bgcolor: "rgba(0, 0, 0, 0.3)",
+          bgcolor: "rgba(0, 0, 0, 0.28)",
           backdropFilter: "blur(10px)",
           borderRadius: "50px",
-          padding: "8px 16px",
+          padding: { xs: "6px 10px", md: "8px 16px" },
         }}
       >
         {heroSlides.map((_, index) => (
@@ -146,16 +163,23 @@ export default function HeroSection() {
             key={index}
             onClick={() => goToSlide(index)}
             sx={{
-              width: currentSlide === index ? 40 : 12,
-              height: 12,
+              width: currentSlide === index ? { xs: 24, md: 40 } : { xs: 10, md: 12 },
+              height: { xs: 10, md: 12 },
               borderRadius: "6px",
-              bgcolor: currentSlide === index ? "#7CBFEA" : "rgba(255, 255, 255, 0.6)",
+              bgcolor:
+                currentSlide === index ? "#7CBFEA" : "rgba(255, 255, 255, 0.6)",
               cursor: "pointer",
-              transition: "all 0.4s ease",
-              boxShadow: currentSlide === index ? "0 0 12px rgba(124, 191, 234, 0.8)" : "none",
+              transition: "all 0.35s ease",
+              boxShadow:
+                currentSlide === index
+                  ? "0 0 10px rgba(124, 191, 234, 0.75)"
+                  : "none",
               "&:hover": {
-                bgcolor: currentSlide === index ? "#7CBFEA" : "rgba(255, 255, 255, 0.9)",
-                transform: "scale(1.15)",
+                bgcolor:
+                  currentSlide === index
+                    ? "#7CBFEA"
+                    : "rgba(255, 255, 255, 0.9)",
+                transform: { xs: "none", md: "scale(1.12)" },
               },
             }}
           />

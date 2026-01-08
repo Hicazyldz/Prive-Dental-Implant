@@ -12,6 +12,7 @@ html {
   :root {
     --background: #424041;
     --foreground: #ededed;
+    scroll-behavior: smooth;
   }
 }
 

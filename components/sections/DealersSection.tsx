@@ -4,20 +4,22 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import TurkeyProvincesMap from "./TurkeyProvincesMap";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 
 export default function DealersSection() {
   const t = useTranslations("dealers");
-  const locale = useLocale();
 
-  // ✅ TR değilse Türkiye haritası hiç görünmesin
-  const showTurkeyMap = locale === "tr";
-
-  const dealersData = t.raw("data"); // { "Ankara": { dealer: "..."} , ... }
-  const activeProvinces = Object.keys(dealersData);
+  // TR mesajlarından geliyor: { "Ankara": { dealer: "..."} , ... }
+  const dealersData = t.raw("data") as Record<string, any>;
+  const activeProvinces = Object.keys(dealersData || {});
 
   return (
-    <Box component="section" id="dealers" aria-labelledby="dealers-title" sx={{ bgcolor: "background.brandMain" }}>
+    <Box
+      component="section"
+      id="dealers"
+      aria-labelledby="dealers-title"
+      sx={{ bgcolor: "background.brandMain" }}
+    >
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
         <Typography
           id="dealers-title"
@@ -50,11 +52,9 @@ export default function DealersSection() {
           {t("description")}
         </Typography>
 
-        {showTurkeyMap && (
-          <Box sx={{ p: { xs: 0, md: 5 }, textAlign: "center", bgcolor: "transparent" }}>
-            <TurkeyProvincesMap activeProvinces={activeProvinces} dealers={dealersData} />
-          </Box>
-        )}
+        <Box sx={{ p: { xs: 0, md: 5 }, textAlign: "center", bgcolor: "transparent" }}>
+          <TurkeyProvincesMap activeProvinces={activeProvinces} dealers={dealersData} />
+        </Box>
       </Container>
     </Box>
   );

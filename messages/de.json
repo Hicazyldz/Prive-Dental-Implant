@@ -20,25 +20,25 @@
     "title": "Unsere Produktgruppen",
     "description": "Zuverlässige Implantatlösungen, die mit fortschrittlicher Technologie und hoher Biokompatibilität auf unterschiedliche klinische Anforderungen abgestimmt sind.",
     "btnDetail": "Mehr erfahren",
-    "btnViewCatalog": "Katalog Anzeigen",
+    "btnViewCatalog": "Katalog anzeigen",
     "items": {
       "prive_info": {
         "title": "Prive Dental",
-        "desc": "Bei Prive Implant definieren wir die Standards der Zahnersatzung neu, indem wir biologische Harmonie mit modernster Technik kombinieren. Unsere Implantatsysteme sind so konzipiert, dass sie Ärzten maximale Kontrolle und Patienten eine lebenslange Stabilität bieten. Mit dem Fokus auf langfristige Knocherhaltung und ästhetischen Erfolg steht Prive Implant an der Spitze der modernen Implantologie."
+        "desc": "Bei Prive Implant definieren wir die Standards der Zahnersatzversorgung neu, indem wir biologische Harmonie mit modernster Technik kombinieren. Unsere Implantatsysteme sind so konzipiert, dass sie Ärzten maximale Kontrolle und Patienten eine lebenslange Stabilität bieten. Mit dem Fokus auf langfristige Knochenerhaltung und ästhetischen Erfolg steht Prive Implant an der Spitze der modernen Implantologie."
       },
       "prive_surgual": {
         "title": "Prive Chirurgisches Set",
-        "desc": "Das Prive Surgical Kit vereint moderne Technik mit intuitivem Design, um Ihren klinischen Arbeitsablauf zu optimieren. Jedes Instrument ist sorgfältig kalibriert, um absolute Präzision und maximale Patientenkomfort während der Prozeduren zu gewährleisten. Aufgrund von Haltbarkeit und Benutzerfreundlichkeit bietet es die ultimative Lösung für Ihren täglichen Praxisbetrieb, wodurch Sie vorhersehbare Ergebnisse und langfristige Stabilität in jedem chirurgischen Fall erreichen können."
+        "desc": "Das Prive Chirurgische Set kombiniert modernste Technik mit einem intuitiven Design, um Ihren klinischen Arbeitsablauf zu optimieren. Jedes Instrument ist sorgfältig kalibriert, um absolute Präzision und maximalen Patientenkomfort während der Eingriffe zu gewährleisten. Langlebig und benutzerfreundlich gefertigt, unterstützt es Ihre tägliche Praxis mit vorhersagbaren Ergebnissen und langfristiger Stabilität in jedem chirurgischen Fall."
       },
       "catalog": {
         "title": "E-Katalog",
-        "desc": "Entdecken Sie das volle Potenzial der fortschrittlichen Lösungen von Prive Implant durch unseren umfassenden Katalog. Von innovativen Oberflächentechnologien bis hin zu präzisionsgefederten chirurgischen Kits bietet unser Katalog alles, was Sie brauchen, um Ihre klinische Praxis zu verbessern und langfristigen Erfolg für Ihre Patienten zu gewährleisten. Erkunden Sie unser gesamtes Sortiment und detaillierte technische Spezifikationen, bitte prüfen Sie unseren E-Katalog."
-    },
-      "properties": "KALTVERLEIMUNG\nHERSTELLT IN DEUTSCHLAND\nSLA REINE OBERFLÄCHE\nGEWINDEDESIGN\nEINPLATTFORM"
+        "desc": "Entdecken Sie das volle Potenzial der fortschrittlichen Lösungen von Prive Implant in unserem umfassenden Katalog. Von innovativen Oberflächentechnologien bis hin zu präzisionsgefertigten chirurgischen Sets finden Sie alles, was Sie benötigen, um Ihre klinische Praxis zu optimieren und langfristigen Erfolg für Ihre Patienten zu sichern. Entdecken Sie unser gesamtes Sortiment und detaillierte technische Spezifikationen in unserem E-Katalog."
+      },
+      "properties": "KALTVERSCHWEIßUNG\nHERGESTELLT IN DEUTSCHLAND\nSLA REINE OBERFLÄCHE\nGEWINDEDESIGN\nEINPLATTFORM"
     }
   },
   "corporate": {
-    "title": "Innovative Vision",
+    "title": "Innovative Ausrichtung",
     "description": "Prive Implant vereint sorgfältige F&E-Studien und klinisches Wissen mit hochpräzisen Produktionsprotokollen, um Ärzten zuverlässige Implantatlösungen zu bieten. Wir entwickeln kontinuierlich innovative Produkte, um Effizienz zu steigern, chirurgische Prozesse zu vereinfachen und ein komfortableres Behandlungserlebnis zu ermöglichen.",
     "btnClose": "Schließen",
     "items": {
@@ -131,7 +131,6 @@
       }
     }
   },
-  
   "about": {
     "subtitle": "ÜBER UNS",
     "paragraphs": [
@@ -161,4 +160,3 @@
     }
   }
 }
-    

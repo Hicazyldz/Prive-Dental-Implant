@@ -19,11 +19,10 @@ import Container from "@mui/material/Container";
 import LanguageIcon from "@mui/icons-material/Language";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 
-type LocaleCode = "tr" | "en"| "de" | "ar";
+type LocaleCode = "tr" | "en" | "de" | "ar";
 
 const NAV_ITEMS = [
   { key: "home", href: "#home" },
@@ -33,7 +32,7 @@ const NAV_ITEMS = [
   { key: "whyUs", href: "#why-us" },
   { key: "dealers", href: "#dealers" },
   { key: "about", href: "#about" },
-  { key: "contact", href: "#contact" }
+  { key: "contact", href: "#contact" },
 ] as const;
 
 const LANGUAGES: { code: LocaleCode; flag: string; label: string }[] = [
@@ -67,7 +66,7 @@ export default function Navbar() {
   const [langAnchor, setLangAnchor] = useState<null | HTMLElement>(null);
 
   const languageOptions = useMemo(() => LANGUAGES, []);
-  const currentLang = languageOptions.find(lang => lang.code === locale);
+  const currentLang = languageOptions.find((lang) => lang.code === locale);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,12 +102,11 @@ export default function Navbar() {
       position="sticky"
       elevation={scrolled ? 4 : 0}
       sx={{
-        bgcolor: "background.paper",
         backdropFilter: scrolled ? "blur(20px)" : "none",
-        backgroundColor: scrolled ? "rgba(255, 255, 255, 0.95)" : "background.paper",
+        backgroundColor: "background.graySoft",
         borderBottom: scrolled ? "none" : "1px solid",
         borderColor: "divider",
-        transition: "all 0.3s ease-in-out"
+        transition: "all 0.3s ease-in-out",
       }}
     >
       <Container maxWidth="xl">
@@ -117,7 +115,7 @@ export default function Navbar() {
           sx={{
             justifyContent: "space-between",
             minHeight: { xs: 70, md: scrolled ? 80 : 100 },
-            transition: "min-height 0.3s ease-in-out"
+            transition: "min-height 0.3s ease-in-out",
           }}
         >
           {/* Logo */}
@@ -129,11 +127,10 @@ export default function Navbar() {
               alignItems: "center",
               textDecoration: "none",
               transition: "transform 0.2s ease-in-out",
-              ml:4,
+
               "&:hover": {
-                transform: "scale(1.05)"
-                
-              }
+                transform: "scale(1.05)",
+              },
             }}
           >
             <Box
@@ -141,10 +138,10 @@ export default function Navbar() {
               src="/logo/logo_head.png"
               alt="Prive Implant"
               sx={{
-                height: { xs: 35, md: scrolled ? 35 : 50 },
+                height: { xs: 35, md: scrolled ? 70 : 80 },
                 width: "auto",
                 display: "block",
-                transition: "height 0.3s ease-in-out"
+                transition: "height 0.3s ease-in-out",
               }}
             />
           </Box>
@@ -158,8 +155,8 @@ export default function Navbar() {
                   color: "text.primary",
                   bgcolor: "rgba(0, 0, 0, 0.04)",
                   "&:hover": {
-                    bgcolor: "rgba(0, 0, 0, 0.08)"
-                  }
+                    bgcolor: "rgba(0, 0, 0, 0.08)",
+                  },
                 }}
                 aria-label={drawerOpen ? "Close menu" : "Open menu"}
               >
@@ -173,11 +170,17 @@ export default function Navbar() {
                 PaperProps={{
                   sx: {
                     width: 300,
-                    bgcolor: "background.paper"
-                  }
+                    bgcolor: "background.paper",
+                  },
                 }}
               >
-                <Box sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+                <Box
+                  sx={{
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <Box
                     sx={{
                       p: 3,
@@ -185,10 +188,15 @@ export default function Navbar() {
                       justifyContent: "space-between",
                       alignItems: "center",
                       borderBottom: "1px solid",
-                      borderColor: "divider"
+                      borderColor: "divider",
                     }}
                   >
-                    <Box component="img" src="/logo.png" alt="Logo" sx={{ height: 50 }} />
+                    <Box
+                      component="img"
+                      src="/logo/logo_down.png"
+                      alt="Logo"
+                      sx={{ height: 40 }}
+                    />
                     <IconButton onClick={handleDrawerToggle} size="small">
                       <CloseIcon />
                     </IconButton>
@@ -205,12 +213,12 @@ export default function Navbar() {
                             mx: 2,
                             borderRadius: 2,
                             "&:hover": {
-                              bgcolor: ".main",
+                              bgcolor: "background.brandLight",
                               "& .MuiListItemText-primary": {
-                                color: "white"
-                              }
+                                color: "white",
+                              },
                             },
-                            transition: "all 0.2s ease-in-out"
+                            transition: "all 0.2s ease-in-out",
                           }}
                         >
                           <ListItemText
@@ -219,8 +227,8 @@ export default function Navbar() {
                               "& .MuiListItemText-primary": {
                                 fontWeight: 600,
                                 fontSize: "0.95rem",
-                                color: "text.primary"
-                              }
+                                color: "text.primary",
+                              },
                             }}
                           />
                         </ListItemButton>
@@ -228,7 +236,13 @@ export default function Navbar() {
                     ))}
                   </List>
 
-                  <Box sx={{ p: 3, borderTop: "1px solid", borderColor: "divider" }}>
+                  <Box
+                    sx={{
+                      p: 3,
+                      borderTop: "1px solid",
+                      borderColor: "divider",
+                    }}
+                  >
                     <Button
                       fullWidth
                       variant="outlined"
@@ -242,10 +256,10 @@ export default function Navbar() {
                         color: "text.primary",
                         borderColor: "#e0e0e0",
                         "&:hover": {
-                          borderColor: "info.main",
+                          borderColor: "background.brandLight",
                           bgcolor: "rgba(211, 47, 47, 0.04)",
-                          color: "info.main"
-                        }
+                          color: "background.onBrandLight",
+                        },
                       }}
                     >
                       {currentLang?.flag} {currentLang?.label}
@@ -278,22 +292,29 @@ export default function Navbar() {
                       width: 0,
                       height: 2,
                       bgcolor: "info.main",
-                      transition: "width 0.3s ease-in-out"
+                      transition: "width 0.3s ease-in-out",
                     },
                     "&:hover": {
                       bgcolor: "transparent",
                       color: "info.main",
                       "&::after": {
-                        width: "80%"
-                      }
-                    }
+                        width: "80%",
+                      },
+                    },
                   }}
                 >
                   {tNav(item.key)}
                 </Button>
               ))}
 
-              <Box sx={{ ml: 2, pl: 2, borderLeft: "1px solid", borderColor: "divider" }}>
+              <Box
+                sx={{
+                  ml: 2,
+                  pl: 2,
+                  borderLeft: "1px solid",
+                  borderColor: "divider",
+                }}
+              >
                 <Button
                   variant="outlined"
                   startIcon={<LanguageIcon />}
@@ -308,9 +329,9 @@ export default function Navbar() {
                     color: "text.primary",
                     "&:hover": {
                       borderColor: "info.main",
-                      bgcolor: "rgba(211, 47, 47, 0.04)",
-                      color: "info.main"
-                    }
+                      bgcolor: "background.brandMain",
+                      color: "text.onBrandMain",
+                    },
                   }}
                 >
                   {currentLang?.flag} {currentLang?.label}
@@ -330,8 +351,8 @@ export default function Navbar() {
             mt: 1,
             minWidth: 150,
             borderRadius: 2,
-            boxShadow: "0 4px 20px rgba(0,0,0,0.1)"
-          }
+            boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+          },
         }}
       >
         {languageOptions.map((lang) => (
@@ -343,12 +364,12 @@ export default function Navbar() {
               gap: 1.5,
               py: 1.5,
               "&.Mui-selected": {
-                bgcolor: "info.main",
-                color: "white",
+                bgcolor: "background.brandMain",
+                color: "text.onBrandMain",
                 "&:hover": {
-                  bgcolor: "error.dark"
-                }
-              }
+                  bgcolor: "background.brandLight",
+                },
+              },
             }}
           >
             <span style={{ fontSize: "1.2rem" }}>{lang.flag}</span>
