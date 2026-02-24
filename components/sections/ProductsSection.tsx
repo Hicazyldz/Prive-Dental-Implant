@@ -15,7 +15,7 @@ import { useTheme } from "@mui/material/styles";
 
 const products = [
   { id: 1, key: "prive_info", image: "/info/prive_info.png", isCatalog: false },
-  { id: 2, key: "prive_surgual", image: "/info/prive_surgual.png", isCatalog: false },
+ 
   { id: 3, key: "catalog", image: "/info/catalog.png", isCatalog: true } 
 ] as const;
 
@@ -256,7 +256,7 @@ export default function ProductsSection() {
                         // Diğer ürünler için normal buton
                         <Button
                           component="a"
-                          href="#contact"
+                          href="/urunler"
                           variant="contained"
                           endIcon={<ArrowForwardIcon />}
                           sx={{ 

@@ -23,16 +23,15 @@ import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 
 type LocaleCode = "tr" | "en" | "de" | "ar";
-
 const NAV_ITEMS = [
-  { key: "home", href: "#home" },
-  { key: "products", href: "#products" },
-  { key: "corporate", href: "#kurumsal" },
-  { key: "patientInfo", href: "#hasta-bilgilendirme" },
-  { key: "whyUs", href: "#why-us" },
-  { key: "dealers", href: "#dealers" },
-  { key: "about", href: "#about" },
-  { key: "contact", href: "#contact" },
+  { key: "home", href: "/" },
+  { key: "products", href: "/urunler" }, // Ana sayfada kalacağı için anchor olarak kalsın
+  { key: "corporate", href: "/kurumsal" },
+  { key: "patientInfo", href: "/hasta-bilgilendirme" },
+  { key: "whyUs", href: "/neden-biz" },
+  { key: "dealers", href: "/bayiler" },
+  { key: "about", href: "/#about" }, // Ana sayfada kalacağı için anchor kalsın
+  { key: "contact", href: "/iletisim" },
 ] as const;
 
 const LANGUAGES: { code: LocaleCode; flag: string; label: string }[] = [
