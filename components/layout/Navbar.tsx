@@ -25,22 +25,22 @@ import { usePathname, useRouter } from "next/navigation";
 type LocaleCode = "tr" | "en" | "de" | "ar";
 const NAV_ITEMS = [
   { key: "home", href: "/" },
-  { key: "products", href: "/urunler" }, // Ana sayfada kalacağı için anchor olarak kalsın
+  { key: "products", href: "/urunler" },
   { key: "corporate", href: "/kurumsal" },
   { key: "patientInfo", href: "/hasta-bilgilendirme" },
   { key: "whyUs", href: "/neden-biz" },
-  { key: "dealers", href: "/bayiler" },
-  { key: "about", href: "/#about" }, // Ana sayfada kalacağı için anchor kalsın
+  { key: "dealers", href: "/bayiler", onlyLocale: "tr" },
+  { key: "about", href: "/#about" },
   { key: "contact", href: "/iletisim" },
 ] as const;
-//deneme
+
 const LANGUAGES: { code: LocaleCode; flag: string; label: string }[] = [
   { code: "tr", flag: "🇹🇷", label: "Türkçe" },
   { code: "en", flag: "🇬🇧", label: "English" },
   { code: "de", flag: "🇩🇪", label: "Deutsch" },
   { code: "ar", flag: "🇸🇦", label: "العربية" },
 ];
-// değişiklik
+
 function replaceLocaleInPath(pathname: string, nextLocale: string) {
   const parts = pathname.split("/");
   if (parts.length >= 2) {
@@ -59,6 +59,13 @@ export default function Navbar() {
   const locale = useLocale() as LocaleCode;
 
   const tNav = useTranslations("nav");
+
+  const filteredNav = useMemo(() => {
+    return NAV_ITEMS.filter(item => {
+      if (!("onlyLocale" in item)) return true;
+      return item.onlyLocale === locale;
+    });
+  }, [locale]);
 
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -202,7 +209,7 @@ export default function Navbar() {
                   </Box>
 
                   <List sx={{ flex: 1, pt: 2 }}>
-                    {NAV_ITEMS.map((item) => (
+                    {filteredNav.map((item) => (
                       <ListItem key={item.key} disablePadding sx={{ mb: 0.5 }}>
                         <ListItemButton
                           component="a"
@@ -269,7 +276,7 @@ export default function Navbar() {
             </>
           ) : (
             <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-              {NAV_ITEMS.map((item) => (
+              {filteredNav.map((item) => (
                 <Button
                   key={item.key}
                   component="a"
