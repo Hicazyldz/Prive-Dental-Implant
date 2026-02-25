@@ -33,7 +33,7 @@ const NAV_ITEMS = [
   { key: "about", href: "/#about" }, // Ana sayfada kalacağı için anchor kalsın
   { key: "contact", href: "/iletisim" },
 ] as const;
-
+//deneme
 const LANGUAGES: { code: LocaleCode; flag: string; label: string }[] = [
   { code: "tr", flag: "🇹🇷", label: "Türkçe" },
   { code: "en", flag: "🇬🇧", label: "English" },
