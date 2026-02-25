@@ -23,12 +23,11 @@ import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 
 type LocaleCode = "tr" | "en" | "de" | "ar";
-
 const NAV_ITEMS = [
   { key: "home", href: "#home" },
   { key: "products", href: "#products" },
   { key: "corporate", href: "#kurumsal" },
-  { key: "patientInfo", href: "/PatientInfoSection" },
+  { key: "patientInfo", href: "#hasta-bilgilendirme" },
   { key: "whyUs", href: "#why-us" },
   { key: "dealers", href: "#dealers" },
   { key: "about", href: "#about" },
