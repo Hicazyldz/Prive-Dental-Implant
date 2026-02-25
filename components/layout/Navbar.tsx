@@ -40,7 +40,7 @@ const LANGUAGES: { code: LocaleCode; flag: string; label: string }[] = [
   { code: "de", flag: "🇩🇪", label: "Deutsch" },
   { code: "ar", flag: "🇸🇦", label: "العربية" },
 ];
-
+// değişiklik
 function replaceLocaleInPath(pathname: string, nextLocale: string) {
   const parts = pathname.split("/");
   if (parts.length >= 2) {
