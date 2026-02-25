@@ -9,7 +9,7 @@ export default function UrunlerPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+//SAsaas
   return (
     <Box component="main" sx={{ bgcolor: "background.paper", minHeight: "0vh" }}>
       
