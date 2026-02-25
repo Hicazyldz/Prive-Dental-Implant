@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -37,7 +37,13 @@ export default function CorporateSection() {
   const [selectedItem, setSelectedItem] = useState<CorporateItem | null>(null);
   const [openModal, setOpenModal] = useState(false);
 
+  // 1. HYDRATION HATASINI ÇÖZEN MOUNTED STATE'İ
+  const [mounted, setMounted] = useState(false);
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleItemClick = (item: CorporateItem) => {
     setSelectedItem(item);
@@ -69,8 +75,10 @@ export default function CorporateSection() {
             </Box>
           </Typography>
 
+          {/* İhtiyaten component="div" ekledik ki JSON içinden <br> vb gelirse patlamasın */}
           <Typography
             variant="body1"
+            component="div"
             sx={{
               color: "text.secondary",
               fontSize: { xs: "0.95rem", md: "1.05rem" },
@@ -84,8 +92,9 @@ export default function CorporateSection() {
           </Typography>
         </Box>
 
-        {/* ✅ MOBİL: Yatay kaydırmalı şerit */}
-        {isMobile ? (
+        {/* 2. MOUNTED KONTROLÜ: Sadece tarayıcıda yüklendikten sonra isMobile çalışır */}
+        {mounted && isMobile ? (
+          /* ✅ MOBİL: Yatay kaydırmalı şerit */
           <Box
             sx={{
               display: "flex",
@@ -138,7 +147,7 @@ export default function CorporateSection() {
                     color: "primary.main",
                     fontSize: "0.85rem",
                     lineHeight: 1.3,
-                    minHeight: 34, // başlıklar 2 satırsa zıplamasın
+                    minHeight: 34,
                   }}
                 >
                   {t(`items.${item.key}.title`)}
@@ -147,10 +156,10 @@ export default function CorporateSection() {
             ))}
           </Box>
         ) : (
-          /* ✅ DESKTOP/TABLET: Normal grid */
+          /* ✅ DESKTOP/TABLET: Normal grid (size yerine standart item yapısına çevrildi) */
           <Grid container spacing={6} justifyContent="center">
             {corporateItems.map((item) => (
-              <Grid key={item.id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }} sx={{ textAlign: "center" }}>
+              <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={item.id} sx={{ textAlign: "center" }}>
                 <Box
                   onClick={() => handleItemClick(item)}
                   sx={{
@@ -227,7 +236,7 @@ export default function CorporateSection() {
             </Box>
 
             <DialogContent sx={{ pt: 4, pb: 4, px: { xs: 3, md: 4 } }}>
-              <Typography sx={{ color: "text.secondary", lineHeight: 1.8, fontSize: "1rem" }}>
+              <Typography component="div" sx={{ color: "text.secondary", lineHeight: 1.8, fontSize: "1rem" }}>
                 {t(`items.${selectedItem.key}.details`)}
               </Typography>
             </DialogContent>
