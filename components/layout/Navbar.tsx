@@ -28,7 +28,7 @@ const NAV_ITEMS = [
   { key: "home", href: "#home" },
   { key: "products", href: "#products" },
   { key: "corporate", href: "#kurumsal" },
-  { key: "patientInfo", href: "#hasta-bilgilendirme" },
+  { key: "patientInfo", href: "/PatientInfoSection" },
   { key: "whyUs", href: "#why-us" },
   { key: "dealers", href: "#dealers" },
   { key: "about", href: "#about" },
