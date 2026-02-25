@@ -33,7 +33,7 @@ const NAV_ITEMS = [
   { key: "about", href: "#about" },
   { key: "contact", href: "#contact" },
 ] as const;
-
+//deneme
 const LANGUAGES: { code: LocaleCode; flag: string; label: string }[] = [
   { code: "tr", flag: "🇹🇷", label: "Türkçe" },
   { code: "en", flag: "🇬🇧", label: "English" },

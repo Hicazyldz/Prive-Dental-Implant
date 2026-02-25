@@ -73,8 +73,8 @@ export default function UrunlerPage() {
             <Typography variant="h4" sx={{ fontWeight: 800, mb: 3, color: "#1e40af" }}>TEK PLATFORM</Typography>
             <Typography variant="body1" sx={{ color: "text.secondary", lineHeight: 1.8 }}>
               İmplantımız, farklı çap seçeneklerine sahip olmasına rağmen tek bir protetik bağlantı platformu sunarak kliniklerdeki stok yönetimini büyük ölçüde kolaylaştırır.
-             <p> Ölçü alımı ve protez aşamalarında parça karmaşasını ortadan kaldıran bu akıllı tasarım, hekimlerimize zaman kazandırırken hata payını da sıfıra indirir
-            </p>
+             Ölçü alımı ve protez aşamalarında parça karmaşasını ortadan kaldıran bu akıllı tasarım, hekimlerimize zaman kazandırırken hata payını da sıfıra indirir
+          
             </Typography>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
@@ -91,8 +91,8 @@ export default function UrunlerPage() {
             <Typography variant="h4" sx={{ fontWeight: 800, mb: 3, color: "#1e40af" }}>AGRESİF YİV DİZAYN</Typography>
             <Typography variant="body1" sx={{ color: "text.secondary", lineHeight: 1.8 }}>
               İmplantımız, özel olarak geliştirilmiş agresif yiv dizaynı sayesinde en yumuşak kemik tiplerinde bile olağanüstü bir ilk tutunma (primer stabilite) gücü sağlar.
-              <p> Kemik kesme ve yönlendirme yeteneği yüksek olan bu yapı, anında yükleme (immediate loading) ve çekim sonrası anında implantasyon prosedürlerini çok daha güvenilir hale getirir.
-              </p>
+             Kemik kesme ve yönlendirme yeteneği yüksek olan bu yapı, anında yükleme (immediate loading) ve çekim sonrası anında implantasyon prosedürlerini çok daha güvenilir hale getirir.
+        
             </Typography>
           </Grid>
         </Grid>
@@ -103,7 +103,7 @@ export default function UrunlerPage() {
             <Typography variant="h4" sx={{ fontWeight: 800, mb: 3, color: "#1e40af" }}>SLA CLEAN YÜZEY TEKNOLOJİSİ</Typography>
             <Typography variant="body1" sx={{ color: "text.secondary", lineHeight: 1.8 }}>
              İmplantımız, "SLA Clean" yüzey teknolojisi ile kalabilecek tüm mikro partikülleri arındırarak kusursuz bir biyouyumluluk (biocompatibility) sunar.
-             <p> Yüksek saflıktaki bu yüzey, hücrelerin implanta çok daha hızlı tutunmasını sağlayarak kemiğe kaynama (osseointegrasyon) sürecini hızlandırır ve iyileşme süresini güvenle kısaltır.    </p>
+             Yüksek saflıktaki bu yüzey, hücrelerin implanta çok daha hızlı tutunmasını sağlayarak kemiğe kaynama (osseointegrasyon) sürecini hızlandırır ve iyileşme süresini güvenle kısaltır. 
              
               </Typography>
           </Grid>
@@ -131,8 +131,8 @@ export default function UrunlerPage() {
             <Typography variant="h4" sx={{ fontWeight: 800, mb: 3, color: "#1e40af" }}>CERRAHİ SETİMİZ</Typography>
             <Typography variant="body1" sx={{ color: "text.secondary", lineHeight: 1.8 }}>
              Cerrahi setimiz, operasyon sırasında hekimlerimize maksimum pratiklik ve zaman tasarrufu sağlamak üzere tamamen sezgisel (kullanıcı dostu) ve ergonomik bir yaklaşımla tasarlanmıştır.
-<p> Tüm sterilizasyon koşullarına yüksek dayanıklılık gösteren kompakt yapısı, parça karmaşasını ortadan kaldırarak implantımızın yerleştirilme sürecini başından sonuna kadar kusursuz bir akıcılıkla destekler.         
-   </p>
+ Tüm sterilizasyon koşullarına yüksek dayanıklılık gösteren kompakt yapısı, parça karmaşasını ortadan kaldırarak implantımızın yerleştirilme sürecini başından sonuna kadar kusursuz bir akıcılıkla destekler.         
+
            </Typography>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
