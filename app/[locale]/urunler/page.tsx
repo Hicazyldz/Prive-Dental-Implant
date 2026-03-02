@@ -15,12 +15,12 @@ export default function UrunlerPage() {
       
 
       {/* 1. BANNER (5.png) */}
-      <Box sx={{ width: "100%", mt: { xs: "70px", md: "100px" } }}>
+      <Box sx={{ width: "100%" }}>
         <Box
           component="img"
           src="/urunsayfasi/5..png"
           alt="Prive Dental Banner"
-          sx={{ width: "100%", height: "auto", display: "block" }}
+          sx={{ width: "100%", height: "50vh", display: "block" }}
         />
       </Box>
 
