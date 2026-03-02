@@ -15,8 +15,7 @@ import { useTheme } from "@mui/material/styles";
 
 const products = [
   { id: 1, key: "prive_info", image: "/info/prive_info.png", isCatalog: false },
- 
-  { id: 3, key: "catalog", image: "/info/catalog.png", isCatalog: true } 
+  { id: 3, key: "catalog", image: "/info/catalog.png", isCatalog: true }
 ] as const;
 
 const fadeInUp = keyframes`
@@ -46,7 +45,6 @@ export default function ProductsSection() {
   const theme = useTheme();
 
   return (
-  
     <Box
       id="products"
       sx={{
@@ -58,12 +56,11 @@ export default function ProductsSection() {
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 }, position: "relative", zIndex: 1 }}>
         {/* Section Header */}
         <Box sx={{ textAlign: "center", mb: 8 }}>
-          
           <Typography
             variant="h3"
             sx={{
               fontWeight: 800,
-        color: "text.onBrandMain",
+              color: "text.onBrandMain",
               mb: 2,
               fontSize: { xs: "2rem", md: "2.75rem" },
               animation: `${fadeInUp} 0.6s ease-out 0.1s backwards`
@@ -89,8 +86,8 @@ export default function ProductsSection() {
         <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 6, md: 10 } }}>
           {products.map((item, index) => {
             const isEven = index % 2 === 0;
-            const isFirstProduct = index === 0; // İlk ürün kontrolü
-            const isCatalog = item.isCatalog; // Katalog kontrolü
+            const isFirstProduct = index === 0;
+            const isCatalog = item.isCatalog;
 
             return (
               <Grid
@@ -103,10 +100,9 @@ export default function ProductsSection() {
                 }}
               >
                 {/* Image */}
-                <Grid size={{ xs: 12, md: 6 }}
-                  sx={{
-                    order: { xs: 1, md: isEven ? 1 : 2 }
-                  }}
+                <Grid
+                  size={{ xs: 12, md: 6 }}
+                  sx={{ order: { xs: 1, md: isEven ? 1 : 2 } }}
                 >
                   <Box
                     sx={{
@@ -144,16 +140,14 @@ export default function ProductsSection() {
                           objectFit: "cover"
                         }}
                       />
-                      
                     </Paper>
                   </Box>
                 </Grid>
 
                 {/* Content */}
-                <Grid size={{ xs: 12, md: 6 }} 
-                  sx={{
-                    order: { xs: 2, md: isEven ? 2 : 1 }
-                  }}
+                <Grid
+                  size={{ xs: 12, md: 6 }}
+                  sx={{ order: { xs: 2, md: isEven ? 2 : 1 } }}
                 >
                   <Box
                     sx={{
@@ -161,13 +155,12 @@ export default function ProductsSection() {
                       pr: { xs: 0, md: isEven ? 0 : 4 }
                     }}
                   >
-
                     {/* Title */}
                     <Typography
                       variant="h4"
                       sx={{
                         fontWeight: 800,
-                      color: "text.onBrandMain",
+                        color: "text.onBrandMain",
                         mb: 3,
                         fontSize: { xs: "1.75rem", md: "2.25rem" }
                       }}
@@ -188,7 +181,7 @@ export default function ProductsSection() {
                       {tProducts(`items.${item.key}.desc`)}
                     </Typography>
 
-                    {/* Features - Sadece ilk ürün için göster */}
+                    {/* Features - Sadece ilk ürün için */}
                     {isFirstProduct && (
                       <Box sx={{ mb: 4 }}>
                         {tProducts("items.properties").split("\n").map((feature, idx) => (
@@ -202,10 +195,7 @@ export default function ProductsSection() {
                             }}
                           >
                             <CheckCircleOutlineIcon
-                              sx={{
-                                color: "secondary.main",
-                                fontSize: "1.5rem"
-                              }}
+                              sx={{ color: "secondary.main", fontSize: "1.5rem" }}
                             />
                             <Typography
                               sx={{
@@ -221,37 +211,66 @@ export default function ProductsSection() {
                       </Box>
                     )}
 
-                    {/* CTA Buttons - Katalog için özel buton */}
+                    {/* CTA Buttons */}
                     <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
                       {isCatalog ? (
-                        // Katalog için PDF butonu
-                        <Button
-                          component="a"
-                          href="https://forevermedikal.com/uploads/pdfs/68f6032c6b777_PRIVEENG.pdf"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          variant="contained"
-                          endIcon={<PictureAsPdfIcon />}
-                          sx={{
-                            bgcolor: "primary.dark",
-                            px: 4,
-                            py: 1.5,
-                            fontSize: "1rem",
-                            fontWeight: 600,
-                            borderRadius: "50px",
-                            textTransform: "none",
-                            boxShadow: "0 8px 16px rgba(37, 85, 142, 0.4)",
-                            transition: "all 0.3s ease",
-                            "&:hover": {
-                              color: "text.onBrandLight",
-                              bgcolor: "background.brandLight",
-                              transform: "translateY(-2px)",
-                              boxShadow: "0 12px 24px rgba(37, 85, 142, 0.5)"
-                            }
-                          }}
-                        >
-                          {tProducts("btnViewCatalog")}
-                        </Button>
+                        <>
+                          {/* Katalog PDF butonu */}
+                          <Button
+                            component="a"
+                            href="https://forevermedikal.com/uploads/pdfs/68f6032c6b777_PRIVEENG.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="contained"
+                            endIcon={<PictureAsPdfIcon />}
+                            sx={{
+                              bgcolor: "primary.dark",
+                              px: 4,
+                              py: 1.5,
+                              fontSize: "1rem",
+                              fontWeight: 600,
+                              borderRadius: "50px",
+                              textTransform: "none",
+                              boxShadow: "0 8px 16px rgba(37, 85, 142, 0.4)",
+                              transition: "all 0.3s ease",
+                              "&:hover": {
+                                color: "text.onBrandLight",
+                                bgcolor: "background.brandLight",
+                                transform: "translateY(-2px)",
+                                boxShadow: "0 12px 24px rgba(37, 85, 142, 0.5)"
+                              }
+                            }}
+                          >
+                            {tProducts("btnViewCatalog")}
+                          </Button>
+
+                          {/* Dijital kütüphane butonu */}
+                          <Button
+                            component="a"
+                            href="/FOREVER%20ver_2.0.rar"
+                            download
+                            variant="contained"
+                            sx={{
+                              bgcolor: "primary.dark",
+                              px: 4,
+                              py: 1.5,
+                              fontSize: "1rem",
+                              fontWeight: 600,
+                              borderRadius: "50px",
+                              textTransform: "none",
+                              boxShadow: "0 8px 16px rgba(37, 85, 142, 0.4)",
+                              transition: "all 0.3s ease",
+                              "&:hover": {
+                                color: "text.onBrandLight",
+                                bgcolor: "background.brandLight",
+                                transform: "translateY(-2px)",
+                                boxShadow: "0 12px 24px rgba(37, 85, 142, 0.5)"
+                              }
+                            }}
+                          >
+                            {tProducts("btnDigitalLibrary")}
+                          </Button>
+                        </>
                       ) : (
                         // Diğer ürünler için normal buton
                         <Button
@@ -259,7 +278,7 @@ export default function ProductsSection() {
                           href="/urunler"
                           variant="contained"
                           endIcon={<ArrowForwardIcon />}
-                          sx={{ 
+                          sx={{
                             bgcolor: "primary.dark",
                             color: "text.onBrandMain",
                             px: 4,
@@ -270,7 +289,7 @@ export default function ProductsSection() {
                             textTransform: "none",
                             boxShadow: "0 8px 16px rgba(37, 85, 142, 0.4)",
                             transition: "all 0.3s ease",
-                            "&:hover": { 
+                            "&:hover": {
                               color: "text.onBrandLight",
                               bgcolor: "background.brandLight",
                               transform: "translateY(-2px)",

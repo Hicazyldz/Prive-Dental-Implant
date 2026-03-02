@@ -56,7 +56,7 @@ export default function CorporateSection() {
   };
 
   return (
-    <Box id="kurumsal" sx={{ py: { xs: 8, md: 12 }, bgcolor: "background.graySoft" }}>
+    <Box id="kurumsal" sx={{ py: { xs: 5, md: 5 }, bgcolor: "background.graySoft" }}>
       <Container maxWidth="lg">
         {/* Başlık ve açıklama */}
         <Box sx={{ textAlign: "center", mb: { xs: 6, md: 10 } }}>

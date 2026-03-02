@@ -62,7 +62,7 @@ export default function WhyUsSection() {
       component="section"
       id="why-us"
       sx={{
-        py: { xs: 10, md: 16 },
+        py: { xs: 5, md: 5 },
         bgcolor: "background.graySoft",   // 🔹 BRAND SOFT ZEMİN
         color: "text.onBrandSoft",   // 🔹 BRAND SOFT ÜZERİNDEKİ YAZI
       }}
