@@ -40,6 +40,26 @@
       "properties": "COLD WELDING\nMADE IN GERMANY\nSLA CLEAN SURFACE\nTHREAD DESIGN\nSINGLE PLATFORM"
     }
   },
+  "productSection": {
+    "featuresTitle": "KEY FEATURES",
+    "feature1": "Provides long-lasting and healthy treatments with a cold-weld connection that forms a flawless barrier against bacterial leakage.",
+    "feature2": "Innovative platform-switch design preserves bone level and optimizes soft tissue adaptation for a natural appearance.",
+    "feature3": "Smart design offering a single prosthetic connection for all diameters, saving clinicians time and simplifying restorations.",
+    "feature4": "Aggressive thread geometry developed for excellent osseointegration and maximum primary stability even in soft bone.",
+    "feature5": "Ultra-pure 'SLA Clean' surface technology removes residues on the implant surface for faster osseointegration.",
+    "sections": {
+      "s1": {"title": "COLD WELDING", "body": "Our implant eliminates micro-movements and minimizes screw loosening risk thanks to a flawless cold weld connection with the abutment. This sealed structure prevents bacterial leakage, reducing infection risk and ensuring long-term intraoral health."},
+      "s2": {"title": "SINGLE PLATFORM", "body": "Although available in different diameters, our implant provides a single prosthetic connection platform that greatly simplifies inventory management in clinics. This smart design eliminates part confusion during impression and prosthetic stages, saving clinicians time and reducing errors."},
+      "s3": {"title": "AGGRESSIVE THREAD DESIGN", "body": "With a specially developed aggressive thread design, our implant provides exceptional primary stability even in the softest bone types. Its high bone-cutting and guidance capability make immediate loading and post-extraction implant procedures more reliable."},
+      "s4": {"title": "SLA CLEAN SURFACE TECHNOLOGY", "body": "The 'SLA Clean' surface technology cleans micro-particles from the implant, offering excellent biocompatibility. This high-purity surface allows cells to attach faster to the implant, accelerating osseointegration and shortening healing times."},
+      "s5": {"title": "MADE IN GERMANY", "body": "Prive Implant represents the gold standard of the industry as it is made in Germany. We consistently maintain the highest standards of quality and hygiene for our dentists and patients."},
+      "s6": {"title": "OUR SURGICAL KIT", "body": "Our surgical kit is designed with an intuitive and ergonomic approach to provide maximum practicality and time savings for clinicians during operations. Its compact, sterilizable design eliminates part confusion and supports a smooth implant placement workflow."}
+    },
+    "diameterTitle": "DIAMETER CLASSIFICATION",
+    "lengthTitle": "LENGTH CLASSIFICATION",
+    "diameterImageAlt": "Diameter Options Table",
+    "lengthImageAlt": "Length Options Table"
+  },
   
   "corporate": {
     "title": "Innovative Vision",

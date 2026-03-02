@@ -1,5 +1,5 @@
 import HeroSection from '../../components/sections/HeroSection';
-import ProductsSection from '../../components/sections/ProductsSection';
+import ProductsSection from '../../components/sections/HomePage';
 import AboutSection from '../../components/sections/AboutSection';
 import { useTranslations } from 'next-intl';
 

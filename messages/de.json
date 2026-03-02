@@ -38,6 +38,26 @@
       "properties": "KALTVERSCHWEIßUNG\nHERGESTELLT IN DEUTSCHLAND\nSLA REINE OBERFLÄCHE\nGEWINDEDESIGN\nEINPLATTFORM"
     }
   },
+  "productSection": {
+    "featuresTitle": "Hauptmerkmale",
+    "feature1": "Bietet dank der Kaltverbindung, die eine einwandfreie Barriere gegen bakterielle Leckage bildet, langlebige und gesunde Behandlungen.",
+    "feature2": "Innovatives Platform-Switch-Design erhält die Knochenniveaus und optimiert die Weichgewebsanpassung für ein natürliches Erscheinungsbild.",
+    "feature3": "Intelligentes Design mit einer einzigen prothetischen Verbindung für alle Durchmesser, spart Zeit und vereinfacht Restaurationen.",
+    "feature4": "Aggressives Gewindedesign für hervorragende Osseointegration und maximale Primärstabilität, auch in weichem Knochen.",
+    "feature5": "Ultra-reine 'SLA Clean'-Oberflächentechnologie entfernt Rückstände von der Implantatoberfläche für schnellere Osseointegration.",
+    "sections": {
+      "s1": {"title": "KALTVERBINDUNG", "body": "Unser Implantat beseitigt Mikrobewegungen und minimiert das Risiko des Lockerens der Schraube dank einer fehlerfreien Kaltverschweißung mit dem Abutment. Diese versiegelte Struktur verhindert bakterielle Leckagen und reduziert das Infektionsrisiko."},
+      "s2": {"title": "EINPLATTFORM", "body": "Obwohl es in verschiedenen Durchmessern erhältlich ist, bietet unser Implantat eine einzige prothetische Verbindung, die das Bestandsmanagement in Kliniken erheblich vereinfacht. Dieses intelligente Design verhindert Verwechslungen bei Abdrücken und Prothetikphasen."},
+      "s3": {"title": "AGGRESSIVES GEWINDEDESIGN", "body": "Mit einem speziell entwickelten aggressiven Gewindedesign bietet unser Implantat außergewöhnliche Primärstabilität, selbst im weichsten Knochen. Seine hohe Knochenabschneide- und Führungsfähigkeit macht Sofortbelastungen und postextraktive Implantationen zuverlässiger."},
+      "s4": {"title": "SLA CLEAN OBERFLÄCHENTECHNOLOGIE", "body": "Die 'SLA Clean'-Oberflächentechnologie reinigt Mikropartikel von der Implantatoberfläche und bietet hervorragende Biokompatibilität. Diese hochreine Oberfläche ermöglicht eine schnellere Anlagerung von Zellen und beschleunigt die Osseointegration."},
+      "s5": {"title": "HERGESTELLT IN DEUTSCHLAND", "body": "Prive Implant steht für höchste Standards der Branche, da es in Deutschland hergestellt wird. Wir halten die höchsten Qualitäts- und Hygienestandards für unsere Zahnärzte und Patienten ein."},
+      "s6": {"title": "UNSER CHIRURGIESET", "body": "Unser chirurgisches Set ist ergonomisch und intuitiv gestaltet, um während Operationen maximale Praktikabilität und Zeitersparnis zu bieten. Das kompakte, sterilisierbare Design eliminiert Verwechslungen und unterstützt einen reibungslosen Implantationsablauf."}
+    },
+    "diameterTitle": "DURCHMESSER-KLASSIFIZIERUNG",
+    "lengthTitle": "LÄNGEN-KLASSIFIZIERUNG",
+    "diameterImageAlt": "Tabelle der Durchmesseroptionen",
+    "lengthImageAlt": "Tabelle der Längenoptionen"
+  },
   "corporate": {
     "title": "Innovative Ausrichtung",
     "description": "Prive Implant vereint sorgfältige F&E-Studien und klinisches Wissen mit hochpräzisen Produktionsprotokollen, um Ärzten zuverlässige Implantatlösungen zu bieten. Wir entwickeln kontinuierlich innovative Produkte, um Effizienz zu steigern, chirurgische Prozesse zu vereinfachen und ein komfortableres Behandlungserlebnis zu ermöglichen.",

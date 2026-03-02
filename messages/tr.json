@@ -39,6 +39,26 @@
       "properties": "SOĞUK KAYNAK\nMADE IN GERMANY\nSLA TEMİZ YÜZEY\nYİV DİZAYN\nTEK PLATFORM"
     }
   },
+  "productSection": {
+    "featuresTitle": "TEMEL ÖZELLİKLER",
+    "feature1": "Bakteri sızıntılarına karşı kusursuz bir bariyer oluşturan soğuk kaynak bağlantısı sayesinde uzun ömürlü ve sağlıklı tedaviler sunar.",
+    "feature2": "Yenilikçi platform switch özelliği ile kemik seviyesini korur, diş eti uyumunu en üst düzeye çıkararak doğal bir görünüm elde edilmesini sağlar.",
+    "feature3": "Tüm çaplar için tek bir protetik bağlantı sunan akıllı tasarımıyla hekimlerimize zaman kazandırır ve restorasyon süreçlerini pratikleştirir.",
+    "feature4": "Kemikle mükemmel bir bütünleşme ve ilk tutunmada (primer stabilite) maksimum güç için özel olarak geliştirilmiş agresif yiv yapısına sahiptir.",
+    "feature5": "İmplant yüzeyindeki kalıntıları sıfıra indiren ultra saf 'SLA Clean' yüzey teknolojisi ile hızlı osseointegrasyon sağlar.",
+    "sections": {
+      "s1": {"title": "SOĞUK KAYNAK", "body": "İmplantımız, abutment ile arasında oluşturduğu kusursuz soğuk kaynak bağlantısı sayesinde mikro hareketleri tamamen ortadan kaldırır ve vida gevşemesi riskini minimuma indirir. Bu sızdırmaz yapı, bakteri sızıntılarını engelleyerek implant çevresi enfeksiyon riskini düşürür ve implantımızın ağızda yıllarca sağlıklı kalmasını sağlar."},
+      "s2": {"title": "TEK PLATFORM", "body": "İmplantımız, farklı çap seçeneklerine sahip olmasına rağmen tek bir protetik bağlantı platformu sunarak kliniklerdeki stok yönetimini büyük ölçüde kolaylaştırır. Ölçü alımı ve protez aşamalarında parça karmaşasını ortadan kaldıran bu akıllı tasarım, hekimlerimize zaman kazandırırken hata payını da sıfıra indirir."},
+      "s3": {"title": "AGRESİF YİV DİZAYN", "body": "İmplantımız, özel olarak geliştirilmiş agresif yiv dizaynı sayesinde en yumuşak kemik tiplerinde bile olağanüstü bir ilk tutunma (primer stabilite) gücü sağlar. Kemik kesme ve yönlendirme yeteneği yüksek olan bu yapı, anında yükleme ve çekim sonrası anında implantasyon prosedürlerini çok daha güvenilir hale getirir."},
+      "s4": {"title": "SLA CLEAN YÜZEY TEKNOLOJİSİ", "body": "İmplantımız, 'SLA Clean' yüzey teknolojisi ile kalabilecek tüm mikro partikülleri arındırarak kusursuz bir biyouyumluluk sunar. Yüksek saflıktaki bu yüzey, hücrelerin implanta çok daha hızlı tutunmasını sağlayarak osseointegrasyon sürecini hızlandırır ve iyileşme süresini güvenle kısaltır."},
+      "s5": {"title": "MADE IN GERMANY", "body": "Prive Implant sektörde altın standartları temsil eder; Almanya'da üretilmiştir. Diş hekimlerimiz ve hastalarımız için kalite ve hijyen standartlarını sürekli yüksek tutuyoruz."},
+      "s6": {"title": "CERRAHİ SETİMİZ", "body": "Cerrahi setimiz, operasyon sırasında hekimlerimize maksimum pratiklik ve zaman tasarrufu sağlamak üzere tamamen sezgisel ve ergonomik bir yaklaşımla tasarlanmıştır. Tüm sterilizasyon koşullarına yüksek dayanıklılık gösteren kompakt yapısı, parça karmaşasını ortadan kaldırarak implantımızın yerleştirilme sürecini başından sonuna kadar kusursuz bir akıcılıkla destekler."}
+    },
+    "diameterTitle": "ÇAP SINIFLANDIRMASI",
+    "lengthTitle": "UZUNLUK SINIFLANDIRMASI",
+    "diameterImageAlt": "Çap Seçenekleri Tablosu",
+    "lengthImageAlt": "Uzunluk Seçenekleri Tablosu"
+  },
 
   "corporate": {
     "title": "Yenilikçi Vizyon",

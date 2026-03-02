@@ -23,7 +23,6 @@ import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 
 type LocaleCode = "tr" | "en" | "de" | "ar";
-
 const NAV_ITEMS = [
   { key: "home", href: "/" },
   { key: "products", href: "/urunler" },
@@ -53,19 +52,16 @@ function replaceLocaleInPath(pathname: string, nextLocale: string) {
 
 export default function Navbar() {
   const theme = useTheme();
-
-  // 🔥 HYDRATION FIX
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"), {
-    noSsr: true,
-  });
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const router = useRouter();
   const pathname = usePathname();
   const locale = useLocale() as LocaleCode;
+
   const tNav = useTranslations("nav");
 
   const filteredNav = useMemo(() => {
-    return NAV_ITEMS.filter((item) => {
+    return NAV_ITEMS.filter(item => {
       if (!("onlyLocale" in item)) return true;
       return item.onlyLocale === locale;
     });
@@ -86,17 +82,18 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleDrawerToggle = () => setDrawerOpen((prev) => !prev);
+  const handleDrawerToggle = () => setDrawerOpen((p) => !p);
 
   const handleLanguageClick = (event: React.MouseEvent<HTMLElement>) => {
     setLangAnchor(event.currentTarget);
   };
 
-  const handleLanguageClose = () => setLangAnchor(null);
+  const handleLanguageClose = () => {
+    setLangAnchor(null);
+  };
 
   const handleLanguageChange = (nextLocale: LocaleCode) => {
-    const hash =
-      typeof window !== "undefined" ? window.location.hash : "";
+    const hash = typeof window !== "undefined" ? window.location.hash : "";
     const nextPath = replaceLocaleInPath(pathname, nextLocale);
     router.push(`${nextPath}${hash}`, { scroll: false });
     handleLanguageClose();
@@ -127,14 +124,19 @@ export default function Navbar() {
             transition: "min-height 0.3s ease-in-out",
           }}
         >
-          {/* Logo (locale-safe) */}
+          {/* Logo */}
           <Box
             component="a"
-            href={`/${locale}`}
+            href="#home"
             sx={{
               display: "flex",
               alignItems: "center",
               textDecoration: "none",
+              transition: "transform 0.2s ease-in-out",
+
+              "&:hover": {
+                transform: "scale(1.05)",
+              },
             }}
           >
             <Box
@@ -143,6 +145,8 @@ export default function Navbar() {
               alt="Prive Implant"
               sx={{
                 height: { xs: 35, md: scrolled ? 70 : 80 },
+                width: "auto",
+                display: "block",
                 transition: "height 0.3s ease-in-out",
               }}
             />
@@ -150,7 +154,18 @@ export default function Navbar() {
 
           {isMobile ? (
             <>
-              <IconButton onClick={handleDrawerToggle}>
+              <IconButton
+                edge="end"
+                onClick={handleDrawerToggle}
+                sx={{
+                  color: "text.primary",
+                  bgcolor: "rgba(0, 0, 0, 0.04)",
+                  "&:hover": {
+                    bgcolor: "rgba(0, 0, 0, 0.08)",
+                  },
+                }}
+                aria-label={drawerOpen ? "Close menu" : "Open menu"}
+              >
                 {drawerOpen ? <CloseIcon /> : <MenuIcon />}
               </IconButton>
 
@@ -158,20 +173,105 @@ export default function Navbar() {
                 anchor="right"
                 open={drawerOpen}
                 onClose={handleDrawerToggle}
+                PaperProps={{
+                  sx: {
+                    width: 300,
+                    bgcolor: "background.paper",
+                  },
+                }}
               >
-                <List sx={{ width: 280 }}>
-                  {filteredNav.map((item) => (
-                    <ListItem key={item.key} disablePadding>
-                      <ListItemButton
-                        component="a"
-                        href={`/${locale}${item.href}`}
-                        onClick={handleNavClick}
-                      >
-                        <ListItemText primary={tNav(item.key)} />
-                      </ListItemButton>
-                    </ListItem>
-                  ))}
-                </List>
+                <Box
+                  sx={{
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      p: 3,
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      borderBottom: "1px solid",
+                      borderColor: "divider",
+                    }}
+                  >
+                    <Box
+                      component="img"
+                      src="/logo/logo_down.png"
+                      alt="Logo"
+                      sx={{ height: 40 }}
+                    />
+                    <IconButton onClick={handleDrawerToggle} size="small">
+                      <CloseIcon />
+                    </IconButton>
+                  </Box>
+
+                  <List sx={{ flex: 1, pt: 2 }}>
+                    {filteredNav.map((item) => (
+                      <ListItem key={item.key} disablePadding sx={{ mb: 0.5 }}>
+                        <ListItemButton
+                          component="a"
+                          href={item.href}
+                          onClick={handleNavClick}
+                          sx={{
+                            mx: 2,
+                            borderRadius: 2,
+                            "&:hover": {
+                              bgcolor: "background.brandLight",
+                              "& .MuiListItemText-primary": {
+                                color: "white",
+                              },
+                            },
+                            transition: "all 0.2s ease-in-out",
+                          }}
+                        >
+                          <ListItemText
+                            primary={tNav(item.key)}
+                            sx={{
+                              "& .MuiListItemText-primary": {
+                                fontWeight: 600,
+                                fontSize: "0.95rem",
+                                color: "text.primary",
+                              },
+                            }}
+                          />
+                        </ListItemButton>
+                      </ListItem>
+                    ))}
+                  </List>
+
+                  <Box
+                    sx={{
+                      p: 3,
+                      borderTop: "1px solid",
+                      borderColor: "divider",
+                    }}
+                  >
+                    <Button
+                      fullWidth
+                      variant="outlined"
+                      startIcon={<LanguageIcon />}
+                      onClick={handleLanguageClick}
+                      sx={{
+                        justifyContent: "flex-start",
+                        textTransform: "none",
+                        fontSize: "0.95rem",
+                        fontWeight: 600,
+                        color: "text.primary",
+                        borderColor: "#e0e0e0",
+                        "&:hover": {
+                          borderColor: "background.brandLight",
+                          bgcolor: "rgba(211, 47, 47, 0.04)",
+                          color: "background.onBrandLight",
+                        },
+                      }}
+                    >
+                      {currentLang?.flag} {currentLang?.label}
+                    </Button>
+                  </Box>
+                </Box>
               </Drawer>
             </>
           ) : (
@@ -180,24 +280,69 @@ export default function Navbar() {
                 <Button
                   key={item.key}
                   component="a"
-                  href={`/${locale}${item.href}`}
+                  href={item.href}
                   sx={{
+                    px: 2,
+                    py: 1,
+                    fontSize: "0.95rem",
                     fontWeight: 600,
+                    color: "text.primary",
                     textTransform: "none",
+                    position: "relative",
+                    "&::after": {
+                      content: '""',
+                      position: "absolute",
+                      bottom: 0,
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      width: 0,
+                      height: 2,
+                      bgcolor: "info.main",
+                      transition: "width 0.3s ease-in-out",
+                    },
+                    "&:hover": {
+                      bgcolor: "transparent",
+                      color: "info.main",
+                      "&::after": {
+                        width: "80%",
+                      },
+                    },
                   }}
                 >
                   {tNav(item.key)}
                 </Button>
               ))}
 
-              <Button
-                variant="outlined"
-                startIcon={<LanguageIcon />}
-                onClick={handleLanguageClick}
-                sx={{ textTransform: "none", fontWeight: 600 }}
+              <Box
+                sx={{
+                  ml: 2,
+                  pl: 2,
+                  borderLeft: "1px solid",
+                  borderColor: "divider",
+                }}
               >
-                {currentLang?.flag} {currentLang?.label}
-              </Button>
+                <Button
+                  variant="outlined"
+                  startIcon={<LanguageIcon />}
+                  onClick={handleLanguageClick}
+                  sx={{
+                    textTransform: "none",
+                    fontSize: "0.95rem",
+                    fontWeight: 600,
+                    borderRadius: 2,
+                    px: 2,
+                    borderColor: "#e0e0e0",
+                    color: "text.primary",
+                    "&:hover": {
+                      borderColor: "info.main",
+                      bgcolor: "background.brandMain",
+                      color: "text.onBrandMain",
+                    },
+                  }}
+                >
+                  {currentLang?.flag} {currentLang?.label}
+                </Button>
+              </Box>
             </Box>
           )}
         </Toolbar>
@@ -207,17 +352,37 @@ export default function Navbar() {
         anchorEl={langAnchor}
         open={Boolean(langAnchor)}
         onClose={handleLanguageClose}
+        PaperProps={{
+          sx: {
+            mt: 1,
+            minWidth: 150,
+            borderRadius: 2,
+            boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+          },
+        }}
       >
         {languageOptions.map((lang) => (
           <MenuItem
             key={lang.code}
             selected={lang.code === locale}
             onClick={() => handleLanguageChange(lang.code)}
+            sx={{
+              gap: 1.5,
+              py: 1.5,
+              "&.Mui-selected": {
+                bgcolor: "background.brandMain",
+                color: "text.onBrandMain",
+                "&:hover": {
+                  bgcolor: "background.brandLight",
+                },
+              },
+            }}
           >
-            {lang.flag} {lang.label}
+            <span style={{ fontSize: "1.2rem" }}>{lang.flag}</span>
+            <span style={{ fontWeight: 500 }}>{lang.label}</span>
           </MenuItem>
         ))}
       </Menu>
     </AppBar>
   );
-}
+}  
