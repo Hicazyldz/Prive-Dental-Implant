@@ -66,10 +66,8 @@ export default async function RootLayout({ children, params }: Props) {
 
           <NextIntlClientProvider locale={locale} messages={messages}>
 
-            <Navbar /> {/* Navbar'ı buraya ekledik, artık her sayfada görünecek */}
-
+            <Navbar />
             {children}
-
           </NextIntlClientProvider>
 
         </ThemeRegistry>

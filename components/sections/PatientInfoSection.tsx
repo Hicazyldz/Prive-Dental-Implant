@@ -75,7 +75,7 @@ export default function PatientInfoSection() {
       component="section"
       id="hasta-bilgilendirme"
       sx={{
-        py: { xs: 8, md: 12 },
+        py: { xs: 5, md: 5 },
         backgroundColor: "background.brandMain",
       }}
     >

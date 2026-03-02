@@ -20,7 +20,7 @@ export default function DealersSection() {
       aria-labelledby="dealers-title"
       sx={{ bgcolor: "background.brandMain" }}
     >
-      <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
+      <Container maxWidth="lg" sx={{py: { xs: 5, md: 5 } }}>
         <Typography
           id="dealers-title"
           component="h2"
